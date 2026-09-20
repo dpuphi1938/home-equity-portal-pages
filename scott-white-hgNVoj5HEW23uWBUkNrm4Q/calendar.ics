@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:5880 Solomon Harmon Way\, Whitestown\, IN 46075 Transaction T
+ imeline
+X-PUBLISHED-TTL:PT12H
+END:VCALENDAR

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5880 Solomon Harmon Way, Whitestown, IN 46075 &mdash; Home Equity Portal</title>
+<style>
+:root{
+  --red:#EE3625; --red-dark:#C42817; --red-deep:#9E1B0E; --red-tint:#FBE3DF;
+  --ink:#1A1A1A; --charcoal:#3A3A3A; --slate:#6B6B6B;
+  --mist:#B8B8B8; --cloud:#EDEDED; --paper:#F7F6F4; --white:#FFFFFF;
+  --good:#1C7A3B; --good-tint:#E4F3E8; --bad:#B3261E; --bad-tint:#FBE9E7;
+  --shadow:0 1px 2px rgba(26,26,26,.05),0 2px 8px rgba(26,26,26,.04);
+  --shadow-hover:0 2px 4px rgba(26,26,26,.06),0 6px 16px rgba(26,26,26,.07);
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:-apple-system,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+a{-webkit-tap-highlight-color:rgba(238,54,37,.12)}
+.wrap{max-width:640px;margin:0 auto;padding:28px 20px 48px}
+.brandbar{height:4px;background:linear-gradient(90deg,var(--red),var(--red-dark));border-radius:2px;margin-bottom:20px}
+.photo-wrap{position:relative;width:95%;max-width:420px;margin:0 auto 22px;border-radius:16px;overflow:hidden;background:var(--cloud);box-shadow:var(--shadow-hover)}
+.hero{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.ribbon{position:absolute;top:24px;left:-70px;width:240px;padding:7px 0;background:var(--red);color:var(--white);text-align:center;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:14px;transform:rotate(-45deg);box-shadow:0 2px 6px rgba(0,0,0,.3);z-index:2}
+.brand-mark{margin-bottom:22px;display:flex;justify-content:center}
+.brand-mark svg{height:24px;width:auto;display:block}
+.brand-mark svg path:not(.cls-1){fill:var(--ink)}
+.eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--red-dark);margin:0 0 6px;text-align:center}
+h1{font-size:30px;font-weight:800;margin:0 0 18px;letter-spacing:-.015em;text-align:center;line-height:1.15}
+.sub{font-size:17px;font-weight:600;color:var(--charcoal);margin:16px 0 20px;text-align:center}
+.summary{background:var(--red-tint);border-radius:var(--radius);padding:14px 16px;font-size:14.5px;font-weight:600;color:var(--red-deep);margin-bottom:20px;box-shadow:var(--shadow)}
+.stats-row{display:flex;gap:10px;margin-bottom:24px}
+.stat{flex:1;background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px;text-align:center;box-shadow:var(--shadow)}
+.stat .v{font-size:17px;font-weight:800}
+.stat .l{font-size:9.5px;color:var(--slate);text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+h2{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--charcoal);margin:32px 0 14px;display:flex;align-items:center;gap:8px}
+h2::before{content:"";width:4px;height:13px;background:var(--red);border-radius:2px;display:inline-block}
+h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
+.timeline{list-style:none;margin:0;padding:0}
+.tstep{display:flex;gap:12px;padding-bottom:18px;position:relative}
+.tstep:not(:last-child)::before{content:"";position:absolute;left:11px;top:26px;bottom:-2px;width:2px;background:var(--cloud)}
+.tdot{flex:0 0 24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;background:var(--cloud);color:var(--slate);z-index:1;transition:background .2s ease}
+.tstep.done .tdot{background:var(--good);color:var(--white)}
+.tlabel{font-weight:600;font-size:14.5px}
+.tdate{font-size:12.5px;color:var(--slate);margin-top:1px}
+.tstep.done .tlabel{color:var(--charcoal)}
+.note{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 16px;font-size:13.5px;color:var(--charcoal);line-height:1.55;margin-top:6px;box-shadow:var(--shadow)}
+.note .from{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);margin-bottom:6px}
+.doclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.doc{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 14px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:box-shadow .15s ease,transform .15s ease}
+.doc:hover,.doc:active{box-shadow:var(--shadow-hover);transform:translateY(-1px)}
+.doc .meta{display:flex;flex-direction:column;gap:3px;min-width:0}
+.doc .label{font-weight:600;font-size:14px}
+.doc .badge{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);white-space:nowrap}
+.doc .arrow{color:var(--red);font-weight:700}
+.status-pill{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;width:fit-content}
+.status-pill.good{background:var(--good-tint);color:var(--good)}
+.status-pill.pending{background:#FFF3D6;color:#8A5A00}
+.status-pill.bad{background:var(--bad-tint);color:var(--bad)}
+.cal-subscribe{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--red-dark);text-decoration:none;margin:2px 0 12px}
+.cal-subscribe:hover{text-decoration:underline}
+.tgcal{font-size:11px;font-weight:600;color:var(--slate);text-decoration:none;white-space:nowrap;margin-left:8px}
+.tgcal:hover{color:var(--red-dark);text-decoration:underline}
+.home-value{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:18px 16px;box-shadow:var(--shadow);margin-bottom:20px}
+.hv-estimate{font-size:26px;font-weight:800;color:var(--ink)}
+.hv-sub{font-size:12px;color:var(--slate);margin-top:4px}
+.hv-gain{font-size:13.5px;font-weight:600;margin-top:10px}
+.hv-gain.positive{color:var(--good)}
+.hv-note{font-size:11.5px;color:var(--slate);margin-top:8px;font-style:italic}
+.comps-block{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);margin-top:-8px;margin-bottom:20px}
+.comps-chart{margin-bottom:6px}
+.comps-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}
+.comps-table th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--slate);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--cloud)}
+.comps-table td{padding:7px 8px;border-bottom:1px solid var(--cloud);color:var(--charcoal);white-space:nowrap}
+.comps-table tr:last-child td{border-bottom:0}
+.me-row{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px}
+.me-row .me-label{color:var(--charcoal);font-weight:600}
+.me-row .me-val{font-weight:800;font-size:16px;color:var(--ink)}
+.me-row.highlight .me-val{color:var(--good)}
+.me-foot{font-size:11px;color:var(--slate);margin-top:10px;line-height:1.5}
+.hv-history{list-style:none;margin:14px 0 0;padding:12px 0 0;border-top:1px solid var(--cloud);display:flex;flex-direction:column;gap:6px}
+.hv-history li{font-size:12px;color:var(--slate);display:flex;justify-content:space-between}
+.footnote{margin-top:36px;padding-top:16px;border-top:1px solid var(--cloud);font-size:11px;color:var(--mist);line-height:1.6}
+
+.section-intro{font-size:13px;color:var(--slate);margin:-8px 0 12px;line-height:1.5}
+.resource-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.resource-card{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
+.resource-title{font-weight:700;font-size:14px;color:var(--ink);margin-bottom:5px}
+.resource-body{font-size:13px;color:var(--charcoal);line-height:1.55}
+.contact-list,.util-list,.todo-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.contact-row,.util-row,.todo-row{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 14px;box-shadow:var(--shadow);transition:box-shadow .15s ease}
+.contact-row:hover,.util-row:hover{box-shadow:var(--shadow-hover)}
+.contact-top,.util-top,.todo-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.contact-role,.util-cat{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--red-deep);background:var(--red-tint);border-radius:5px;padding:2px 7px;white-space:nowrap}
+.contact-name,.util-provider{font-weight:700;font-size:14.5px;flex:1}
+.contact-company{font-size:12.5px;color:var(--slate);margin-top:1px}
+.contact-links,.util-links{margin-top:6px;font-size:13px;display:flex;flex-wrap:wrap;gap:2px 12px}
+.contact-links a,.util-links a{color:var(--red-dark);text-decoration:none;font-weight:600}
+.util-notes{margin-top:4px;font-size:12.5px;color:var(--slate);line-height:1.4}
+.util-row.checkable,.todo-row{display:flex;align-items:flex-start;gap:12px}
+.util-row.checkable input[type=checkbox],.todo-row input[type=checkbox]{flex:0 0 20px;width:20px;height:20px;margin:2px 0 0;accent-color:var(--good);cursor:pointer}
+.util-row.checkable label,.todo-row label{flex:1;cursor:pointer}
+.util-row.checkable.done .util-provider,.todo-row.done .todo-label{color:var(--slate);text-decoration:line-through}
+.todo-label{font-weight:700;font-size:14.5px}
+.todo-due{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--slate);background:var(--cloud);border-radius:5px;padding:2px 7px;white-space:nowrap}
+.todo-row.overdue .todo-due{color:var(--white);background:var(--bad)}
+.todo-row.soon .todo-due{color:var(--red-deep);background:var(--red-tint)}
+.faq{display:flex;flex-direction:column;gap:8px}
+.faq details{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:2px 14px;box-shadow:var(--shadow)}
+.faq summary{cursor:pointer;list-style:none;font-weight:600;font-size:14px;padding:12px 0;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--red);font-size:18px;font-weight:700;flex:0 0 auto}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:0 0 14px;font-size:13.5px;color:var(--charcoal);line-height:1.55}
+.faq-wrap{margin:32px 0 14px}
+.faq-wrap>.faq{margin-top:14px}
+.faq-wrap-summary{cursor:pointer;list-style:none;font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--charcoal);display:flex;align-items:center;gap:8px}
+.faq-wrap-summary::-webkit-details-marker{display:none}
+.faq-wrap-summary::before{content:"";width:4px;height:13px;background:var(--red);border-radius:2px;display:inline-block}
+.faq-wrap-summary::after{content:"\25BE";margin-left:auto;color:var(--red);font-size:14px}
+.faq-wrap[open]>.faq-wrap-summary::after{content:"\25B4"}
+.faq-count{font-weight:600;color:var(--slate);text-transform:none;letter-spacing:0}
+
+.add-form{margin-top:10px}
+.add-form summary{cursor:pointer;list-style:none;font-weight:600;font-size:13.5px;color:var(--red-dark);padding:8px 2px}
+.add-form summary::-webkit-details-marker{display:none}
+.add-form form{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.add-form label{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);display:flex;flex-direction:column;gap:4px}
+.add-form input{font-family:inherit;font-size:14px;font-weight:400;text-transform:none;letter-spacing:normal;color:var(--ink);border:1px solid var(--cloud);border-radius:8px;padding:9px 10px;background:var(--paper)}
+.add-form input:focus{outline:2px solid var(--red);outline-offset:1px}
+.add-form button{align-self:flex-start;background:var(--red);color:var(--white);border:none;border-radius:8px;padding:10px 18px;font-weight:700;font-size:13.5px;cursor:pointer}
+.add-form button:disabled{opacity:.6;cursor:default}
+.add-form-msg{font-size:12.5px;font-weight:600;padding:8px 10px;border-radius:8px}
+.add-form-msg.ok{background:var(--good-tint);color:var(--good)}
+.add-form-msg.err{background:var(--bad-tint);color:var(--bad)}
+
+.staff-gate{max-width:340px;margin:80px auto;text-align:center}
+.staff-gate input{width:100%;font-size:16px;border:1px solid var(--cloud);border-radius:8px;padding:12px;margin:14px 0;text-align:center}
+.staff-gate button{background:var(--red);color:var(--white);border:none;border-radius:8px;padding:12px 24px;font-weight:700;font-size:14px;cursor:pointer;width:100%}
+.staff-note{background:var(--red-tint);color:var(--red-deep);border-radius:var(--radius);padding:12px 14px;font-size:12.5px;font-weight:600;margin-bottom:20px}
+.staff-section{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;margin-bottom:14px}
+.staff-section h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--charcoal);margin:0 0 10px}
+.staff-section textarea{width:100%;font-family:inherit;font-size:14px;border:1px solid var(--cloud);border-radius:8px;padding:10px;min-height:90px;resize:vertical;background:var(--paper)}
+.staff-current{font-size:12.5px;color:var(--slate);background:var(--paper);border-radius:8px;padding:8px 10px;margin-bottom:10px;line-height:1.5}
+.staff-list{list-style:none;margin:0 0 10px;padding:0;display:flex;flex-direction:column;gap:6px}
+.staff-list li{display:flex;align-items:flex-start;gap:8px;font-size:13px;padding:6px 0;border-bottom:1px solid var(--cloud)}
+.staff-list li:last-child{border-bottom:none}
+.staff-list input[type=checkbox]{flex:0 0 18px;width:18px;height:18px;margin-top:1px;accent-color:var(--good);cursor:pointer}
+.staff-list .staff-item-label{font-weight:600;flex:1}
+.staff-list .staff-item-meta{color:var(--slate);font-size:11.5px}
+.staff-row{display:flex;flex-direction:column;gap:8px}
+.staff-row input{font-family:inherit;font-size:13.5px;border:1px solid var(--cloud);border-radius:8px;padding:8px 10px;background:var(--paper)}
+.staff-row label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--slate)}
+.staff-btn{align-self:flex-start;background:var(--red);color:var(--white);border:none;border-radius:8px;padding:8px 16px;font-weight:700;font-size:12.5px;cursor:pointer;margin-top:2px}
+.staff-btn:disabled{opacity:.6;cursor:default}
+
+.countdown{background:linear-gradient(135deg,var(--ink),var(--charcoal));border-radius:var(--radius);padding:18px 20px;margin-bottom:20px;text-align:center;box-shadow:var(--shadow-hover)}
+.countdown .cd-num{font-size:40px;font-weight:800;color:var(--white);line-height:1;letter-spacing:-.02em}
+.countdown .cd-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--red);margin-top:4px}
+.countdown .cd-date{font-size:12px;color:var(--mist);margin-top:6px}
+.countdown.closed{background:linear-gradient(135deg,var(--good),#155c2d)}
+
+.progress-wrap{margin:0 0 18px}
+.progress-label{font-size:12px;color:var(--slate);margin-bottom:6px;display:flex;justify-content:space-between;font-weight:600}
+.progress-track{height:8px;background:var(--cloud);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--red),var(--red-dark));border-radius:4px;transition:width .3s ease}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brandbar"></div>
+    <div class="brand-mark"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   viewBox="0 0 294.415 60.7422"
+   height="0.8436in"
+   width="4.0891in"
+   data-name="Layer 1"
+   id="Layer_1">
+  <metadata
+     id="metadata33">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{fill:#ff1300;}</style>
+  </defs>
+  <path
+     id="path6"
+     transform="translate(-0.7265 -0.816)"
+     d="M72.7636,19.7633h-3.44V18.4225h1.2231a31.7056,31.7056,0,0,0,3.3218-.1162,20.0687,20.0687,0,0,0,3.3218-.4658v4.5468l.1137-.0615a8.0521,8.0521,0,0,1,7.1123-4.4853c4.4893,0,10.8428,3.497,10.8428,12.7041,0,5.7119-3.85,11.7138-11.0747,11.7138a7.2925,7.2925,0,0,1-6.7583-3.9043h-.1221V53.3278h3.9668v1.3457H69.3237V53.3278h3.44Zm4.5405,11.3633c0,3.8476.24,4.8369,1.1719,6.5889A6.9449,6.9449,0,0,0,83.78,41.0914c2.9717,0,6.1758-.1152,6.1758-10.7216,0-8.3916-1.69-11.1319-6.0029-11.1319-1.1089,0-5.5357.8721-6.4082,6.5274A34.2752,34.2752,0,0,0,77.3041,31.1266Z" />
+  <path
+     id="path8"
+     transform="translate(-0.7265 -0.816)"
+     d="M105.5937,23.3209h.1181c1.05-2.6269,3.3814-5.48,6.5855-5.48,1.9814,0,3.5537,1.0478,3.5537,3.2656,0,1.4531-1.5132,2.1543-2.74,2.1543a2.5535,2.5535,0,0,1-2.2725-2.333,11.9345,11.9345,0,0,1,.2319-1.2256c0-.3486-.3452-.3486-.5229-.3486a6.8742,6.8742,0,0,0-3.3218,3.44,14.9746,14.9746,0,0,0-1.4546,6.2949V40.1617h4.4854v1.3428H97.26V40.1617h3.9624V19.7633H97.26V18.4225h1.8086a27.3187,27.3187,0,0,0,6.5254-.582Z" />
+  <path
+     id="path10"
+     transform="translate(-0.7265 -0.816)"
+     d="M139.0463,30.0211c0,7.05-5.1264,12.2373-11.248,12.2373s-11.2476-5.1875-11.2476-12.2373c0-7.0517,5.1265-12.1806,11.2476-12.1806S139.0463,22.9694,139.0463,30.0211Zm-17.1924,0c0,4.8926.0591,11.07,5.9444,11.07,5.89,0,5.9443-6.1777,5.9443-11.07,0-4.84-.0547-11.0146-5.9443-11.0146C121.913,19.0065,121.8539,25.1813,121.8539,30.0211Z" />
+  <path
+     id="path12"
+     transform="translate(-0.7265 -0.816)"
+     d="M143.5585,19.7633h-3.436V18.4225h1.2226a31.7284,31.7284,0,0,0,3.3218-.1162,20.0734,20.0734,0,0,0,3.3228-.4658v4.5468l.1172-.0615a8.0436,8.0436,0,0,1,7.1123-4.4853c4.4853,0,10.8344,3.497,10.8344,12.7041,0,5.7119-3.8447,11.7138-11.0708,11.7138a7.3015,7.3015,0,0,1-6.7612-3.9043h-.1147V53.3278H152.07v1.3457H140.1225V53.3278h3.436Zm4.5484,11.3633c0,3.8476.2319,4.8369,1.164,6.5889a6.963,6.963,0,0,0,5.3032,3.3759c2.9717,0,6.18-.1152,6.18-10.7216,0-8.3916-1.69-11.1319-6.0029-11.1319-1.1089,0-5.5357.8721-6.4126,6.5274A34.3572,34.3572,0,0,0,148.1069,31.1266Z" />
+  <path
+     id="path14"
+     transform="translate(-0.7265 -0.816)"
+     d="M191.2343,34.278c-1.1641,5.4169-5.1269,7.98-10.2568,7.98-5.9444,0-11.6573-4.7773-11.6573-11.2461,0-6.8789,4.545-13.1718,11.4805-13.1718,5.9434,0,10.4336,4.02,10.4922,10.373H174.8007v2.3916c0,5.7676.7559,10.4316,7.1084,10.4316a8.9238,8.9238,0,0,0,8.044-6.7587Zm-5.248-7.7549V24.5407c0-4.1963-2.4414-5.5342-5.3594-5.5342a5.8811,5.8811,0,0,0-5.19,3.6709,14.6543,14.6543,0,0,0-.582,3.8457Z" />
+  <path
+     id="path16"
+     transform="translate(-0.7265 -0.816)"
+     d="M201.9775,23.3209h.122c1.045-2.6269,3.377-5.48,6.58-5.48,1.9863,0,3.5586,1.0478,3.5586,3.2656,0,1.4531-1.5137,2.1543-2.74,2.1543a2.5491,2.5491,0,0,1-2.2715-2.333,11.9575,11.9575,0,0,1,.2314-1.2256c0-.3486-.35-.3486-.5224-.3486a6.8683,6.8683,0,0,0-3.3272,3.44,14.9837,14.9837,0,0,0-1.4541,6.2949V40.1617h4.49v1.3428h-13.002V40.1617h3.9629V19.7633h-3.9629V18.4225h1.8086a27.3293,27.3293,0,0,0,6.5264-.582Z" />
+  <path
+     id="path18"
+     transform="translate(-0.7265 -0.816)"
+     d="M214.4413,18.4225h3.44v-7.17a28.0534,28.0534,0,0,0,4.4306-.2315v7.4014h5.1309v1.3408h-5.1309v17.832c0,1.0528,0,2.6241,2.2129,2.6241,1.5137,0,2.3321-1.0489,3.2637-2.1563l.9307.64a7.3517,7.3517,0,0,1-6.294,3.5556c-4.1943,0-4.6621-2.2734-4.6621-5.07V19.7633h-3.3223Z" />
+  <path
+     id="path20"
+     transform="translate(-0.7265 -0.816)"
+     d="M231.7128,41.5045V40.1617h3.9063V19.7633h-3.9063V18.4225h1.9219a27.3957,27.3957,0,0,0,6.5312-.582V40.1617h3.4375v1.3428Zm6.1211-38.4678a3.0779,3.0779,0,0,1,2.9668,2.7979,2.9413,2.9413,0,0,1-2.9668,3.09,2.8748,2.8748,0,0,1-2.8008-3.09A2.878,2.878,0,0,1,237.8339,3.0367Z" />
+  <path
+     id="path22"
+     transform="translate(-0.7265 -0.816)"
+     d="M266.93,34.278c-1.168,5.4169-5.1308,7.98-10.2617,7.98-5.9395,0-11.65-4.7773-11.65-11.2461,0-6.8789,4.5391-13.1718,11.4824-13.1718,5.9395,0,10.43,4.02,10.4844,10.373H250.4921v2.3916c0,5.7676.76,10.4316,7.1074,10.4316a8.9284,8.9284,0,0,0,8.0489-6.7587Zm-5.2441-7.7549V24.5407c0-4.1963-2.4531-5.5342-5.3672-5.5342a5.86,5.86,0,0,0-5.1817,3.6709,14.4569,14.4569,0,0,0-.582,3.8457Z" />
+  <path
+     id="path24"
+     transform="translate(-0.7265 -0.816)"
+     d="M286.2206,18.4225V24.95h-1.2851c-.8731-3.3828-2.8535-5.77-6.35-5.9433-4.7813-.1182-5.4805,3.5527-5.4805,4.2539,0,1.6894.4629,2.5674,9.3848,4.3691,4.4843.9336,6.0527,2.9756,6.0527,6.6485,0,5.01-3.7813,7.98-8.3848,7.98a9.1461,9.1461,0,0,1-6.6972-2.8564l-1.291,2.1025h-1.2774V33.81h1.34c1.1054,4.1963,3.9628,7.2812,8.2714,7.2812,2.627,0,5.6543-1.9814,5.6543-5.01,0-2.2715-3.205-3.3223-8.039-4.5469-3.8457-.93-7.2266-1.4551-7.2266-6.5264,0-2.4492,1.5137-7.1679,7.8652-7.1679a8.5959,8.5959,0,0,1,5.4219,2.1572l1.0469-1.5752Z" />
+  <path
+     id="path26"
+     transform="translate(-0.7265 -0.816)"
+     d="M27.29,47.3844c-7.2637,0-11.3247-4.4092-11.3247-12.0342a19.7554,19.7554,0,0,1,6.8383-14.5957A16.4537,16.4537,0,0,1,33.84,16.2692c4.414,0,6.9087,1.9912,7.5473,6.122l1.64-5.4843H50.29l-6.0542,21.72a12.5121,12.5121,0,0,0-.4986,3.0644c0,2.1329.9981,3.418,2.4234,3.418,1.1357,0,3.9883-1.1406,6.4795-3.3476,4.4873-4.06,6.9077-9.9688,6.9077-16.879,0-5.623-1.5664-10.18-4.7012-13.6C50.29,6.2262,43.809,3.5172,36.2621,3.5172A28.9181,28.9181,0,0,0,18.9574,9.0035C11.2656,14.5612,6.9931,23.316,6.9931,33.5709c0,15.5977,10.1821,25.28,26.4907,25.28,7.9033,0,14.67-2.42,21.9326-7.1865l1.4268,1.9892a38.69,38.69,0,0,1-23.3594,7.9043C13.1884,61.5582.7265,50.0914.7265,32.8619a30.7188,30.7188,0,0,1,11.82-24.1425A35.1171,35.1171,0,0,1,35.2626.816C51.5.816,62.0409,10.4274,62.0409,24.9547c0,7.6914-2.85,14.1719-8.0473,18.7988a14.1054,14.1054,0,0,1-9.33,3.7754c-4.4863,0-7.4058-2.5644-7.69-6.8369C34.1259,45.1774,30.851,47.3844,27.29,47.3844Zm.9243-22.1426c-2.8511,5.626-4.1294,10.6787-4.1294,14.0967,0,3.416,1.708,5.4131,4.1294,5.4131,2.7051,0,5.3413-2.7774,7.7617-8.4043a35.942,35.942,0,0,0,3.2051-12.6738c0-3.1319-1.354-4.8467-3.7041-4.8467C32.56,18.8268,30.349,20.9674,28.2143,25.2418Z"
+     class="cls-1" />
+  <path
+     id="path28"
+     transform="translate(-0.7265 -0.816)"
+     d="M292.4208,17.66a2.7952,2.7952,0,0,1,1.3389.352,2.5009,2.5009,0,0,1,1.0176,1.0069,2.7388,2.7388,0,0,1,.0058,2.7192,2.5338,2.5338,0,0,1-1.0068,1.0088,2.739,2.739,0,0,1-2.7109,0,2.5429,2.5429,0,0,1-1.0079-1.0088,2.7228,2.7228,0,0,1,.0049-2.7192,2.5111,2.5111,0,0,1,1.02-1.0069A2.7948,2.7948,0,0,1,292.4208,17.66Zm0,.4512a2.3169,2.3169,0,0,0-1.1172.2944,2.1082,2.1082,0,0,0-.85.8408,2.2626,2.2626,0,0,0-.0049,2.2661,2.1316,2.1316,0,0,0,.8418.8408,2.2693,2.2693,0,0,0,2.26,0,2.1285,2.1285,0,0,0,.8408-.8408,2.272,2.272,0,0,0-.0058-2.2661,2.0911,2.0911,0,0,0-.85-.8408A2.3211,2.3211,0,0,0,292.4208,18.1115ZM291.2265,21.89V18.96h1.0068a2.4633,2.4633,0,0,1,.7471.0811.727.727,0,0,1,.3682.2832.7568.7568,0,0,1,.1367.43.7827.7827,0,0,1-.2285.56.9062.9062,0,0,1-.6084.2666.8055.8055,0,0,1,.249.1553,3.3482,3.3482,0,0,1,.4326.581l.3574.5738H293.11l-.26-.4619a2.3841,2.3841,0,0,0-.4941-.6822.6116.6116,0,0,0-.3789-.1006h-.2784V21.89Zm.4726-1.649h.5743a.9221.9221,0,0,0,.5605-.123.4193.4193,0,0,0,.0781-.5571.437.437,0,0,0-.2-.1538,1.5069,1.5069,0,0,0-.4746-.05h-.5381Z" />
+</svg>
+</div>
+    <div class="eyebrow">Home Equity Portal</div>
+    <h1>Scott White, Elizabeth White</h1>
+    
+    <div class="sub">5880 Solomon Harmon Way, Whitestown, IN 46075</div>
+
+    
+
+    
+    <div class="stats-row"><div class="stat"><div class="v">Sold</div><div class="l">Status</div></div><div class="stat"><div class="v">$299,900</div><div class="l">Price</div></div><div class="stat"><div class="v">3</div><div class="l">Days on Market</div></div></div>
+
+    <h2>Your Home</h2>
+    <div class="home-value">
+      <div class="hv-estimate">$419,994 &ndash; $454,719</div>
+      <div class="hv-sub">Estimated value today, based on 11 recent comparable sales &middot; updated 09/19/2026</div>
+      <div class="hv-gain positive">&#9650; Up $137,456 since you closed at $299,900</div>
+      <div class="hv-note">Estimated via a price/sqft trend fit across 11 recent &quot;Neighborhoods At Anson&quot; sold comps (last 18 months) -- tighter than a blind-radius search since every comp is a verified same-subdivision MLS sale.</div>
+      <ul class="hv-history"><li><span>09/19/2026</span><span>$362,288 – $544,207</span></li></ul>
+    </div>
+    
+    <div class="comps-block">
+      <div class="comps-chart"><svg viewBox="0 0 640 320" width="100%" height="auto" role="img" aria-label="Price versus square footage, your home against 6 recent comparable sales"><line x1="62" x2="622" y1="282.0" y2="282.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="286.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$270K</text><line x1="62" x2="622" y1="215.5" y2="215.5" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="219.5" text-anchor="end" font-size="10.5" fill="var(--slate)">$335K</text><line x1="62" x2="622" y1="149.0" y2="149.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="153.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$401K</text><line x1="62" x2="622" y1="82.5" y2="82.5" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="86.5" text-anchor="end" font-size="10.5" fill="var(--slate)">$466K</text><line x1="62" x2="622" y1="16.0" y2="16.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="20.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$531K</text><text x="62.0" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">1,905 sf</text><text x="248.7" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">2,674 sf</text><text x="435.3" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">3,444 sf</text><text x="622.0" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">4,213 sf</text><line x1="62" x2="622" y1="282" y2="282" stroke="var(--mist)" stroke-width="1"/><line x1="62" x2="62" y1="16" y2="282" stroke="var(--mist)" stroke-width="1"/><line x1="116.2" y1="166.7" x2="567.8" y2="40.4" stroke="var(--slate)" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.7"/><circle cx="301.5" cy="134.3" r="6" fill="var(--charcoal)" opacity="0.55"/><circle cx="567.8" cy="50.0" r="6" fill="var(--charcoal)" opacity="0.55"/><circle cx="256.4" cy="109.9" r="6" fill="var(--charcoal)" opacity="0.55"/><circle cx="116.2" cy="169.9" r="6" fill="var(--charcoal)" opacity="0.55"/><circle cx="494.8" cy="46.7" r="6" fill="var(--charcoal)" opacity="0.55"/><circle cx="340.1" cy="103.8" r="6" fill="var(--charcoal)" opacity="0.55"/><circle cx="313.1" cy="251.3" r="9" fill="var(--red)"/><text x="327.1" y="239.3" font-size="11.5" font-weight="700" fill="var(--red-dark)">Your Home</text></svg></div>
+      <table class="comps-table">
+      <thead><tr><th>Address</th><th>Sale Price</th><th>Sq. Ft.</th><th>$/Sq. Ft.</th><th>Sold</th></tr></thead>
+      <tbody><tr><td>6177 Andrews Way</td><td>$415,000</td><td>2,892 sf</td><td>$143/sf</td><td>12/02/2025</td></tr><tr><td>5911 Solomon Harmon Way</td><td>$498,000</td><td>3,990 sf</td><td>$125/sf</td><td>09/16/2025</td></tr><tr><td>5944 Crowley Pkwy</td><td>$439,000</td><td>2,706 sf</td><td>$162/sf</td><td>09/02/2026</td></tr><tr><td>6203 Bliss Pt</td><td>$380,000</td><td>2,128 sf</td><td>$179/sf</td><td>08/28/2026</td></tr><tr><td>6217 Andrews Way</td><td>$501,210</td><td>3,689 sf</td><td>$136/sf</td><td>07/24/2026</td></tr><tr><td>6188 Aldridge Dr</td><td>$445,000</td><td>3,051 sf</td><td>$146/sf</td><td>07/01/2026</td></tr></tbody>
+    </table>
+    </div>
+    <div class="home-value"><div class="mortgage-equity" data-loan-amount="269000.0" data-rate="3.25"
+         data-term-months="360" data-first-payment="2020-07-01"
+         data-value-low="419994.3219271285" data-value-high="454718.6348238612">
+      <div class="me-row">
+        <span class="me-label">Est. Remaining Mortgage Balance</span>
+        <span class="me-val" id="me-balance">&hellip;</span>
+      </div>
+      <div class="progress-wrap" style="margin:10px 0 14px">
+        <div class="progress-label"><span id="me-paid-label">&nbsp;</span><span id="me-paid-pct">&nbsp;</span></div>
+        <div class="progress-track"><div class="progress-fill" id="me-progress-fill" style="width:0%"></div></div>
+      </div>
+      <div class="me-row highlight">
+        <span class="me-label">Est. Equity</span>
+        <span class="me-val" id="me-equity">&hellip;</span>
+      </div>
+      <div class="me-foot">Estimated from your original loan terms (standard amortization &mdash; doesn't
+        account for extra principal payments, refinancing, or PMI removal) combined with the value estimate
+        above.</div>
+    </div>
+    <script>
+    (function(){
+      var el = document.querySelector('.mortgage-equity');
+      if (!el) return;
+      var P = parseFloat(el.getAttribute('data-loan-amount'));
+      var annualRate = parseFloat(el.getAttribute('data-rate'));
+      var N = parseInt(el.getAttribute('data-term-months'), 10);
+      var first = new Date(el.getAttribute('data-first-payment') + 'T00:00:00');
+      var valueLow = parseFloat(el.getAttribute('data-value-low'));
+      var valueHigh = parseFloat(el.getAttribute('data-value-high'));
+      var today = new Date(); today.setHours(0,0,0,0);
+
+      var n = (today.getFullYear() - first.getFullYear()) * 12 + (today.getMonth() - first.getMonth());
+      if (today.getDate() < first.getDate()) n -= 1;
+      n = Math.max(0, Math.min(N, n));
+
+      var r = annualRate / 100 / 12;
+      var balance = (r === 0)
+        ? P * (1 - n / N)
+        : P * (Math.pow(1 + r, N) - Math.pow(1 + r, n)) / (Math.pow(1 + r, N) - 1);
+      balance = Math.max(0, balance);
+
+      function fmt(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
+
+      document.getElementById('me-balance').textContent = fmt(balance);
+      var pct = Math.round((1 - balance / P) * 100);
+      document.getElementById('me-paid-label').textContent = 'Loan paid off';
+      document.getElementById('me-paid-pct').textContent = pct + '%';
+      document.getElementById('me-progress-fill').style.width = Math.min(100, Math.max(0, pct)) + '%';
+
+      var eqLow = valueLow - balance, eqHigh = valueHigh - balance;
+      var eqText = (Math.round(eqLow) === Math.round(eqHigh)) ? fmt(eqLow) : (fmt(eqLow) + ' – ' + fmt(eqHigh));
+      document.getElementById('me-equity').textContent = eqText;
+    })();
+    </script></div>
+
+    
+
+    
+
+    <h2>Stay in Touch</h2><p class="section-intro">Questions about your home, refinancing, or thinking about your next move &mdash; reach out anytime.</p><ul class="contact-list"><li class="contact-row"><div class="contact-top"><span class="contact-name">Scott White</span><span class="contact-role">Buyer&#x27;s Agent</span></div><div class="contact-company">@properties Christie&#x27;s International Real Estate</div><div class="contact-links"><a href="tel:317-345-0573">317-345-0573</a><a href="mailto:swhite@atpropertiesind.com">swhite@atpropertiesind.com</a><a href="https://www.boughtwithscott.com" target="_blank" rel="noopener">https://www.boughtwithscott.com</a></div></li><li class="contact-row"><div class="contact-top"><span class="contact-name">Indiana Members Credit Union</span><span class="contact-role">Buyer&#x27;s Loan Officer</span></div><div class="contact-links"><a href="https://imcu.com" target="_blank" rel="noopener">imcu.com</a></div></li></ul>
+
+    <h2>Key Contacts</h2><ul class="contact-list"><li class="contact-row"><div class="contact-top"><span class="contact-name">Scott White</span><span class="contact-role">Buyer&#x27;s Agent</span></div><div class="contact-company">@properties Christie&#x27;s International Real Estate</div><div class="contact-links"><a href="tel:317-345-0573">317-345-0573</a><a href="mailto:swhite@atpropertiesind.com">swhite@atpropertiesind.com</a><a href="https://www.boughtwithscott.com" target="_blank" rel="noopener">https://www.boughtwithscott.com</a></div></li><li class="contact-row"><div class="contact-top"><span class="contact-name">Indiana Members Credit Union</span><span class="contact-role">Buyer&#x27;s Loan Officer</span></div><div class="contact-links"><a href="https://imcu.com" target="_blank" rel="noopener">imcu.com</a></div></li></ul>
+
+    
+
+    
+
+    
+
+    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">If you haven't already, file a Homestead Deduction with your county auditor &mdash; it isn't automatic and can reduce your taxable assessed value by the lesser of 60% or $48,000. A one-time filing, and easy to forget after closing.</div></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, Scott White is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div></div></div>
+
+    <div class="footnote">
+      Scott White &middot; @properties Indy<br>
+      Last updated 2026-09-19. This page is private to you &mdash; please don't share the link.
+    </div>
+  </div>
+</body>
+</html>
