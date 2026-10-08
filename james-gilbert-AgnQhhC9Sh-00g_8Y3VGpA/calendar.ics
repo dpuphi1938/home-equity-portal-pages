@@ -1,0 +1,126 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:102 Clarendon Dr\, Unit 305\, Noblesville\, IN Transaction Ti
+ meline
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:james-gilbert-AgnQhhC9Sh-00g_8Y3VGpA-contract-signed@portal.boughtwith
+ scott.com
+DTSTAMP:20261008T153236Z
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+SUMMARY:Contract Signed — 102 Clarendon Dr\, Unit 305\, Noblesville\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/james-
+ gilbert-AgnQhhC9Sh-00g_8Y3VGpA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:james-gilbert-AgnQhhC9Sh-00g_8Y3VGpA-earnest-money-received-3-000@port
+ al.boughtwithscott.com
+DTSTAMP:20261008T153236Z
+DTSTART;VALUE=DATE:20260909
+DTEND;VALUE=DATE:20260910
+SUMMARY:Earnest Money Received ($3\,000) — 102 Clarendon Dr\, Unit 305\, N
+ oblesville\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/james-
+ gilbert-AgnQhhC9Sh-00g_8Y3VGpA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:james-gilbert-AgnQhhC9Sh-00g_8Y3VGpA-closing@portal.boughtwithscott.com
+DTSTAMP:20261008T153236Z
+DTSTART;VALUE=DATE:20261007
+DTEND;VALUE=DATE:20261008
+SUMMARY:Closing — 102 Clarendon Dr\, Unit 305\, Noblesville\, IN
+DESCRIPTION:Upcoming — https://dpuphi1938.github.io/client-portal-pages/ja
+ mes-gilbert-AgnQhhC9Sh-00g_8Y3VGpA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:james-gilbert-AgnQhhC9Sh-00g_8Y3VGpA-buyer-agency-contract-signed@port
+ al.boughtwithscott.com
+DTSTAMP:20261008T153236Z
+DTSTART;VALUE=DATE:20260908
+DTEND;VALUE=DATE:20260909
+SUMMARY:Buyer Agency Contract Signed — 102 Clarendon Dr\, Unit 305\, Noble
+ sville\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/james-
+ gilbert-AgnQhhC9Sh-00g_8Y3VGpA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:james-gilbert-AgnQhhC9Sh-00g_8Y3VGpA-inspection-report-received@portal
+ .boughtwithscott.com
+DTSTAMP:20261008T153236Z
+DTSTART;VALUE=DATE:20260914
+DTEND;VALUE=DATE:20260915
+SUMMARY:Inspection Report Received — 102 Clarendon Dr\, Unit 305\, Noblesv
+ ille\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/james-
+ gilbert-AgnQhhC9Sh-00g_8Y3VGpA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:james-gilbert-AgnQhhC9Sh-00g_8Y3VGpA-buyer-s-financing-application-due
+ @portal.boughtwithscott.com
+DTSTAMP:20261008T153236Z
+DTSTART;VALUE=DATE:20260910
+DTEND;VALUE=DATE:20260911
+SUMMARY:Buyer's Financing Application Due — 102 Clarendon Dr\, Unit 305\, 
+ Noblesville\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/james-
+ gilbert-AgnQhhC9Sh-00g_8Y3VGpA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:james-gilbert-AgnQhhC9Sh-00g_8Y3VGpA-inspection-response-period-ends@p
+ ortal.boughtwithscott.com
+DTSTAMP:20261008T153236Z
+DTSTART;VALUE=DATE:20260921
+DTEND;VALUE=DATE:20260922
+SUMMARY:Inspection Response Period Ends — 102 Clarendon Dr\, Unit 305\, No
+ blesville\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/james-
+ gilbert-AgnQhhC9Sh-00g_8Y3VGpA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:james-gilbert-AgnQhhC9Sh-00g_8Y3VGpA-buyer-s-inspection-response-sent@
+ portal.boughtwithscott.com
+DTSTAMP:20261008T153236Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:Buyer's Inspection Response Sent — 102 Clarendon Dr\, Unit 305\, N
+ oblesville\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/james-
+ gilbert-AgnQhhC9Sh-00g_8Y3VGpA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:james-gilbert-AgnQhhC9Sh-00g_8Y3VGpA-loan-approval-deadline@portal.bou
+ ghtwithscott.com
+DTSTAMP:20261008T153236Z
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261013
+SUMMARY:Loan Approval Deadline — 102 Clarendon Dr\, Unit 305\, Noblesville
+ \, IN
+DESCRIPTION:Upcoming — https://dpuphi1938.github.io/client-portal-pages/ja
+ mes-gilbert-AgnQhhC9Sh-00g_8Y3VGpA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:james-gilbert-AgnQhhC9Sh-00g_8Y3VGpA-homeowner-s-insurance-commitment-
+ due@portal.boughtwithscott.com
+DTSTAMP:20261008T153236Z
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261013
+SUMMARY:Homeowner's Insurance Commitment Due — 102 Clarendon Dr\, Unit 305
+ \, Noblesville\, IN
+DESCRIPTION:Upcoming — https://dpuphi1938.github.io/client-portal-pages/ja
+ mes-gilbert-AgnQhhC9Sh-00g_8Y3VGpA/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
