@@ -198,6 +198,8 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .calc-cta{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12.5px;font-weight:700;color:var(--red-dark);text-decoration:none}
 .calc-cta:hover{text-decoration:underline}
 
+.area-trend-block{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 14px 6px;box-shadow:var(--shadow);margin-bottom:14px}
+.area-trend-label{font-size:10.5px;color:var(--slate);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
 .area-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
 .area-stat{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 14px;box-shadow:var(--shadow)}
 .as-label{font-size:10.5px;color:var(--slate);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
@@ -376,6 +378,10 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     <h2>Whitestown Market Snapshot</h2>
     <p class="section-intro">How the broader Whitestown market is trending &middot; September 2026 vs. prior year &mdash; not specific to your home (see Your Home above for that).</p>
+    <div class="area-trend-block">
+      <div class="area-trend-label">Median Sale Price &mdash; Last 4 Months</div>
+      <svg viewBox="0 0 640 220" width="100%" height="auto" role="img" aria-label="Median sale price trend over the last 4 months"><line x1="60" x2="622" y1="190.0" y2="190.0" stroke="var(--cloud)" stroke-width="1"/><text x="52" y="194.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$348K</text><line x1="60" x2="622" y1="132.0" y2="132.0" stroke="var(--cloud)" stroke-width="1"/><text x="52" y="136.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$364K</text><line x1="60" x2="622" y1="74.0" y2="74.0" stroke="var(--cloud)" stroke-width="1"/><text x="52" y="78.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$380K</text><line x1="60" x2="622" y1="16.0" y2="16.0" stroke="var(--cloud)" stroke-width="1"/><text x="52" y="20.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$397K</text><text x="60.0" y="210" text-anchor="middle" font-size="10.5" fill="var(--slate)">Jun</text><text x="247.3" y="210" text-anchor="middle" font-size="10.5" fill="var(--slate)">Jul</text><text x="434.7" y="210" text-anchor="middle" font-size="10.5" fill="var(--slate)">Aug</text><text x="622.0" y="210" text-anchor="middle" font-size="10.5" fill="var(--slate)">Sep</text><line x1="60" x2="622" y1="190" y2="190" stroke="var(--mist)" stroke-width="1"/><polyline points="60.0,111.9 247.3,165.1 434.7,40.9 622.0,84.7" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60.0" cy="111.9" r="4.5" fill="var(--red)"/><circle cx="247.3" cy="165.1" r="4.5" fill="var(--red)"/><circle cx="434.7" cy="40.9" r="4.5" fill="var(--red)"/><circle cx="622.0" cy="84.7" r="4.5" fill="var(--red)"/><text x="622.0" y="72.7" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--red-dark)">$377K</text></svg>
+    </div>
     <div class="area-stats-grid">
       <div class="area-stat">
         <div class="as-label">Median Sale Price</div>
