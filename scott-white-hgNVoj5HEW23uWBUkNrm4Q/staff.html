@@ -169,6 +169,34 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .progress-label{font-size:12px;color:var(--slate);margin-bottom:6px;display:flex;justify-content:space-between;font-weight:600}
 .progress-track{height:8px;background:var(--cloud);border-radius:4px;overflow:hidden}
 .progress-fill{height:100%;background:linear-gradient(90deg,var(--red),var(--red-dark));border-radius:4px;transition:width .3s ease}
+
+.team-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.team-card{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center}
+.team-photo{flex:0 0 60px;width:60px;height:60px;border-radius:50%;object-fit:cover;background:var(--cloud)}
+.team-info{flex:1;min-width:0}
+.team-name{font-weight:700;font-size:14.5px}
+.team-role{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--red-deep);background:var(--red-tint);border-radius:5px;padding:2px 7px;display:inline-block;margin-top:2px}
+.team-company{font-size:12.5px;color:var(--slate);margin-top:4px}
+.team-links{margin-top:6px;font-size:13px;display:flex;flex-wrap:wrap;gap:2px 12px}
+.team-links a{color:var(--red-dark);text-decoration:none;font-weight:600}
+.team-nmls{font-size:10.5px;color:var(--mist);margin-top:4px}
+
+.calc-card{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);margin-bottom:20px}
+.calc-row{display:flex;flex-direction:column;gap:4px;margin-bottom:12px}
+.calc-row label{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--slate)}
+.calc-row input,.calc-row select{font-family:inherit;font-size:15px;font-weight:600;color:var(--ink);border:1px solid var(--cloud);border-radius:8px;padding:9px 10px;background:var(--paper)}
+.calc-row input:focus,.calc-row select:focus{outline:2px solid var(--red);outline-offset:1px}
+.calc-result{background:var(--paper);border-radius:10px;padding:14px 16px;margin-top:4px}
+.calc-result-main{font-size:24px;font-weight:800;color:var(--ink)}
+.calc-result-sub{font-size:12px;color:var(--slate);margin-top:3px}
+.calc-result-row{display:flex;justify-content:space-between;font-size:13px;margin-top:8px;padding-top:8px;border-top:1px solid var(--cloud)}
+.calc-result-row .cr-label{color:var(--charcoal)}
+.calc-result-row .cr-val{font-weight:700}
+.calc-result-row .cr-val.good{color:var(--good)}
+.calc-result-row .cr-val.bad{color:var(--bad)}
+.calc-disclaimer{font-size:10.5px;color:var(--mist);margin-top:10px;line-height:1.5}
+.calc-cta{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12.5px;font-weight:700;color:var(--red-dark);text-decoration:none}
+.calc-cta:hover{text-decoration:underline}
 </style>
 </head>
 <body>
