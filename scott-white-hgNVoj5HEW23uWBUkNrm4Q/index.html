@@ -199,6 +199,10 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .calc-cta:hover{text-decoration:underline}
 
 .area-trend-block{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 14px 6px;box-shadow:var(--shadow);margin-bottom:14px}
+.area-trend-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.area-trend-tab{font-family:inherit;font-size:11.5px;font-weight:700;color:var(--slate);background:var(--paper);border:1px solid var(--cloud);border-radius:999px;padding:6px 12px;cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease}
+.area-trend-tab:hover{border-color:var(--mist)}
+.area-trend-tab.active{background:var(--red);border-color:var(--red);color:var(--white)}
 .area-trend-label{font-size:10.5px;color:var(--slate);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
 .area-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
 .area-stat{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 14px;box-shadow:var(--shadow)}
@@ -379,9 +383,86 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     <h2>Whitestown Market Snapshot</h2>
     <p class="section-intro">How the broader Whitestown market is trending &middot; September 2026 vs. prior year &mdash; not specific to your home (see Your Home above for that).</p>
     <div class="area-trend-block">
-      <div class="area-trend-label">Median Sale Price &mdash; Last 4 Months</div>
-      <svg viewBox="0 0 640 220" width="100%" height="auto" role="img" aria-label="Median sale price trend over the last 4 months"><line x1="60" x2="622" y1="190.0" y2="190.0" stroke="var(--cloud)" stroke-width="1"/><text x="52" y="194.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$348K</text><line x1="60" x2="622" y1="132.0" y2="132.0" stroke="var(--cloud)" stroke-width="1"/><text x="52" y="136.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$364K</text><line x1="60" x2="622" y1="74.0" y2="74.0" stroke="var(--cloud)" stroke-width="1"/><text x="52" y="78.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$380K</text><line x1="60" x2="622" y1="16.0" y2="16.0" stroke="var(--cloud)" stroke-width="1"/><text x="52" y="20.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$397K</text><text x="60.0" y="210" text-anchor="middle" font-size="10.5" fill="var(--slate)">Jun</text><text x="247.3" y="210" text-anchor="middle" font-size="10.5" fill="var(--slate)">Jul</text><text x="434.7" y="210" text-anchor="middle" font-size="10.5" fill="var(--slate)">Aug</text><text x="622.0" y="210" text-anchor="middle" font-size="10.5" fill="var(--slate)">Sep</text><line x1="60" x2="622" y1="190" y2="190" stroke="var(--mist)" stroke-width="1"/><polyline points="60.0,111.9 247.3,165.1 434.7,40.9 622.0,84.7" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60.0" cy="111.9" r="4.5" fill="var(--red)"/><circle cx="247.3" cy="165.1" r="4.5" fill="var(--red)"/><circle cx="434.7" cy="40.9" r="4.5" fill="var(--red)"/><circle cx="622.0" cy="84.7" r="4.5" fill="var(--red)"/><text x="622.0" y="72.7" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--red-dark)">$377K</text></svg>
+      <div class="area-trend-tabs"><button class="area-trend-tab active" data-metric="price">Median Sale Price</button><button class="area-trend-tab" data-metric="units">Homes Sold</button><button class="area-trend-tab" data-metric="dom">Median Days on Market</button><button class="area-trend-tab" data-metric="inventory">Active Inventory</button></div>
+      <div class="area-trend-label" id="area-trend-label">&nbsp;</div>
+      <div id="area-trend-chart"></div>
     </div>
+    <script type="application/json" id="area-trend-data">{"price": [["2026-06-01", 369900.0], ["2026-07-01", 355000.0], ["2026-08-01", 389750.0], ["2026-09-01", 377498.0]], "units": [["2026-06-01", 35.0], ["2026-07-01", 31.0], ["2026-08-01", 20.0], ["2026-09-01", 44.0]], "dom": [["2026-06-01", 22.0], ["2026-07-01", 36.0], ["2026-08-01", 33.0], ["2026-09-01", 40.0]], "inventory": [["2026-06-01", 49.0], ["2026-07-01", 46.0], ["2026-08-01", 43.0], ["2026-09-01", 43.0]]}</script>
+    <script>
+    (function(){
+      var data = JSON.parse(document.getElementById('area-trend-data').textContent);
+      var chartEl = document.getElementById('area-trend-chart');
+      var labelEl = document.getElementById('area-trend-label');
+      var tabs = document.querySelectorAll('.area-trend-tab');
+
+      var META = {
+        price: {title: 'Median Sale Price', fmt: fmtPrice},
+        units: {title: 'Homes Sold', fmt: fmtInt},
+        dom: {title: 'Median Days on Market', fmt: function(v){ return Math.round(v) + ' days'; }},
+        inventory: {title: 'Active Inventory', fmt: fmtInt}
+      };
+
+      function fmtInt(v) { return Math.round(v).toLocaleString('en-US'); }
+      function fmtPrice(v) {
+        if (v >= 1000000) { return '$' + (v/1000000).toFixed(2).replace(/\.?0+$/, '') + 'M'; }
+        return '$' + Math.round(v/1000) + 'K';
+      }
+
+      function render(metric) {
+        var points = data[metric] || [];
+        var meta = META[metric];
+        if (points.length < 2) {
+          labelEl.textContent = meta.title;
+          chartEl.innerHTML = '<div style="font-size:12.5px;color:var(--slate);padding:16px 0">Not enough months on file yet for this one.</div>';
+          return;
+        }
+        labelEl.textContent = meta.title + ' \u2014 Last ' + points.length + ' Months';
+
+        var W = 640, H = 220, padL = 60, padR = 18, padT = 16, padB = 30;
+        var plotW = W - padL - padR, plotH = H - padT - padB;
+        var vals = points.map(function(p) { return p[1]; });
+        var minV = Math.min.apply(null, vals), maxV = Math.max.apply(null, vals);
+        var span = (maxV - minV) || (maxV * 0.1) || 1;
+        var yMin = Math.max(0, minV - span * 0.2), yMax = maxV + span * 0.2;
+
+        function xPix(i) { return points.length > 1 ? padL + (i / (points.length - 1)) * plotW : padL; }
+        function yPix(v) { return padT + plotH - (v - yMin) / (yMax - yMin) * plotH; }
+
+        var parts = [];
+        for (var i = 0; i < 4; i++) {
+          var v = yMin + (yMax - yMin) * i / 3;
+          var y = yPix(v);
+          parts.push('<line x1="' + padL + '" x2="' + (W - padR) + '" y1="' + y.toFixed(1) + '" y2="' + y.toFixed(1) + '" stroke="var(--cloud)" stroke-width="1"/>');
+          parts.push('<text x="' + (padL - 8) + '" y="' + (y + 4).toFixed(1) + '" text-anchor="end" font-size="10.5" fill="var(--slate)">' + meta.fmt(v) + '</text>');
+        }
+        points.forEach(function(p, i) {
+          var d = new Date(p[0] + 'T00:00:00');
+          parts.push('<text x="' + xPix(i).toFixed(1) + '" y="' + (H - padB + 20) + '" text-anchor="middle" font-size="10.5" fill="var(--slate)">' + d.toLocaleDateString('en-US', {month: 'short'}) + '</text>');
+        });
+        parts.push('<line x1="' + padL + '" x2="' + (W - padR) + '" y1="' + (H - padB) + '" y2="' + (H - padB) + '" stroke="var(--mist)" stroke-width="1"/>');
+
+        var linePts = points.map(function(p, i) { return xPix(i).toFixed(1) + ',' + yPix(p[1]).toFixed(1); }).join(' ');
+        parts.push('<polyline points="' + linePts + '" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>');
+        points.forEach(function(p, i) {
+          parts.push('<circle cx="' + xPix(i).toFixed(1) + '" cy="' + yPix(p[1]).toFixed(1) + '" r="4.5" fill="var(--red)"/>');
+        });
+        var lastI = points.length - 1;
+        parts.push('<text x="' + xPix(lastI).toFixed(1) + '" y="' + (yPix(points[lastI][1]) - 12).toFixed(1) + '" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--red-dark)">' + meta.fmt(points[lastI][1]) + '</text>');
+
+        chartEl.innerHTML = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" height="auto" role="img" aria-label="' + meta.title + ' trend">' + parts.join('') + '</svg>';
+      }
+
+      tabs.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          tabs.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          render(btn.getAttribute('data-metric'));
+        });
+      });
+
+      render('price');
+    })();
+    </script>
     <div class="area-stats-grid">
       <div class="area-stat">
         <div class="as-label">Median Sale Price</div>
