@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:7140 Sultans Run Ln\, Whitestown\, IN 46075 Transaction Timel
+ ine
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:grant-oexmann-hcJN0e60tWri2Iln63xSsw-purchase-agreement-accepted-395-0
+ 00@portal.boughtwithscott.com
+DTSTAMP:20261029T012047Z
+DTSTART;VALUE=DATE:20260124
+DTEND;VALUE=DATE:20260125
+SUMMARY:Purchase Agreement Accepted ($395\,000) — 7140 Sultans Run Ln\, Wh
+ itestown\, IN 46075
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/grant-
+ oexmann-hcJN0e60tWri2Iln63xSsw/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:grant-oexmann-hcJN0e60tWri2Iln63xSsw-title-order-placed@portal.boughtw
+ ithscott.com
+DTSTAMP:20261029T012047Z
+DTSTART;VALUE=DATE:20260126
+DTEND;VALUE=DATE:20260127
+SUMMARY:Title Order Placed — 7140 Sultans Run Ln\, Whitestown\, IN 46075
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/grant-
+ oexmann-hcJN0e60tWri2Iln63xSsw/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:grant-oexmann-hcJN0e60tWri2Iln63xSsw-closing@portal.boughtwithscott.com
+DTSTAMP:20261029T012047Z
+DTSTART;VALUE=DATE:20260306
+DTEND;VALUE=DATE:20260307
+SUMMARY:Closing — 7140 Sultans Run Ln\, Whitestown\, IN 46075
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/grant-
+ oexmann-hcJN0e60tWri2Iln63xSsw/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
