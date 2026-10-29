@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:6070 Salisbury St\, Zionsville\, IN 46077 Transaction Timeline
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:justin-bryant-kuWYX22QCKf5QTF5zylXJw-home-inspection-completed@portal.
+ boughtwithscott.com
+DTSTAMP:20261029T012013Z
+DTSTART;VALUE=DATE:20260710
+DTEND;VALUE=DATE:20260711
+SUMMARY:Home Inspection Completed — 6070 Salisbury St\, Zionsville\, IN 46
+ 077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/justin
+ -bryant-kuWYX22QCKf5QTF5zylXJw/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:justin-bryant-kuWYX22QCKf5QTF5zylXJw-closing@portal.boughtwithscott.com
+DTSTAMP:20261029T012013Z
+DTSTART;VALUE=DATE:20260727
+DTEND;VALUE=DATE:20260728
+SUMMARY:Closing — 6070 Salisbury St\, Zionsville\, IN 46077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/justin
+ -bryant-kuWYX22QCKf5QTF5zylXJw/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
