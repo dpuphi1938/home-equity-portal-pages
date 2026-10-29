@@ -1,0 +1,67 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:5588 W Woodhaven Dr\, Mccordsville\, IN 46055 Transaction Tim
+ eline
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:sam-linette-qZ9C0pBOIvMESOfM1zjMpw-purchase-agreement-accepted-4-count
+ ers@portal.boughtwithscott.com
+DTSTAMP:20261029T012112Z
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260707
+SUMMARY:Purchase Agreement Accepted (4 Counters) — 5588 W Woodhaven Dr\, M
+ ccordsville\, IN 46055
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sam-li
+ nette-qZ9C0pBOIvMESOfM1zjMpw/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sam-linette-qZ9C0pBOIvMESOfM1zjMpw-earnest-money-due-3-000@portal.boug
+ htwithscott.com
+DTSTAMP:20261029T012112Z
+DTSTART;VALUE=DATE:20260705
+DTEND;VALUE=DATE:20260706
+SUMMARY:Earnest Money Due ($3\,000) — 5588 W Woodhaven Dr\, Mccordsville\,
+  IN 46055
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sam-li
+ nette-qZ9C0pBOIvMESOfM1zjMpw/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sam-linette-qZ9C0pBOIvMESOfM1zjMpw-appraisal-received-320-000@portal.b
+ oughtwithscott.com
+DTSTAMP:20261029T012112Z
+DTSTART;VALUE=DATE:20260714
+DTEND;VALUE=DATE:20260715
+SUMMARY:Appraisal Received ($320\,000) — 5588 W Woodhaven Dr\, Mccordsvill
+ e\, IN 46055
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sam-li
+ nette-qZ9C0pBOIvMESOfM1zjMpw/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sam-linette-qZ9C0pBOIvMESOfM1zjMpw-inspection-response-sent@portal.bou
+ ghtwithscott.com
+DTSTAMP:20261029T012112Z
+DTSTART;VALUE=DATE:20260714
+DTEND;VALUE=DATE:20260715
+SUMMARY:Inspection Response Sent — 5588 W Woodhaven Dr\, Mccordsville\, IN
+  46055
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sam-li
+ nette-qZ9C0pBOIvMESOfM1zjMpw/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sam-linette-qZ9C0pBOIvMESOfM1zjMpw-closing@portal.boughtwithscott.com
+DTSTAMP:20261029T012112Z
+DTSTART;VALUE=DATE:20260724
+DTEND;VALUE=DATE:20260725
+SUMMARY:Closing — 5588 W Woodhaven Dr\, Mccordsville\, IN 46055
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sam-li
+ nette-qZ9C0pBOIvMESOfM1zjMpw/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
