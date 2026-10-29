@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:10066 Perlita Pl\, Fishers\, IN 46038 Transaction Timeline
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:blake-park-Ca9DLPIGM5p_wWUkIx9wQQ-purchase-agreement-accepted@portal.b
+ oughtwithscott.com
+DTSTAMP:20261029T011948Z
+DTSTART;VALUE=DATE:20251115
+DTEND;VALUE=DATE:20251116
+SUMMARY:Purchase Agreement Accepted — 10066 Perlita Pl\, Fishers\, IN 4603
+ 8
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/blake-
+ park-Ca9DLPIGM5p_wWUkIx9wQQ/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:blake-park-Ca9DLPIGM5p_wWUkIx9wQQ-title-order-placed@portal.boughtwith
+ scott.com
+DTSTAMP:20261029T011948Z
+DTSTART;VALUE=DATE:20251218
+DTEND;VALUE=DATE:20251219
+SUMMARY:Title Order Placed — 10066 Perlita Pl\, Fishers\, IN 46038
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/blake-
+ park-Ca9DLPIGM5p_wWUkIx9wQQ/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:blake-park-Ca9DLPIGM5p_wWUkIx9wQQ-closing@portal.boughtwithscott.com
+DTSTAMP:20261029T011948Z
+DTSTART;VALUE=DATE:20260123
+DTEND;VALUE=DATE:20260124
+SUMMARY:Closing — 10066 Perlita Pl\, Fishers\, IN 46038
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/blake-
+ park-Ca9DLPIGM5p_wWUkIx9wQQ/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
