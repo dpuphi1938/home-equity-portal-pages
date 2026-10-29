@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:610 Danbury Dr\, Zionsville\, IN 46077 Transaction Timeline
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:derrick-ford-ImzFlpJfFafZXtnLAqPiQg-earnest-money-due@portal.boughtwit
+ hscott.com
+DTSTAMP:20261029T012011Z
+DTSTART;VALUE=DATE:20260506
+DTEND;VALUE=DATE:20260507
+SUMMARY:Earnest Money Due — 610 Danbury Dr\, Zionsville\, IN 46077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/derric
+ k-ford-ImzFlpJfFafZXtnLAqPiQg/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:derrick-ford-ImzFlpJfFafZXtnLAqPiQg-closing@portal.boughtwithscott.com
+DTSTAMP:20261029T012011Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+SUMMARY:Closing — 610 Danbury Dr\, Zionsville\, IN 46077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/derric
+ k-ford-ImzFlpJfFafZXtnLAqPiQg/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
