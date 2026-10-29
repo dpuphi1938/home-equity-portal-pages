@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:8145 Hanley Ln\, Zionsville\, IN 46077 Transaction Timeline
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:james-gilbert-Lq9HfJnIpsAq4e0o90S4jA-purchase-agreement-accepted-2-000
+ -000@portal.boughtwithscott.com
+DTSTAMP:20261029T012103Z
+DTSTART;VALUE=DATE:20260218
+DTEND;VALUE=DATE:20260219
+SUMMARY:Purchase Agreement Accepted ($2\,000\,000) — 8145 Hanley Ln\, Zion
+ sville\, IN 46077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/james-
+ gilbert-Lq9HfJnIpsAq4e0o90S4jA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:james-gilbert-Lq9HfJnIpsAq4e0o90S4jA-appraisal-completed-2-000-000@por
+ tal.boughtwithscott.com
+DTSTAMP:20261029T012103Z
+DTSTART;VALUE=DATE:20260317
+DTEND;VALUE=DATE:20260318
+SUMMARY:Appraisal Completed ($2\,000\,000) — 8145 Hanley Ln\, Zionsville\,
+  IN 46077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/james-
+ gilbert-Lq9HfJnIpsAq4e0o90S4jA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:james-gilbert-Lq9HfJnIpsAq4e0o90S4jA-closing@portal.boughtwithscott.com
+DTSTAMP:20261029T012103Z
+DTSTART;VALUE=DATE:20260428
+DTEND;VALUE=DATE:20260429
+SUMMARY:Closing — 8145 Hanley Ln\, Zionsville\, IN 46077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/james-
+ gilbert-Lq9HfJnIpsAq4e0o90S4jA/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
