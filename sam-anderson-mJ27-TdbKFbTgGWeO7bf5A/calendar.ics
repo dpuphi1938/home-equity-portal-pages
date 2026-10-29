@@ -1,0 +1,55 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:3720 Indigo Blue Blvd\, Whitestown\, IN 46075 Transaction Tim
+ eline
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:sam-anderson-mJ27-TdbKFbTgGWeO7bf5A-purchase-agreement-accepted-325-50
+ 0@portal.boughtwithscott.com
+DTSTAMP:20261029T012027Z
+DTSTART;VALUE=DATE:20260513
+DTEND;VALUE=DATE:20260514
+SUMMARY:Purchase Agreement Accepted ($325\,500) — 3720 Indigo Blue Blvd\, 
+ Whitestown\, IN 46075
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sam-an
+ derson-mJ27-TdbKFbTgGWeO7bf5A/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sam-anderson-mJ27-TdbKFbTgGWeO7bf5A-earnest-money-received-2-000@porta
+ l.boughtwithscott.com
+DTSTAMP:20261029T012027Z
+DTSTART;VALUE=DATE:20260513
+DTEND;VALUE=DATE:20260514
+SUMMARY:Earnest Money Received ($2\,000) — 3720 Indigo Blue Blvd\, Whitest
+ own\, IN 46075
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sam-an
+ derson-mJ27-TdbKFbTgGWeO7bf5A/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sam-anderson-mJ27-TdbKFbTgGWeO7bf5A-buyer-s-loan-approval@portal.bough
+ twithscott.com
+DTSTAMP:20261029T012027Z
+DTSTART;VALUE=DATE:20260526
+DTEND;VALUE=DATE:20260527
+SUMMARY:Buyer's Loan Approval — 3720 Indigo Blue Blvd\, Whitestown\, IN 46
+ 075
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sam-an
+ derson-mJ27-TdbKFbTgGWeO7bf5A/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sam-anderson-mJ27-TdbKFbTgGWeO7bf5A-closing@portal.boughtwithscott.com
+DTSTAMP:20261029T012027Z
+DTSTART;VALUE=DATE:20260612
+DTEND;VALUE=DATE:20260613
+SUMMARY:Closing — 3720 Indigo Blue Blvd\, Whitestown\, IN 46075
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sam-an
+ derson-mJ27-TdbKFbTgGWeO7bf5A/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
