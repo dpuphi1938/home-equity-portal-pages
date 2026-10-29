@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:6032 Grandview Dr\, Indianapolis\, IN 46228 Transaction Timel
+ ine
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:jeff-rich-iJJDi6fS9qwQykYZR_FQZA-purchase-agreement-accepted-300-000@p
+ ortal.boughtwithscott.com
+DTSTAMP:20261029T011959Z
+DTSTART;VALUE=DATE:20260311
+DTEND;VALUE=DATE:20260312
+SUMMARY:Purchase Agreement Accepted ($300\,000) — 6032 Grandview Dr\, Indi
+ anapolis\, IN 46228
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/jeff-r
+ ich-iJJDi6fS9qwQykYZR_FQZA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:jeff-rich-iJJDi6fS9qwQykYZR_FQZA-buyer-inspection-response-due@portal.
+ boughtwithscott.com
+DTSTAMP:20261029T011959Z
+DTSTART;VALUE=DATE:20260325
+DTEND;VALUE=DATE:20260326
+SUMMARY:Buyer Inspection Response Due — 6032 Grandview Dr\, Indianapolis\,
+  IN 46228
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/jeff-r
+ ich-iJJDi6fS9qwQykYZR_FQZA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:jeff-rich-iJJDi6fS9qwQykYZR_FQZA-closing@portal.boughtwithscott.com
+DTSTAMP:20261029T011959Z
+DTSTART;VALUE=DATE:20260403
+DTEND;VALUE=DATE:20260404
+SUMMARY:Closing — 6032 Grandview Dr\, Indianapolis\, IN 46228
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/jeff-r
+ ich-iJJDi6fS9qwQykYZR_FQZA/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
