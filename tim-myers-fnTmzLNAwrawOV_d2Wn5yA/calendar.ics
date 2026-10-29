@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:3638 Wish Ave\, Indianapolis\, IN 46268 Transaction Timeline
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:tim-myers-fnTmzLNAwrawOV_d2Wn5yA-purchase-agreement-accepted-240-000@p
+ ortal.boughtwithscott.com
+DTSTAMP:20261029T012115Z
+DTSTART;VALUE=DATE:20260728
+DTEND;VALUE=DATE:20260729
+SUMMARY:Purchase Agreement Accepted ($240\,000) — 3638 Wish Ave\, Indianap
+ olis\, IN 46268
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/tim-my
+ ers-fnTmzLNAwrawOV_d2Wn5yA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:tim-myers-fnTmzLNAwrawOV_d2Wn5yA-buyer-inspection-response-due@portal.
+ boughtwithscott.com
+DTSTAMP:20261029T012115Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:Buyer Inspection Response Due — 3638 Wish Ave\, Indianapolis\, IN 
+ 46268
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/tim-my
+ ers-fnTmzLNAwrawOV_d2Wn5yA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:tim-myers-fnTmzLNAwrawOV_d2Wn5yA-closing@portal.boughtwithscott.com
+DTSTAMP:20261029T012115Z
+DTSTART;VALUE=DATE:20260821
+DTEND;VALUE=DATE:20260822
+SUMMARY:Closing — 3638 Wish Ave\, Indianapolis\, IN 46268
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/tim-my
+ ers-fnTmzLNAwrawOV_d2Wn5yA/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
