@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:3845 Jason Ave\, Franklin\, IN 46131 Transaction Timeline
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:sean-mcpike-hli-o5MDa4Ra716xzJak9A-purchase-agreement-signed@portal.bo
+ ughtwithscott.com
+DTSTAMP:20261029T012043Z
+DTSTART;VALUE=DATE:20251231
+DTEND;VALUE=DATE:20260101
+SUMMARY:Purchase Agreement Signed — 3845 Jason Ave\, Franklin\, IN 46131
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sean-m
+ cpike-hli-o5MDa4Ra716xzJak9A/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sean-mcpike-hli-o5MDa4Ra716xzJak9A-buyer-s-inspection-completed@portal
+ .boughtwithscott.com
+DTSTAMP:20261029T012043Z
+DTSTART;VALUE=DATE:20260121
+DTEND;VALUE=DATE:20260122
+SUMMARY:Buyer's Inspection Completed — 3845 Jason Ave\, Franklin\, IN 4613
+ 1
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sean-m
+ cpike-hli-o5MDa4Ra716xzJak9A/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sean-mcpike-hli-o5MDa4Ra716xzJak9A-new-home-orientation@portal.boughtw
+ ithscott.com
+DTSTAMP:20261029T012043Z
+DTSTART;VALUE=DATE:20260127
+DTEND;VALUE=DATE:20260128
+SUMMARY:New Home Orientation — 3845 Jason Ave\, Franklin\, IN 46131
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sean-m
+ cpike-hli-o5MDa4Ra716xzJak9A/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sean-mcpike-hli-o5MDa4Ra716xzJak9A-closing@portal.boughtwithscott.com
+DTSTAMP:20261029T012043Z
+DTSTART;VALUE=DATE:20260205
+DTEND;VALUE=DATE:20260206
+SUMMARY:Closing — 3845 Jason Ave\, Franklin\, IN 46131
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/sean-m
+ cpike-hli-o5MDa4Ra716xzJak9A/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
