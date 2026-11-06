@@ -381,13 +381,13 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     </script></div>
 
     <h2>Whitestown Market Snapshot</h2>
-    <p class="section-intro">How the broader Whitestown market is trending &middot; September 2026 vs. prior year &mdash; not specific to your home (see Your Home above for that).</p>
+    <p class="section-intro">How the broader Whitestown market is trending &middot; October 2026 vs. prior year &mdash; not specific to your home (see Your Home above for that).</p>
     <div class="area-trend-block">
       <div class="area-trend-tabs"><button class="area-trend-tab active" data-metric="price">Median Sale Price</button><button class="area-trend-tab" data-metric="units">Homes Sold</button><button class="area-trend-tab" data-metric="dom">Median Days on Market</button><button class="area-trend-tab" data-metric="inventory">Active Inventory</button></div>
       <div class="area-trend-label" id="area-trend-label">&nbsp;</div>
       <div id="area-trend-chart"></div>
     </div>
-    <script type="application/json" id="area-trend-data">{"price": [["2026-06-01", 369900.0], ["2026-07-01", 355000.0], ["2026-08-01", 389750.0], ["2026-09-01", 377498.0]], "units": [["2026-06-01", 35.0], ["2026-07-01", 31.0], ["2026-08-01", 20.0], ["2026-09-01", 44.0]], "dom": [["2026-06-01", 22.0], ["2026-07-01", 36.0], ["2026-08-01", 33.0], ["2026-09-01", 40.0]], "inventory": [["2026-06-01", 49.0], ["2026-07-01", 46.0], ["2026-08-01", 43.0], ["2026-09-01", 43.0]]}</script>
+    <script type="application/json" id="area-trend-data">{"price": [["2026-06-01", 369900.0], ["2026-07-01", 355000.0], ["2026-08-01", 389750.0], ["2026-09-01", 377498.0], ["2026-10-01", 349695.0]], "units": [["2026-06-01", 35.0], ["2026-07-01", 31.0], ["2026-08-01", 20.0], ["2026-09-01", 44.0], ["2026-10-01", 22.0]], "dom": [["2026-06-01", 22.0], ["2026-07-01", 36.0], ["2026-08-01", 33.0], ["2026-09-01", 40.0], ["2026-10-01", 21.0]], "inventory": [["2026-06-01", 49.0], ["2026-07-01", 46.0], ["2026-08-01", 43.0], ["2026-09-01", 43.0], ["2026-10-01", 59.0]]}</script>
     <script>
     (function(){
       var data = JSON.parse(document.getElementById('area-trend-data').textContent);
@@ -466,26 +466,26 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     <div class="area-stats-grid">
       <div class="area-stat">
         <div class="as-label">Median Sale Price</div>
-        <div class="as-value">$377,498</div>
-        <div class="as-delta good">+5.7% YoY</div>
+        <div class="as-value">$349,695</div>
+        <div class="as-delta bad">−3.7% YoY</div>
       </div>
       <div class="area-stat">
         <div class="as-label">Homes Sold</div>
-        <div class="as-value">44</div>
-        <div class="as-delta good">+120.0% YoY</div>
+        <div class="as-value">22</div>
+        <div class="as-delta bad">−35.3% YoY</div>
       </div>
       <div class="area-stat">
         <div class="as-label">Median Days on Market</div>
-        <div class="as-value">40 days</div>
-        <div class="as-delta bad">+135.3% YoY</div>
+        <div class="as-value">21 days</div>
+        <div class="as-delta bad">+82.6% YoY</div>
       </div>
       <div class="area-stat">
         <div class="as-label">Active Inventory</div>
-        <div class="as-value">43</div>
-        <div class="as-delta bad">−8.5% YoY</div>
+        <div class="as-value">59</div>
+        <div class="as-delta good">+5.4% YoY</div>
       </div>
     </div>
-    <div class="area-stats-secondary"><span>New listings: <b>25</b></span><span>$/sqft: <b>$166</b></span></div>
+    <div class="area-stats-secondary"><span>New listings: <b>35</b></span><span>$/sqft: <b>$164</b></span></div>
     
 
     
@@ -649,5 +649,34 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       Last updated 2026-10-09. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
+<script>
+(function(){
+  var form = document.getElementById('loan-info-form');
+  if (!form) return;
+  var msg = document.getElementById('loan-info-msg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; btn.textContent = 'Submitting...';
+    var data = new FormData(form);
+    var payload = {slug: 'scott-white-hgNVoj5HEW23uWBUkNrm4Q', kind: 'loan_info_set', section: 'home-equity'};
+    ['balance','rate','payment','notes'].forEach(function(k){ payload[k] = data.get(k) || null; });
+    fetch('https://transaction-portal-submissions.scottwhite2011.workers.dev', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)
+    }).then(function(r){
+      if (!r.ok) throw new Error('bad response');
+      msg.hidden = false;
+      msg.textContent = 'Thanks -- submitted! This will show up on the page once Scott syncs it.';
+      msg.className = 'add-form-msg ok';
+      btn.textContent = 'Submit'; btn.disabled = false;
+    }).catch(function(){
+      msg.hidden = false;
+      msg.textContent = 'Something went wrong submitting this -- please text or email Scott directly instead.';
+      msg.className = 'add-form-msg err';
+      btn.textContent = 'Submit'; btn.disabled = false;
+    });
+  });
+})();
+</script>
 </body>
 </html>
