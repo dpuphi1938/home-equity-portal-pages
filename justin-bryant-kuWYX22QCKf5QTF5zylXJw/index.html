@@ -309,7 +309,23 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     <div class="summary">Closed! Bought 07/27/2026 for $907,879. New construction with David Weekley Homes in Wild Air -- congratulations on your new home!</div>
     <div class="stats-row"><div class="stat"><div class="v">Sold</div><div class="l">Status</div></div><div class="stat"><div class="v">$907,879</div><div class="l">Price</div></div><div class="stat"><div class="v">22</div><div class="l">Days on Market</div></div></div>
 
+    <h2>Your Home</h2>
     
+    <div class="home-value"><details class="add-form" id="loan-info-details" open>
+      <summary>Don&rsquo;t have your loan on file? Tell us your numbers</summary>
+      <p class="section-intro">We don't have your actual loan on file for this home &mdash; pull up a recent
+        mortgage statement and fill in your approximate numbers, and we'll track your equity against those
+        instead. Won't be as precise as the real thing, but it beats nothing.</p>
+      <form id="loan-info-form">
+        <input type="hidden" name="slug" value="justin-bryant-kuWYX22QCKf5QTF5zylXJw">
+        <label>Approximate current mortgage balance<input type="number" name="balance" placeholder="e.g. 285000"  required></label>
+        <label>Interest rate (optional)<input type="number" step="0.01" name="rate" placeholder="e.g. 6.5" ></label>
+        <label>Current monthly payment, principal + interest (optional)<input type="number" name="payment" placeholder="e.g. 2100" ></label>
+        <label>Anything else useful (optional)<input type="text" name="notes" placeholder="Lender name, recent refinance, etc." ></label>
+        <button type="submit">Submit</button>
+        <div class="add-form-msg" id="loan-info-msg" hidden></div>
+      </form>
+    </details></div>
 
     
 
@@ -406,5 +422,34 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       Last updated 2026-10-28. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
+<script>
+(function(){
+  var form = document.getElementById('loan-info-form');
+  if (!form) return;
+  var msg = document.getElementById('loan-info-msg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; btn.textContent = 'Submitting...';
+    var data = new FormData(form);
+    var payload = {slug: 'justin-bryant-kuWYX22QCKf5QTF5zylXJw', kind: 'loan_info_set', section: 'home-equity'};
+    ['balance','rate','payment','notes'].forEach(function(k){ payload[k] = data.get(k) || null; });
+    fetch('https://transaction-portal-submissions.scottwhite2011.workers.dev', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)
+    }).then(function(r){
+      if (!r.ok) throw new Error('bad response');
+      msg.hidden = false;
+      msg.textContent = 'Thanks -- submitted! This will show up on the page once Scott syncs it.';
+      msg.className = 'add-form-msg ok';
+      btn.textContent = 'Submit'; btn.disabled = false;
+    }).catch(function(){
+      msg.hidden = false;
+      msg.textContent = 'Something went wrong submitting this -- please text or email Scott directly instead.';
+      msg.className = 'add-form-msg err';
+      btn.textContent = 'Submit'; btn.disabled = false;
+    });
+  });
+})();
+</script>
 </body>
 </html>
