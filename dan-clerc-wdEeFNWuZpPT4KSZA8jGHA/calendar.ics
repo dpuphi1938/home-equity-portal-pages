@@ -1,0 +1,136 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:5668 Liberty Creek Dr W\, Indianapolis\, IN Transaction Timel
+ ine
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:dan-clerc-wdEeFNWuZpPT4KSZA8jGHA-contract-signed@portal.boughtwithscot
+ t.com
+DTSTAMP:20261106T211848Z
+DTSTART;VALUE=DATE:20260910
+DTEND;VALUE=DATE:20260911
+SUMMARY:Contract Signed — 5668 Liberty Creek Dr W\, Indianapolis\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/dan-cl
+ erc-wdEeFNWuZpPT4KSZA8jGHA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:dan-clerc-wdEeFNWuZpPT4KSZA8jGHA-closing@portal.boughtwithscott.com
+DTSTAMP:20261106T211848Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
+SUMMARY:Closing — 5668 Liberty Creek Dr W\, Indianapolis\, IN
+DESCRIPTION:Upcoming — https://dpuphi1938.github.io/client-portal-pages/da
+ n-clerc-wdEeFNWuZpPT4KSZA8jGHA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:dan-clerc-wdEeFNWuZpPT4KSZA8jGHA-offer-submitted@portal.boughtwithscot
+ t.com
+DTSTAMP:20261106T211848Z
+DTSTART;VALUE=DATE:20260909
+DTEND;VALUE=DATE:20260910
+SUMMARY:Offer Submitted — 5668 Liberty Creek Dr W\, Indianapolis\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/dan-cl
+ erc-wdEeFNWuZpPT4KSZA8jGHA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:dan-clerc-wdEeFNWuZpPT4KSZA8jGHA-counter-accepted-contract-executed@po
+ rtal.boughtwithscott.com
+DTSTAMP:20261106T211848Z
+DTSTART;VALUE=DATE:20260909
+DTEND;VALUE=DATE:20260910
+SUMMARY:Counter Accepted (Contract Executed) — 5668 Liberty Creek Dr W\, I
+ ndianapolis\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/dan-cl
+ erc-wdEeFNWuZpPT4KSZA8jGHA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:dan-clerc-wdEeFNWuZpPT4KSZA8jGHA-earnest-money-received-2-500@portal.b
+ oughtwithscott.com
+DTSTAMP:20261106T211848Z
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260912
+SUMMARY:Earnest Money Received ($2\,500) — 5668 Liberty Creek Dr W\, India
+ napolis\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/dan-cl
+ erc-wdEeFNWuZpPT4KSZA8jGHA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:dan-clerc-wdEeFNWuZpPT4KSZA8jGHA-appraisal-received@portal.boughtwiths
+ cott.com
+DTSTAMP:20261106T211848Z
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+SUMMARY:Appraisal Received — 5668 Liberty Creek Dr W\, Indianapolis\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/dan-cl
+ erc-wdEeFNWuZpPT4KSZA8jGHA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:dan-clerc-wdEeFNWuZpPT4KSZA8jGHA-buyer-s-inspection-response-sent@port
+ al.boughtwithscott.com
+DTSTAMP:20261106T211848Z
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+SUMMARY:Buyer's Inspection Response Sent — 5668 Liberty Creek Dr W\, India
+ napolis\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/dan-cl
+ erc-wdEeFNWuZpPT4KSZA8jGHA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:dan-clerc-wdEeFNWuZpPT4KSZA8jGHA-buyer-s-financing-application-due@por
+ tal.boughtwithscott.com
+DTSTAMP:20261106T211848Z
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260913
+SUMMARY:Buyer's Financing Application Due — 5668 Liberty Creek Dr W\, Indi
+ anapolis\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/dan-cl
+ erc-wdEeFNWuZpPT4KSZA8jGHA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:dan-clerc-wdEeFNWuZpPT4KSZA8jGHA-inspection-response-period-ends@porta
+ l.boughtwithscott.com
+DTSTAMP:20261106T211848Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:Inspection Response Period Ends — 5668 Liberty Creek Dr W\, Indian
+ apolis\, IN
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/dan-cl
+ erc-wdEeFNWuZpPT4KSZA8jGHA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:dan-clerc-wdEeFNWuZpPT4KSZA8jGHA-loan-approval-deadline@portal.boughtw
+ ithscott.com
+DTSTAMP:20261106T211848Z
+DTSTART;VALUE=DATE:20261014
+DTEND;VALUE=DATE:20261015
+SUMMARY:Loan Approval Deadline — 5668 Liberty Creek Dr W\, Indianapolis\, 
+ IN
+DESCRIPTION:Upcoming — https://dpuphi1938.github.io/client-portal-pages/da
+ n-clerc-wdEeFNWuZpPT4KSZA8jGHA/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:dan-clerc-wdEeFNWuZpPT4KSZA8jGHA-homeowner-s-insurance-commitment-due@
+ portal.boughtwithscott.com
+DTSTAMP:20261106T211848Z
+DTSTART;VALUE=DATE:20261014
+DTEND;VALUE=DATE:20261015
+SUMMARY:Homeowner's Insurance Commitment Due — 5668 Liberty Creek Dr W\, I
+ ndianapolis\, IN
+DESCRIPTION:Upcoming — https://dpuphi1938.github.io/client-portal-pages/da
+ n-clerc-wdEeFNWuZpPT4KSZA8jGHA/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
