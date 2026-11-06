@@ -307,9 +307,64 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     
 
     <div class="summary">Closed! New-construction purchase at Kingsbridge #109 closed 02/05/2026 for $399,995. Congratulations on your new home!</div>
-    
+    <div class="stats-row"><div class="stat"><div class="v">Sold</div><div class="l">Status</div></div><div class="stat"><div class="v">$399,995</div><div class="l">Price</div></div><div class="stat"><div class="v">141</div><div class="l">Days on Market</div></div></div>
 
+    <h2>Your Home</h2>
     
+    <div class="home-value"><div class="mortgage-equity" data-loan-amount="359996.0" data-rate="3.99"
+         data-term-months="360" data-first-payment="2026-04-01"
+         data-value-low="399995.0" data-value-high="399995.0">
+      <div class="me-row">
+        <span class="me-label">Est. Remaining Mortgage Balance</span>
+        <span class="me-val" id="me-balance">&hellip;</span>
+      </div>
+      <div class="progress-wrap" style="margin:10px 0 14px">
+        <div class="progress-label"><span id="me-paid-label">&nbsp;</span><span id="me-paid-pct">&nbsp;</span></div>
+        <div class="progress-track"><div class="progress-fill" id="me-progress-fill" style="width:0%"></div></div>
+      </div>
+      <div class="me-row highlight">
+        <span class="me-label">Est. Equity</span>
+        <span class="me-val" id="me-equity">&hellip;</span>
+      </div>
+      <div class="me-foot">Estimated from your original loan terms (standard amortization &mdash; doesn't
+        account for extra principal payments, refinancing, or PMI removal) combined with the value estimate
+        above (using your closing price until the first value refresh).</div>
+    </div>
+    <script>
+    (function(){
+      var el = document.querySelector('.mortgage-equity');
+      if (!el) return;
+      var P = parseFloat(el.getAttribute('data-loan-amount'));
+      var annualRate = parseFloat(el.getAttribute('data-rate'));
+      var N = parseInt(el.getAttribute('data-term-months'), 10);
+      var first = new Date(el.getAttribute('data-first-payment') + 'T00:00:00');
+      var valueLow = parseFloat(el.getAttribute('data-value-low'));
+      var valueHigh = parseFloat(el.getAttribute('data-value-high'));
+      var today = new Date(); today.setHours(0,0,0,0);
+
+      var n = (today.getFullYear() - first.getFullYear()) * 12 + (today.getMonth() - first.getMonth());
+      if (today.getDate() < first.getDate()) n -= 1;
+      n = Math.max(0, Math.min(N, n));
+
+      var r = annualRate / 100 / 12;
+      var balance = (r === 0)
+        ? P * (1 - n / N)
+        : P * (Math.pow(1 + r, N) - Math.pow(1 + r, n)) / (Math.pow(1 + r, N) - 1);
+      balance = Math.max(0, balance);
+
+      function fmt(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
+
+      document.getElementById('me-balance').textContent = fmt(balance);
+      var pct = Math.round((1 - balance / P) * 100);
+      document.getElementById('me-paid-label').textContent = 'Loan paid off';
+      document.getElementById('me-paid-pct').textContent = pct + '%';
+      document.getElementById('me-progress-fill').style.width = Math.min(100, Math.max(0, pct)) + '%';
+
+      var eqLow = valueLow - balance, eqHigh = valueHigh - balance;
+      var eqText = (Math.round(eqLow) === Math.round(eqHigh)) ? fmt(eqLow) : (fmt(eqLow) + ' – ' + fmt(eqHigh));
+      document.getElementById('me-equity').textContent = eqText;
+    })();
+    </script></div>
 
     
 
@@ -389,7 +444,75 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     })();
     </script>
 
-    
+    <h2>Is Refinancing Worth It?</h2>
+    <p class="section-intro">See what a different rate would do to your payment, based on your current estimated balance.</p>
+    <div class="calc-card" data-loan-amount="359996.0" data-rate="3.99"
+         data-term-months="360" data-first-payment="2026-04-01" id="refi-calc">
+      <div class="calc-row">
+        <label for="refi-rate">Hypothetical New Rate (%)</label>
+        <input type="number" id="refi-rate" value="6.0" min="0" step="0.125">
+      </div>
+      <div class="calc-row">
+        <label for="refi-term">New Loan Term</label>
+        <select id="refi-term">
+          <option value="360">30-year fixed</option>
+          <option value="180">15-year fixed</option>
+        </select>
+      </div>
+      <div class="calc-result">
+        <div class="calc-result-row"><span class="cr-label">Current Est. Payment (P&amp;I)</span><span class="cr-val" id="refi-current">&hellip;</span></div>
+        <div class="calc-result-row"><span class="cr-label">New Est. Payment (P&amp;I)</span><span class="cr-val" id="refi-new">&hellip;</span></div>
+        <div class="calc-result-row"><span class="cr-label">Monthly Difference</span><span class="cr-val" id="refi-diff">&hellip;</span></div>
+      </div>
+      <div class="calc-disclaimer">Estimate only &mdash; principal &amp; interest on your current remaining balance, doesn't include closing costs, escrow changes, or PMI. For real numbers, talk to Kole McClain.</div>
+      <a class="calc-cta" href="mailto:kmcclain@uhm.com?subject=Refinance%20Question">Ask Kole McClain about refinancing <span class="arrow">&rarr;</span></a>
+    </div>
+    <script>
+    (function(){
+      var el = document.getElementById('refi-calc');
+      var P = parseFloat(el.getAttribute('data-loan-amount'));
+      var origRate = parseFloat(el.getAttribute('data-rate'));
+      var N = parseInt(el.getAttribute('data-term-months'), 10);
+      var first = new Date(el.getAttribute('data-first-payment') + 'T00:00:00');
+      var today = new Date(); today.setHours(0,0,0,0);
+
+      var n = (today.getFullYear() - first.getFullYear()) * 12 + (today.getMonth() - first.getMonth());
+      if (today.getDate() < first.getDate()) n -= 1;
+      n = Math.max(0, Math.min(N, n));
+
+      function pmt(principal, annualRatePct, termMonths) {
+        var r = annualRatePct / 100 / 12;
+        if (r === 0) return principal / termMonths;
+        return principal * (r * Math.pow(1 + r, termMonths)) / (Math.pow(1 + r, termMonths) - 1);
+      }
+
+      var origR = origRate / 100 / 12;
+      var balance = (origR === 0)
+        ? P * (1 - n / N)
+        : P * (Math.pow(1 + origR, N) - Math.pow(1 + origR, n)) / (Math.pow(1 + origR, N) - 1);
+      balance = Math.max(0, balance);
+
+      var currentPayment = pmt(P, origRate, N);
+
+      function fmt(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
+
+      var rateInput = document.getElementById('refi-rate'), termSelect = document.getElementById('refi-term');
+      var curEl = document.getElementById('refi-current'), newEl = document.getElementById('refi-new'), diffEl = document.getElementById('refi-diff');
+
+      function recalc() {
+        var newRate = parseFloat(rateInput.value) || 0;
+        var newTerm = parseInt(termSelect.value, 10);
+        var newPayment = pmt(balance, newRate, newTerm);
+        curEl.textContent = fmt(currentPayment);
+        newEl.textContent = fmt(newPayment);
+        var diff = currentPayment - newPayment;
+        diffEl.textContent = (diff >= 0 ? '-' : '+') + fmt(Math.abs(diff)) + '/mo';
+        diffEl.className = 'cr-val ' + (diff >= 0 ? 'good' : 'bad');
+      }
+      [rateInput, termSelect].forEach(function(el2) { el2.addEventListener('input', recalc); el2.addEventListener('change', recalc); });
+      recalc();
+    })();
+    </script>
 
     <h2>Key Contacts</h2><ul class="contact-list"><li class="contact-row"><div class="contact-top"><span class="contact-name">Jason Lee</span><span class="contact-role">Home Inspector</span></div><div class="contact-company">Door to Door Inspections</div><div class="contact-links"><a href="tel:317-500-0903">317-500-0903</a><a href="mailto:jason.lee@d2dinspections.com">jason.lee@d2dinspections.com</a><a href="https://www.d2dinspections.com" target="_blank" rel="noopener">https://www.d2dinspections.com</a></div></li><li class="contact-row"><div class="contact-top"><span class="contact-name">Joseph Snyder</span><span class="contact-role">Builder/Seller</span></div><div class="contact-company">Lennar - New Home Consultant</div><div class="contact-links"><a href="tel:317-296-2728">317-296-2728</a><a href="mailto:Joseph.Snyder@lennar.com">Joseph.Snyder@lennar.com</a></div></li><li class="contact-row"><div class="contact-top"><span class="contact-name">Jacqueline DeArmond</span><span class="contact-role">Homebuyer Concierge</span></div><div class="contact-company">Lennar</div><div class="contact-links"><a href="tel:317-607-7123">317-607-7123</a><a href="mailto:Jackie.Dearmond@lennar.com">Jackie.Dearmond@lennar.com</a></div></li><li class="contact-row"><div class="contact-top"><span class="contact-name">Patti Henry</span><span class="contact-role">Transaction Coordinator</span></div><div class="contact-company">@properties</div><div class="contact-links"><a href="tel:317-489-3441">317-489-3441</a><a href="mailto:patti@atpropertiesind.com">patti@atpropertiesind.com</a></div></li></ul>
 
@@ -397,14 +520,43 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     <h2>Utilities</h2><p class="section-intro">On file for this home &mdash; handy reference if you ever need to call about service, a switch, or an outage.</p><ul class="util-list"><li class="util-row"><div class="util-top"><span class="util-provider">Verify -- Johnson County REMC or Duke Energy</span><span class="util-cat">Electric</span></div><div class="util-notes">Confirm with builder/HOA documents</div></li><li class="util-row"><div class="util-top"><span class="util-provider">Verify -- City of Franklin Utilities</span><span class="util-cat">Water/Sewer</span></div><div class="util-notes">Confirm with builder/HOA documents</div></li></ul>
 
-    <div class="note"><div class="from">Note from Scott White</div>Congratulations again, Sean and Lauren -- 3845 Jason Ave (Kingsbridge #109) officially closed on 2/5! Your New Home Orientation with Lennar was completed 1/27, and the inspection items you flagged were sent to the construction manager ahead of closing. I&#x27;ve added Joseph and Jackie from Lennar above in case you need anything on the builder warranty side. It&#x27;s been a pleasure working with you both!</div>
+    <div class="note"><div class="from">Note from Scott White</div>Loan amount ($359,996, new construction, Lennar Mortgage) from the Closing Disclosure. Rate derived from prepaid per-diem interest ($39.35/day ≈ 3.99%), not an explicit note rate. Term assumed 30yr.</div>
 
     <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">If you haven't already, file a Homestead Deduction with your county auditor &mdash; it isn't automatic and can reduce your taxable assessed value by the lesser of 60% or $48,000. A one-time filing, and easy to forget after closing.</div><a class="resource-cta" href="https://johnsoncounty.in.gov/topic/index.php?topicid=68&amp;structureid=11" target="_blank" rel="noopener">File with the Johnson County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://johnsoncounty.in.gov/topic/index.php?topicid=10&amp;structureid=14" target="_blank" rel="noopener">Visit the Johnson County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
 
     <div class="footnote">
       Scott White &middot; @properties Indy<br>
-      Last updated 2026-10-28. This page is private to you &mdash; please don't share the link.
+      Last updated 2026-11-05. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
+<script>
+(function(){
+  var form = document.getElementById('loan-info-form');
+  if (!form) return;
+  var msg = document.getElementById('loan-info-msg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; btn.textContent = 'Submitting...';
+    var data = new FormData(form);
+    var payload = {slug: 'sean-mcpike-hli-o5MDa4Ra716xzJak9A', kind: 'loan_info_set', section: 'home-equity'};
+    ['balance','rate','payment','notes'].forEach(function(k){ payload[k] = data.get(k) || null; });
+    fetch('https://transaction-portal-submissions.scottwhite2011.workers.dev', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)
+    }).then(function(r){
+      if (!r.ok) throw new Error('bad response');
+      msg.hidden = false;
+      msg.textContent = 'Thanks -- submitted! This will show up on the page once Scott syncs it.';
+      msg.className = 'add-form-msg ok';
+      btn.textContent = 'Submit'; btn.disabled = false;
+    }).catch(function(){
+      msg.hidden = false;
+      msg.textContent = 'Something went wrong submitting this -- please text or email Scott directly instead.';
+      msg.className = 'add-form-msg err';
+      btn.textContent = 'Submit'; btn.disabled = false;
+    });
+  });
+})();
+</script>
 </body>
 </html>
