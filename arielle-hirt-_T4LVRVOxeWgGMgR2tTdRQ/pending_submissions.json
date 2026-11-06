@@ -1,10 +1,1 @@
-[
-  {
-    "kind": "loan_info_set",
-    "balance": 1,
-    "rate": 1,
-    "payment": 1,
-    "notes": "LIVE WORKER TEST -- will be reverted immediately",
-    "submitted_at": "2026-11-06T21:49:10.041Z"
-  }
-]
+[]
