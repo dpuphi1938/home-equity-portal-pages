@@ -310,7 +310,21 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     <div class="stats-row"><div class="stat"><div class="v">Sold</div><div class="l">Status</div></div><div class="stat"><div class="v">$498,000</div><div class="l">Price</div></div><div class="stat"><div class="v">5</div><div class="l">Days on Market</div></div></div>
 
     <h2>Your Home</h2>
+    <div class="home-value">
+      <div class="hv-estimate">$393,428 &ndash; $532,399</div>
+      <div class="hv-sub">Estimated value today, based on 27 recent comparable sales &middot; updated 11/06/2026</div>
+      <div class="hv-gain">You closed at $498,000</div>
+      <div class="hv-note">Not enough recent same-subdivision MLS sales for a tighter estimate -- using MLS&#x27;s broader-radius blended estimate instead. Also excluded the tax-assessment-ratio estimate ($30,413,530): 1 comp behind it (e.g. 2130 Woodlawn Ave) show a stale recorded sale price ($369,000,000) that doesn&#x27;t match their actual MLS closing ($369,000).</div>
+      
+    </div>
     
+    <div class="comps-block">
+      <div class="comps-chart"><svg viewBox="0 0 640 320" width="100%" height="auto" role="img" aria-label="Price versus square footage, your home against 6 recent comparable sales"><line x1="62" x2="622" y1="282.0" y2="282.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="286.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$166K</text><line x1="62" x2="622" y1="215.5" y2="215.5" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="219.5" text-anchor="end" font-size="10.5" fill="var(--slate)">$293K</text><line x1="62" x2="622" y1="149.0" y2="149.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="153.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$420K</text><line x1="62" x2="622" y1="82.5" y2="82.5" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="86.5" text-anchor="end" font-size="10.5" fill="var(--slate)">$547K</text><line x1="62" x2="622" y1="16.0" y2="16.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="20.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$674K</text><text x="62.0" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">1,534 sf</text><text x="248.7" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">1,762 sf</text><text x="435.3" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">1,990 sf</text><text x="622.0" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">2,218 sf</text><line x1="62" x2="622" y1="282" y2="282" stroke="var(--mist)" stroke-width="1"/><line x1="62" x2="62" y1="16" y2="282" stroke="var(--mist)" stroke-width="1"/><line x1="116.2" y1="181.1" x2="567.8" y2="144.1" stroke="var(--slate)" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.7"/><circle cx="556.4" cy="251.3" r="6" fill="var(--charcoal)" opacity="0.55"/><circle cx="116.2" cy="188.3" r="6" fill="var(--charcoal)" opacity="0.55"/><circle cx="273.3" cy="173.4" r="6" fill="var(--charcoal)" opacity="0.55"/><circle cx="557.2" cy="46.7" r="6" fill="var(--charcoal)" opacity="0.55"/><circle cx="459.8" cy="107.0" r="6" fill="var(--charcoal)" opacity="0.55"/><circle cx="567.8" cy="169.5" r="6" fill="var(--charcoal)" opacity="0.55"/><circle cx="340.4" cy="126.5" r="9" fill="var(--red)"/><text x="354.4" y="114.5" font-size="11.5" font-weight="700" fill="var(--red-dark)">Your Home</text></svg></div>
+      <table class="comps-table">
+      <thead><tr><th>Address</th><th>Sale Price</th><th>Sq. Ft.</th><th>$/Sq. Ft.</th><th>Sold</th></tr></thead>
+      <tbody><tr><td>1148 Lexington Ave</td><td>$225,000</td><td>2,138 sf</td><td>$105/sf</td><td>06/18/2026</td></tr><tr><td>1215 Pleasant St</td><td>$345,000</td><td>1,600 sf</td><td>$216/sf</td><td>07/01/2026</td></tr><tr><td>1052 Hosbrook St</td><td>$373,450</td><td>1,792 sf</td><td>$208/sf</td><td>04/29/2026</td></tr><tr><td>1217 Woodlawn Ave</td><td>$615,000</td><td>2,139 sf</td><td>$288/sf</td><td>04/30/2026</td></tr><tr><td>1548 Fletcher Ave</td><td>$500,000</td><td>2,020 sf</td><td>$248/sf</td><td>06/17/2026</td></tr><tr><td>1627 Pleasant St</td><td>$381,000</td><td>2,152 sf</td><td>$177/sf</td><td>05/15/2026</td></tr></tbody>
+    </table>
+    </div>
     <div class="home-value"><details class="add-form" id="loan-info-details" open>
       <summary>Don&rsquo;t have your loan on file? Tell us your numbers</summary>
       <p class="section-intro">We don't have your actual loan on file for this home &mdash; pull up a recent
@@ -366,7 +380,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       </div>
       <div class="calc-row">
         <label for="pp-down">Down Payment</label>
-        <input type="number" id="pp-down" value="20000" min="0" step="1000">
+        <input type="number" id="pp-down" value="93000" min="0" step="1000">
       </div>
       <div class="calc-row">
         <label for="pp-rate">Interest Rate (%)</label>
@@ -419,7 +433,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     <div class="footnote">
       Scott White &middot; @properties Indy<br>
-      Last updated 2026-11-05. This page is private to you &mdash; please don't share the link.
+      Last updated 2026-11-06. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
 <script>
