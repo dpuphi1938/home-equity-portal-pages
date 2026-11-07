@@ -81,6 +81,12 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .me-foot{font-size:11px;color:var(--slate);margin-top:10px;line-height:1.5}
 .hv-history{list-style:none;margin:14px 0 0;padding:12px 0 0;border-top:1px solid var(--cloud);display:flex;flex-direction:column;gap:6px}
 .hv-history li{font-size:12px;color:var(--slate);display:flex;justify-content:space-between}
+.rpr-ref{background:var(--paper);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 16px;margin-bottom:20px}
+.rpr-ref-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);font-weight:600}
+.rpr-ref-row{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px}
+.rpr-ref-val{font-size:18px;font-weight:800;color:var(--ink)}
+.rpr-ref-range{font-size:12px;color:var(--slate)}
+.rpr-ref-note{font-size:11px;color:var(--mist);margin-top:8px;line-height:1.5}
 .footnote{margin-top:36px;padding-top:16px;border-top:1px solid var(--cloud);font-size:11px;color:var(--mist);line-height:1.6}
 
 .section-intro{font-size:13px;color:var(--slate);margin:-8px 0 12px;line-height:1.5}
@@ -324,6 +330,22 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       <thead><tr><th>Address</th><th>Sale Price</th><th>Sq. Ft.</th><th>$/Sq. Ft.</th><th>Sold</th></tr></thead>
       <tbody><tr><td>3510 Limesprings Ln</td><td>$276,000</td><td>1,380 sf</td><td>$200/sf</td><td>06/18/2026</td></tr><tr><td>6129 Green Glade Dr</td><td>$125,000</td><td>1,556 sf</td><td>$80/sf</td><td>05/07/2026</td></tr><tr><td>3689 Indigo Blue Blvd</td><td>$272,000</td><td>1,288 sf</td><td>$211/sf</td><td>05/22/2026</td></tr><tr><td>6460 Dusty Laurel Dr</td><td>$282,000</td><td>1,511 sf</td><td>$187/sf</td><td>05/13/2026</td></tr><tr><td>3492 Limelight Ln</td><td>$285,000</td><td>1,182 sf</td><td>$241/sf</td><td>05/29/2026</td></tr><tr><td>3830 Gray Heather Ln</td><td>$296,000</td><td>1,506 sf</td><td>$197/sf</td><td>05/20/2026</td></tr></tbody>
     </table>
+    </div>
+    <div class="rpr-ref">
+      <div class="rpr-ref-label">Also from RPR (Realtors Property Resource)</div>
+      <div class="rpr-ref-row">
+        <div class="rpr-ref-val">$277,420</div>
+        <div class="rpr-ref-range">Range: $255,200 &ndash; $299,600</div>
+      </div>
+      <div class="rpr-ref-note">RPR's automated valuation model, as of 11/06/2026 &middot; Confidence: 5/5. Shown for reference only &mdash; the estimate above (based on recent comparable sales) is what drives the equity figures on this page.</div>
+    </div>
+    <div class="rpr-ref">
+      <div class="rpr-ref-label">Also from Homebot</div>
+      <div class="rpr-ref-row">
+        <div class="rpr-ref-val">$276,000</div>
+        
+      </div>
+      <div class="rpr-ref-note">Homebot's own estimate, as of 11/06/2026. Shown for reference only &mdash; the estimate above (based on recent comparable sales) is what drives the equity figures on this page.</div>
     </div>
     <div class="home-value"><details class="add-form" id="loan-info-details" open>
       <summary>Don&rsquo;t have your loan on file? Tell us your numbers</summary>
