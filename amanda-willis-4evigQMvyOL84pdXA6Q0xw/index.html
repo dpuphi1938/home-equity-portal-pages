@@ -81,6 +81,12 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .me-foot{font-size:11px;color:var(--slate);margin-top:10px;line-height:1.5}
 .hv-history{list-style:none;margin:14px 0 0;padding:12px 0 0;border-top:1px solid var(--cloud);display:flex;flex-direction:column;gap:6px}
 .hv-history li{font-size:12px;color:var(--slate);display:flex;justify-content:space-between}
+.rpr-ref{background:var(--paper);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 16px;margin-bottom:20px}
+.rpr-ref-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);font-weight:600}
+.rpr-ref-row{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px}
+.rpr-ref-val{font-size:18px;font-weight:800;color:var(--ink)}
+.rpr-ref-range{font-size:12px;color:var(--slate)}
+.rpr-ref-note{font-size:11px;color:var(--mist);margin-top:8px;line-height:1.5}
 .footnote{margin-top:36px;padding-top:16px;border-top:1px solid var(--cloud);font-size:11px;color:var(--mist);line-height:1.6}
 
 .section-intro{font-size:13px;color:var(--slate);margin:-8px 0 12px;line-height:1.5}
@@ -315,7 +321,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       <div class="hv-sub">Estimated value today, based on 17 recent comparable sales &middot; updated 11/06/2026</div>
       <div class="hv-gain positive">&#9650; Up $69,086 since you closed at $205,000</div>
       <div class="hv-note">Not enough recent same-subdivision MLS sales for a tighter estimate -- using MLS&#x27;s broader-radius blended estimate instead.</div>
-      
+      <ul class="hv-history"><li><span>11/06/2026</span><span>$266,900 – $280,120</span></li></ul>
     </div>
     
     <div class="comps-block">
@@ -324,6 +330,22 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       <thead><tr><th>Address</th><th>Sale Price</th><th>Sq. Ft.</th><th>$/Sq. Ft.</th><th>Sold</th></tr></thead>
       <tbody><tr><td>5602 Rum Cherry Way</td><td>$300,000</td><td>1,512 sf</td><td>$198/sf</td><td>06/26/2026</td></tr><tr><td>5555 Cherry Field Dr</td><td>$285,000</td><td>1,636 sf</td><td>$174/sf</td><td>06/26/2026</td></tr><tr><td>5516 Cherry Birch Dr</td><td>$285,000</td><td>1,667 sf</td><td>$171/sf</td><td>06/30/2026</td></tr><tr><td>3810 Cherry Blossom Blvd</td><td>$290,000</td><td>1,596 sf</td><td>$182/sf</td><td>06/16/2026</td></tr><tr><td>3902 Cherry Blossom Blvd</td><td>$284,900</td><td>1,440 sf</td><td>$198/sf</td><td>07/10/2026</td></tr><tr><td>5519 Black Cherry Cir</td><td>$252,000</td><td>1,518 sf</td><td>$166/sf</td><td>06/04/2026</td></tr></tbody>
     </table>
+    </div>
+    <div class="rpr-ref">
+      <div class="rpr-ref-label">Also from RPR (Realtors Property Resource)</div>
+      <div class="rpr-ref-row">
+        <div class="rpr-ref-val">$273,160</div>
+        <div class="rpr-ref-range">Range: $251,300 &ndash; $295,000</div>
+      </div>
+      <div class="rpr-ref-note">RPR's automated valuation model, as of 11/06/2026 &middot; Confidence: 5/5. Shown for reference only &mdash; the estimate above (based on recent comparable sales) is what drives the equity figures on this page.</div>
+    </div>
+    <div class="rpr-ref">
+      <div class="rpr-ref-label">Also from Homebot</div>
+      <div class="rpr-ref-row">
+        <div class="rpr-ref-val">$287,000</div>
+        <div class="rpr-ref-range">Homebot equity: 40% (Approx. $114,243)</div>
+      </div>
+      <div class="rpr-ref-note">Homebot's own estimate, as of 11/06/2026 &middot; On file: 30-year fixed at 3.000%. Shown for reference only &mdash; the estimate above (based on recent comparable sales) is what drives the equity figures on this page.</div>
     </div>
     <div class="home-value"><div class="mortgage-equity" data-loan-amount="194750.0" data-rate="3.0"
          data-term-months="360" data-first-payment="2021-11-01"
