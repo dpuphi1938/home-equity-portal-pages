@@ -1,0 +1,97 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:5378 Rose Drive\, Zionsville\, IN 46077 Transaction Timeline
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:chas-bowman-hKHONisVwSB4nGExpJJ25Q-under-contract@portal.boughtwithsco
+ tt.com
+DTSTAMP:20261107T192029Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
+SUMMARY:Under Contract — 5378 Rose Drive\, Zionsville\, IN 46077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/chas-b
+ owman-hKHONisVwSB4nGExpJJ25Q/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:chas-bowman-hKHONisVwSB4nGExpJJ25Q-closing@portal.boughtwithscott.com
+DTSTAMP:20261107T192029Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:Closing — 5378 Rose Drive\, Zionsville\, IN 46077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/chas-b
+ owman-hKHONisVwSB4nGExpJJ25Q/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:chas-bowman-hKHONisVwSB4nGExpJJ25Q-loan-approval-deadline@portal.bough
+ twithscott.com
+DTSTAMP:20261107T192029Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:Loan Approval Deadline — 5378 Rose Drive\, Zionsville\, IN 46077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/chas-b
+ owman-hKHONisVwSB4nGExpJJ25Q/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:chas-bowman-hKHONisVwSB4nGExpJJ25Q-financing-application-due@portal.bo
+ ughtwithscott.com
+DTSTAMP:20261107T192029Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+SUMMARY:Financing Application Due — 5378 Rose Drive\, Zionsville\, IN 4607
+ 7
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/chas-b
+ owman-hKHONisVwSB4nGExpJJ25Q/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:chas-bowman-hKHONisVwSB4nGExpJJ25Q-buyer-inspection-response-due@porta
+ l.boughtwithscott.com
+DTSTAMP:20261107T192029Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:Buyer Inspection Response Due — 5378 Rose Drive\, Zionsville\, IN 
+ 46077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/chas-b
+ owman-hKHONisVwSB4nGExpJJ25Q/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:chas-bowman-hKHONisVwSB4nGExpJJ25Q-earnest-money-deadline@portal.bough
+ twithscott.com
+DTSTAMP:20261107T192029Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:Earnest Money Deadline — 5378 Rose Drive\, Zionsville\, IN 46077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/chas-b
+ owman-hKHONisVwSB4nGExpJJ25Q/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:chas-bowman-hKHONisVwSB4nGExpJJ25Q-hoa-document-deadline@portal.bought
+ withscott.com
+DTSTAMP:20261107T192029Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:HOA Document Deadline — 5378 Rose Drive\, Zionsville\, IN 46077
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/chas-b
+ owman-hKHONisVwSB4nGExpJJ25Q/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:chas-bowman-hKHONisVwSB4nGExpJJ25Q-insurance-deadline@portal.boughtwit
+ hscott.com
+DTSTAMP:20261107T192029Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:Insurance Deadline — 5378 Rose Drive\, Zionsville\, IN 46077
+DESCRIPTION:Upcoming — https://dpuphi1938.github.io/client-portal-pages/ch
+ as-bowman-hKHONisVwSB4nGExpJJ25Q/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
