@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//Scott White Transaction Portal//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:359 E Saint Clair St\, Indianapolis\, IN 46202 Transaction Ti
- meline
+X-WR-CALNAME:359 S Audubon Rd\, Indianapolis\, IN 46219 Transaction Timeli
+ ne
 X-PUBLISHED-TTL:PT12H
 END:VCALENDAR
