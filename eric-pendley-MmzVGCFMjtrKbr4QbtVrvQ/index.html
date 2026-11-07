@@ -81,6 +81,12 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .me-foot{font-size:11px;color:var(--slate);margin-top:10px;line-height:1.5}
 .hv-history{list-style:none;margin:14px 0 0;padding:12px 0 0;border-top:1px solid var(--cloud);display:flex;flex-direction:column;gap:6px}
 .hv-history li{font-size:12px;color:var(--slate);display:flex;justify-content:space-between}
+.rpr-ref{background:var(--paper);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 16px;margin-bottom:20px}
+.rpr-ref-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);font-weight:600}
+.rpr-ref-row{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px}
+.rpr-ref-val{font-size:18px;font-weight:800;color:var(--ink)}
+.rpr-ref-range{font-size:12px;color:var(--slate)}
+.rpr-ref-note{font-size:11px;color:var(--mist);margin-top:8px;line-height:1.5}
 .footnote{margin-top:36px;padding-top:16px;border-top:1px solid var(--cloud);font-size:11px;color:var(--mist);line-height:1.6}
 
 .section-intro{font-size:13px;color:var(--slate);margin:-8px 0 12px;line-height:1.5}
@@ -324,6 +330,22 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       <thead><tr><th>Address</th><th>Sale Price</th><th>Sq. Ft.</th><th>$/Sq. Ft.</th><th>Sold</th></tr></thead>
       <tbody><tr><td>4300 Tally Ho Cir</td><td>$635,000</td><td>2,688 sf</td><td>$236/sf</td><td>08/07/2026</td></tr><tr><td>4150 Huntsman Dr</td><td>$570,000</td><td>3,192 sf</td><td>$179/sf</td><td>01/08/2026</td></tr><tr><td>3863 Sugar Pine Ln</td><td>$779,500</td><td>3,240 sf</td><td>$241/sf</td><td>04/02/2026</td></tr><tr><td>3807 Sugar Pine Ln</td><td>$935,000</td><td>3,050 sf</td><td>$307/sf</td><td>05/29/2026</td></tr><tr><td>4401 Brittany Dr</td><td>$640,000</td><td>2,569 sf</td><td>$249/sf</td><td>05/05/2026</td></tr><tr><td>3579 Sugar Pine Ln</td><td>$765,000</td><td>3,060 sf</td><td>$250/sf</td><td>09/23/2026</td></tr></tbody>
     </table>
+    </div>
+    <div class="rpr-ref">
+      <div class="rpr-ref-label">Also from RPR (Realtors Property Resource)</div>
+      <div class="rpr-ref-row">
+        <div class="rpr-ref-val">$649,570</div>
+        <div class="rpr-ref-range">Range: $597,600 &ndash; $701,500</div>
+      </div>
+      <div class="rpr-ref-note">RPR's automated valuation model, as of 11/06/2026 &middot; Confidence: 5/5. Shown for reference only &mdash; the estimate above (based on recent comparable sales) is what drives the equity figures on this page.</div>
+    </div>
+    <div class="rpr-ref">
+      <div class="rpr-ref-label">Also from Homebot</div>
+      <div class="rpr-ref-row">
+        <div class="rpr-ref-val">$647,000</div>
+        <div class="rpr-ref-range">Homebot equity: 70% (Approx. $450,911)</div>
+      </div>
+      <div class="rpr-ref-note">Homebot's own estimate, as of 11/06/2026 &middot; On file: 30-year fixed at 3.375%. Shown for reference only &mdash; the estimate above (based on recent comparable sales) is what drives the equity figures on this page.</div>
     </div>
     <div class="home-value"><details class="add-form" id="loan-info-details" open>
       <summary>Don&rsquo;t have your loan on file? Tell us your numbers</summary>
