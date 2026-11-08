@@ -319,7 +319,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     
 
     
-    <div class="stats-row"><div class="stat"><div class="v">$271,410</div><div class="l">Est. Value</div></div><div class="stat"><div class="v">—</div><div class="l">Est. Equity</div></div></div>
+    <div class="stats-row"><div class="stat"><div class="v">$271,410</div><div class="l">Est. Value</div></div><div class="stat"><div class="v">27%</div><div class="l">Est. Equity</div></div></div>
 
     <h2>Your Home</h2>
     
@@ -339,17 +339,31 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       </div>
       <div class="rpr-ref-note">The county's own current assessed value, as of 11/08/2026. This is a tax-assessment figure, not a market-value estimate &mdash; assessed values typically run 5-15% below actual market value. Shown for reference only &mdash; the estimate above (based on recent comparable sales) is what drives the equity figures on this page.</div>
     </div>
-    <div class="home-value"><details class="add-form" id="loan-info-details" open>
-      <summary>Don&rsquo;t have your loan on file? Tell us your numbers</summary>
+    <div class="home-value"><div class="me-row">
+        <span class="me-label">Your Reported Mortgage Balance</span>
+        <span class="me-val">$198,651</span>
+      </div>
+      <div class="me-row"><span class="me-label">Your Reported Rate</span><span class="me-val">3.125%</span></div>
+      
+      <div class="me-row highlight">
+        <span class="me-label">Est. Equity</span>
+        <span class="me-val">$72,759</span>
+      </div>
+      <div class="me-foot">Based on what you told us on 11/08/2026 (using your closing price until the first value refresh) &mdash;
+        this doesn't update automatically the way a real loan on file would, so it's worth refreshing below
+        whenever your balance changes meaningfully.</div>
+      <div class="me-foot">You noted: Backfilled from Homebot&#x27;s last-synced mortgage data (30-year fixed at 3.125%, as of 11/07/2026) before decommissioning Homebot. Balance computed as Homebot&#x27;s value minus its reported equity amount.</div>
+      <details class="add-form" id="loan-info-details">
+      <summary>Update your mortgage info</summary>
       <p class="section-intro">We don't have your actual loan on file for this home &mdash; pull up a recent
         mortgage statement and fill in your approximate numbers, and we'll track your equity against those
         instead. Won't be as precise as the real thing, but it beats nothing.</p>
       <form id="loan-info-form">
         <input type="hidden" name="slug" value="kaleena-white-hAvgZpAB4gr9tTbb4LNfSA">
-        <label>Approximate current mortgage balance<input type="number" name="balance" placeholder="e.g. 285000"  required></label>
-        <label>Interest rate (optional)<input type="number" step="0.01" name="rate" placeholder="e.g. 6.5" ></label>
+        <label>Approximate current mortgage balance<input type="number" name="balance" placeholder="e.g. 285000" value="198651" required></label>
+        <label>Interest rate (optional)<input type="number" step="0.01" name="rate" placeholder="e.g. 6.5" value="3.125"></label>
         <label>Current monthly payment, principal + interest (optional)<input type="number" name="payment" placeholder="e.g. 2100" ></label>
-        <label>Anything else useful (optional)<input type="text" name="notes" placeholder="Lender name, recent refinance, etc." ></label>
+        <label>Anything else useful (optional)<input type="text" name="notes" placeholder="Lender name, recent refinance, etc." value="Backfilled from Homebot&#x27;s last-synced mortgage data (30-year fixed at 3.125%, as of 11/07/2026) before decommissioning Homebot. Balance computed as Homebot&#x27;s value minus its reported equity amount."></label>
         <button type="submit">Submit</button>
         <div class="add-form-msg" id="loan-info-msg" hidden></div>
       </form>
@@ -549,7 +563,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     
 
-    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">If you haven't already, file a Homestead Deduction with your county auditor &mdash; it isn't automatic and can reduce your taxable assessed value by the lesser of 60% or $48,000. A one-time filing, and easy to forget after closing.</div><a class="resource-cta" href="https://www.hamiltoncounty.in.gov/368/Property-Tax-Deductions-Credits" target="_blank" rel="noopener">File with the Hamilton County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://www.hamiltoncounty.in.gov/405/Assessment-Appeal-Process" target="_blank" rel="noopener">Visit the Hamilton County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
+    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">Your title company normally files this with the county auditor on your behalf as part of closing &mdash; it can reduce your taxable assessed value by the lesser of 60% or $48,000. It's not automatic though, so it's worth confirming directly with the county that it was actually recorded for your property.</div><a class="resource-cta" href="https://www.hamiltoncounty.in.gov/368/Property-Tax-Deductions-Credits" target="_blank" rel="noopener">Confirm with the Hamilton County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://www.hamiltoncounty.in.gov/405/Assessment-Appeal-Process" target="_blank" rel="noopener">Visit the Hamilton County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
 
     <div class="footnote">
       Scott White &middot; @properties<br>
