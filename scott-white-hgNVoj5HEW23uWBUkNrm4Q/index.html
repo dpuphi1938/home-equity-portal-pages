@@ -325,9 +325,10 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     <div class="home-value">
       <div class="hv-estimate">$421,109 &ndash; $452,890</div>
       <div class="hv-sub">Estimated value today, based on 7 recent comparable sales &middot; updated 11/08/2026</div>
+      
       <div class="hv-gain positive">&#9650; Up $137,100 since you closed at $299,900</div>
       <div class="hv-note">Estimated via a price/sqft trend fit across 7 recent &quot;Neighborhoods At Anson&quot; sold comps (last 12 months) -- tighter than a blind-radius search since every comp is a verified same-subdivision MLS sale. RPR $419,470 and Homebot $444,920 weighted into this estimate.</div>
-      <ul class="hv-history"><li><span>11/07/2026</span><span>$421,109 – $452,890</span></li><li><span>11/06/2026</span><span>$418,304 – $454,276</span></li><li><span>11/06/2026</span><span>$418,304 – $454,276</span></li><li><span>10/09/2026</span><span>$419,994 – $454,719</span></li><li><span>10/09/2026</span><span>$419,994 – $454,719</span></li><li><span>10/09/2026</span><span>$419,994 – $454,719</span></li><li><span>09/19/2026</span><span>$419,994 – $454,719</span></li><li><span>09/19/2026</span><span>$362,288 – $544,207</span></li></ul>
+      <ul class="hv-history"><li><span>11/08/2026</span><span>$421,109 – $452,890</span></li><li><span>11/07/2026</span><span>$421,109 – $452,890</span></li><li><span>11/06/2026</span><span>$418,304 – $454,276</span></li><li><span>11/06/2026</span><span>$418,304 – $454,276</span></li><li><span>10/09/2026</span><span>$419,994 – $454,719</span></li><li><span>10/09/2026</span><span>$419,994 – $454,719</span></li><li><span>10/09/2026</span><span>$419,994 – $454,719</span></li><li><span>09/19/2026</span><span>$419,994 – $454,719</span></li><li><span>09/19/2026</span><span>$362,288 – $544,207</span></li></ul>
     </div>
     
     <div class="comps-block">
@@ -413,7 +414,19 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       var eqText = (Math.round(eqLow) === Math.round(eqHigh)) ? fmt(eqLow) : (fmt(eqLow) + ' – ' + fmt(eqHigh));
       document.getElementById('me-equity').textContent = eqText;
     })();
-    </script></div>
+    </script><details class="add-form" id="loan-info-details">
+      <summary>Correct your mortgage balance</summary>
+      <p class="section-intro">We're estimating your balance above from your original loan terms, which can't account for extra principal payments, a refinance, or PMI removal. Tell us your real current numbers from a recent statement and we'll track your equity against those instead.</p>
+      <form id="loan-info-form">
+        <input type="hidden" name="slug" value="scott-white-hgNVoj5HEW23uWBUkNrm4Q">
+        <label>Approximate current mortgage balance<input type="number" name="balance" placeholder="e.g. 285000"  required></label>
+        <label>Interest rate (optional)<input type="number" step="0.01" name="rate" placeholder="e.g. 6.5" ></label>
+        <label>Current monthly payment, principal + interest (optional)<input type="number" name="payment" placeholder="e.g. 2100" ></label>
+        <label>Anything else useful (optional)<input type="text" name="notes" placeholder="Lender name, recent refinance, etc." ></label>
+        <button type="submit">Submit</button>
+        <div class="add-form-msg" id="loan-info-msg" hidden></div>
+      </form>
+    </details></div>
 
     <h2>Whitestown Market Snapshot</h2>
     <p class="section-intro">How the broader Whitestown market is trending &middot; October 2026 vs. prior year &mdash; not specific to your home (see Your Home above for that).</p>
