@@ -3,6 +3,6 @@ VERSION:2.0
 PRODID:-//Scott White Transaction Portal//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:32 Markelville Ln\, Westfield\, IN 46074 Transaction Timeline
+X-WR-CALNAME:32 Markleville Ln\, Westfield\, IN 46074 Transaction Timeline
 X-PUBLISHED-TTL:PT12H
 END:VCALENDAR
