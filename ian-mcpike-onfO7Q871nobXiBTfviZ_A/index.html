@@ -46,6 +46,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .tdate{font-size:12.5px;color:var(--slate);margin-top:1px}
 .tstep.done .tlabel{color:var(--charcoal)}
 .note{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 16px;font-size:13.5px;color:var(--charcoal);line-height:1.55;margin-top:6px;box-shadow:var(--shadow)}
+.unsub-banner{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 16px;font-size:13px;color:var(--slate);line-height:1.5;margin-top:6px}
 .note .from{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);margin-bottom:6px}
 .doclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 .doc{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 14px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:box-shadow .15s ease,transform .15s ease}
@@ -310,6 +311,11 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     <div class="photo-wrap"><img class="hero" src="photo/pine_cir.jpg" alt="1531 Pine Cir, Franklin, IN listing photo"></div>
     <div class="sub">1531 Pine Cir, Franklin, IN</div>
 
+    <div class="unsub-banner" id="unsub-banner" hidden>
+      You&rsquo;re unsubscribed from the monthly home value email. This page itself still works the same as always &mdash;
+      come back and check it anytime. (Changed your mind? Just email Scott and ask to be re-added.)
+    </div>
+
     
 
     <div class="summary">Closed! Purchased 1531 Pine Cir (new construction, Lennar) on 09/25/2026 for $420,000.</div>
@@ -319,6 +325,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     <div class="home-value">
       <div class="hv-estimate">$400,479 &ndash; $432,288</div>
       <div class="hv-sub">Estimated value today, based on 24 recent comparable sales &middot; updated 11/07/2026</div>
+      
       <div class="hv-gain">You closed at $420,000</div>
       <div class="hv-note">Estimated via a price/sqft trend fit across 24 recent &quot;Kingsbridge&quot; sold comps (last 6 months) -- tighter than a blind-radius search since every comp is a verified same-subdivision MLS sale.</div>
       
@@ -387,7 +394,19 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       var eqText = (Math.round(eqLow) === Math.round(eqHigh)) ? fmt(eqLow) : (fmt(eqLow) + ' – ' + fmt(eqHigh));
       document.getElementById('me-equity').textContent = eqText;
     })();
-    </script></div>
+    </script><details class="add-form" id="loan-info-details">
+      <summary>Correct your mortgage balance</summary>
+      <p class="section-intro">We're estimating your balance above from your original loan terms, which can't account for extra principal payments, a refinance, or PMI removal. Tell us your real current numbers from a recent statement and we'll track your equity against those instead.</p>
+      <form id="loan-info-form">
+        <input type="hidden" name="slug" value="ian-mcpike-onfO7Q871nobXiBTfviZ_A">
+        <label>Approximate current mortgage balance<input type="number" name="balance" placeholder="e.g. 285000"  required></label>
+        <label>Interest rate (optional)<input type="number" step="0.01" name="rate" placeholder="e.g. 6.5" ></label>
+        <label>Current monthly payment, principal + interest (optional)<input type="number" name="payment" placeholder="e.g. 2100" ></label>
+        <label>Anything else useful (optional)<input type="text" name="notes" placeholder="Lender name, recent refinance, etc." ></label>
+        <button type="submit">Submit</button>
+        <div class="add-form-msg" id="loan-info-msg" hidden></div>
+      </form>
+    </details></div>
 
     <h2>Franklin Market Snapshot</h2>
     <p class="section-intro">How the broader Franklin market is trending &middot; October 2026 vs. prior year &mdash; not specific to your home (see Your Home above for that).</p>
@@ -565,17 +584,17 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     <h2>Key Contacts</h2><ul class="contact-list"><li class="contact-row"><div class="contact-top"><span class="contact-name">Scott White</span><span class="contact-role">Buyer&#x27;s Agent</span></div><div class="contact-company">@properties</div><div class="contact-links"><a href="tel:317-345-0573">317-345-0573</a><a href="mailto:swhite@atpropertiesind.com">swhite@atpropertiesind.com</a><a href="https://www.boughtwithscott.com" target="_blank" rel="noopener">https://www.boughtwithscott.com</a></div></li><li class="contact-row"><div class="contact-top"><span class="contact-name">Jason Lee</span><span class="contact-role">Home Inspector</span></div><div class="contact-company">Door to Door Inspections</div><div class="contact-links"><a href="tel:317-500-0903">317-500-0903</a><a href="mailto:jason.lee@d2dinspections.com">jason.lee@d2dinspections.com</a><a href="https://www.d2dinspections.com" target="_blank" rel="noopener">https://www.d2dinspections.com</a></div></li><li class="contact-row"><div class="contact-top"><span class="contact-name">Patti Henry</span><span class="contact-role">Transaction Coordinator</span></div><div class="contact-company">@properties</div><div class="contact-links"><a href="tel:317-489-3441">317-489-3441</a><a href="mailto:patti@atpropertiesind.com">patti@atpropertiesind.com</a></div></li><li class="contact-row"><div class="contact-top"><span class="contact-name">Christine Hardy</span><span class="contact-role">Builder Concierge</span></div><div class="contact-company">Lennar</div><div class="contact-links"><a href="tel:317-775-5042">317-775-5042</a><a href="mailto:Christine.Hardy@Lennar.com">Christine.Hardy@Lennar.com</a></div></li><li class="contact-row"><div class="contact-top"><span class="contact-name">Lennar Title</span><span class="contact-role">Title/Escrow Officer</span></div></li><li class="contact-row"><div class="contact-top"><span class="contact-name">Lona Schroeder</span><span class="contact-role">Buyer&#x27;s Loan Officer</span></div><div class="contact-company">Lennar Mortgage</div><div class="contact-links"><a href="mailto:lonaschroeder@lennarmortgage.com">lonaschroeder@lennarmortgage.com</a></div></li></ul>
 
-    <h2>Documents</h2><div class="doclist"><a class="doc" href="https://account.docusign.com/" target="_blank" rel="noopener"><span class="meta"><span class="label">Purchase Contract (Signed)</span></span><span class="badge">Via DocuSign <span class="arrow">&rarr;</span></span></a><a class="doc" href="documents/bldr_option_summary.pdf" target="_blank" rel="noopener"><span class="meta"><span class="label">Builder Option Summary</span></span><span class="badge">Document <span class="arrow">&rarr;</span></span></a><a class="doc" href="documents/closing_dates.pdf" target="_blank" rel="noopener"><span class="meta"><span class="label">Closing Dates &amp; Times</span></span><span class="badge">Document <span class="arrow">&rarr;</span></span></a><a class="doc" href="documents/vendor_recommendations.pdf" target="_blank" rel="noopener"><span class="meta"><span class="label">Vendor Recommendations</span></span><span class="badge">Document <span class="arrow">&rarr;</span></span></a></div>
+    <h2>Documents</h2><div class="doclist"><a class="doc" href="https://account.docusign.com/" target="_blank" rel="noopener"><span class="meta"><span class="label">Purchase Contract (Signed)</span></span><span class="badge">Via DocuSign <span class="arrow">&rarr;</span></span></a><a class="doc" href="documents/bldr_option_summary.pdf" target="_blank" rel="noopener"><span class="meta"><span class="label">Builder Option Summary</span></span><span class="badge">Document <span class="arrow">&rarr;</span></span></a><a class="doc" href="documents/closing_dates.pdf" target="_blank" rel="noopener"><span class="meta"><span class="label">Closing Dates &amp; Times</span></span><span class="badge">Document <span class="arrow">&rarr;</span></span></a></div>
 
     <h2>Utilities</h2><p class="section-intro">On file for this home &mdash; handy reference if you ever need to call about service, a switch, or an outage.</p><ul class="util-list"><li class="util-row"><div class="util-top"><span class="util-provider">CenterPoint Energy</span><span class="util-cat">Gas</span></div><div class="util-links"><a href="tel:800-227-1376">800-227-1376</a></div></li><li class="util-row"><div class="util-top"><span class="util-provider">Duke Energy Indiana</span><span class="util-cat">Electric</span></div><div class="util-links"><a href="tel:800-521-2232">800-521-2232</a></div></li><li class="util-row"><div class="util-top"><span class="util-provider">Indiana American Water</span><span class="util-cat">Water</span></div><div class="util-links"><a href="tel:800-492-8373">800-492-8373</a></div></li><li class="util-row"><div class="util-top"><span class="util-provider">City of Franklin</span><span class="util-cat">Sewer</span></div><div class="util-links"><a href="tel:317-736-3640">317-736-3640</a></div></li><li class="util-row"><div class="util-top"><span class="util-provider">Metronet</span><span class="util-cat">Internet</span></div><div class="util-notes">AT&amp;T and Xfinity/Comcast also available</div></li></ul>
 
-    <div class="note"><div class="from">Note from Scott White</div>Loan amount (,392, FHA) and rate (3.75%, exact match from prepaid per-diem interest $42.37/day -- likely builder-subsidized, Lennar Mortgage) both from the Closing Disclosure/ALTA Settlement Statement. Term assumed 30yr (standard for FHA).</div>
+    
 
-    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">If you haven't already, file a Homestead Deduction with your county auditor &mdash; it isn't automatic and can reduce your taxable assessed value by the lesser of 60% or $48,000. A one-time filing, and easy to forget after closing.</div><a class="resource-cta" href="https://johnsoncounty.in.gov/topic/index.php?topicid=68&amp;structureid=11" target="_blank" rel="noopener">File with the Johnson County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://johnsoncounty.in.gov/topic/index.php?topicid=10&amp;structureid=14" target="_blank" rel="noopener">Visit the Johnson County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, Scott White is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
+    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Planning a home improvement project?</div><div class="resource-body">Scott White's partnered with ProjectStory to make getting quotes painless &mdash; record a quick video walkthrough of the project and get matched with local, vetted pros for fast estimates. No scheduling site visits just to get a ballpark number.</div><a class="resource-cta" href="https://www.myprojectstory.com/scottwhite" target="_blank" rel="noopener">Get a Free Quote <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">Your title company normally files this with the county auditor on your behalf as part of closing &mdash; it can reduce your taxable assessed value by the lesser of 60% or $48,000. It's not automatic though, so it's worth confirming directly with the county that it was actually recorded for your property.</div><a class="resource-cta" href="https://johnsoncounty.in.gov/topic/index.php?topicid=68&amp;structureid=11" target="_blank" rel="noopener">Confirm with the Johnson County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://johnsoncounty.in.gov/topic/index.php?topicid=10&amp;structureid=14" target="_blank" rel="noopener">Visit the Johnson County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, Scott White is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
 
     <div class="footnote">
       Scott White &middot; @properties<br>
-      Last updated 2026-11-07. This page is private to you &mdash; please don't share the link.
+      Last updated 2026-11-08. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
 <script>
@@ -605,6 +624,17 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       btn.textContent = 'Submit'; btn.disabled = false;
     });
   });
+})();
+</script>
+<script>
+(function(){
+  if (!/[?&]unsubscribe=1\b/.test(location.search)) return;
+  var banner = document.getElementById('unsub-banner');
+  var payload = {slug: 'ian-mcpike-onfO7Q871nobXiBTfviZ_A', kind: 'value_email_optout', section: 'home-equity'};
+  fetch('https://transaction-portal-submissions.scottwhite2011.workers.dev', {
+    method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)
+  }).catch(function(){ /* best-effort, see docstring */ });
+  if (banner) banner.hidden = false;
 })();
 </script>
 </body>
