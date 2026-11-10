@@ -46,6 +46,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .tdate{font-size:12.5px;color:var(--slate);margin-top:1px}
 .tstep.done .tlabel{color:var(--charcoal)}
 .note{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 16px;font-size:13.5px;color:var(--charcoal);line-height:1.55;margin-top:6px;box-shadow:var(--shadow)}
+.unsub-banner{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 16px;font-size:13px;color:var(--slate);line-height:1.5;margin-top:6px}
 .note .from{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);margin-bottom:6px}
 .doclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 .doc{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 14px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:box-shadow .15s ease,transform .15s ease}
@@ -310,15 +311,21 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     
     <div class="sub">2902 S Brill Rd, Indianapolis, IN 46239</div>
 
+    <div class="unsub-banner" id="unsub-banner" hidden>
+      You&rsquo;re unsubscribed from the monthly home value email. This page itself still works the same as always &mdash;
+      come back and check it anytime. (Changed your mind? Just email Scott and ask to be re-added.)
+    </div>
+
     
 
     
-    <div class="stats-row"><div class="stat"><div class="v">$200,959</div><div class="l">Est. Value</div></div><div class="stat"><div class="v">—</div><div class="l">Est. Equity</div></div></div>
+    <div class="stats-row"><div class="stat"><div class="v">$200,959</div><div class="l">Est. Value</div></div><div class="stat"><div class="v">24%</div><div class="l">Est. Equity</div></div></div>
 
     <h2>Your Home</h2>
     <div class="home-value">
       <div class="hv-estimate">$179,423 &ndash; $237,192</div>
       <div class="hv-sub">Estimated value today, based on 45 recent comparable sales &middot; updated 11/07/2026</div>
+      
       <div class="hv-gain positive">&#9650; Up $43,959 since you closed at $157,000</div>
       <div class="hv-note">Not enough recent same-subdivision MLS sales for a tighter estimate -- using MLS&#x27;s broader-radius blended estimate instead. Homebot $221,076 weighted into this estimate.</div>
       <ul class="hv-history"><li><span>11/07/2026</span><span>$149,248 – $207,017</span></li></ul>
@@ -341,17 +348,29 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       <div class="rpr-ref-note">Homebot's own estimate, as of 11/07/2026. Shown for reference only &mdash; the estimate above (based on recent comparable sales) is what drives the equity figures on this page.</div>
     </div>
     
-    <div class="home-value"><details class="add-form" id="loan-info-details" open>
-      <summary>Don&rsquo;t have your loan on file? Tell us your numbers</summary>
-      <p class="section-intro">We don't have your actual loan on file for this home &mdash; pull up a recent
-        mortgage statement and fill in your approximate numbers, and we'll track your equity against those
-        instead. Won't be as precise as the real thing, but it beats nothing.</p>
+    <div class="home-value"><div class="me-row">
+        <span class="me-label">Your Reported Mortgage Balance</span>
+        <span class="me-val">$152,290</span>
+      </div>
+      
+      
+      <div class="me-row highlight">
+        <span class="me-label">Est. Equity</span>
+        <span class="me-val">$27,133 &ndash; $84,902</span>
+      </div>
+      <div class="me-foot">Based on what you told us on 11/10/2026 &mdash;
+        if your real balance drifts from this estimate (extra principal payments, a refinance, etc.),
+        refresh it below any time and that always takes over from here.</div>
+      <div class="me-foot">You noted: Original loan amount at closing (10/15/2021) was $152,290. Rate/payment not confirmed.</div>
+      <details class="add-form" id="loan-info-details">
+      <summary>Update your mortgage info</summary>
+      <p class="section-intro">Pull up a recent mortgage statement and fill in your current numbers if ours have drifted -- this always takes over from whatever's shown above.</p>
       <form id="loan-info-form">
         <input type="hidden" name="slug" value="micha-moore-qWgiyQaBxofrjD0bFmi-jA">
-        <label>Approximate current mortgage balance<input type="number" name="balance" placeholder="e.g. 285000"  required></label>
+        <label>Approximate current mortgage balance<input type="number" name="balance" placeholder="e.g. 285000" value="152290" required></label>
         <label>Interest rate (optional)<input type="number" step="0.01" name="rate" placeholder="e.g. 6.5" ></label>
         <label>Current monthly payment, principal + interest (optional)<input type="number" name="payment" placeholder="e.g. 2100" ></label>
-        <label>Anything else useful (optional)<input type="text" name="notes" placeholder="Lender name, recent refinance, etc." ></label>
+        <label>Anything else useful (optional)<input type="text" name="notes" placeholder="Lender name, recent refinance, etc." value="Original loan amount at closing (10/15/2021) was $152,290. Rate/payment not confirmed."></label>
         <button type="submit">Submit</button>
         <div class="add-form-msg" id="loan-info-msg" hidden></div>
       </form>
@@ -551,11 +570,11 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     
 
-    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">If you haven't already, file a Homestead Deduction with your county auditor &mdash; it isn't automatic and can reduce your taxable assessed value by the lesser of 60% or $48,000. A one-time filing, and easy to forget after closing.</div></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
+    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Planning a home improvement project?</div><div class="resource-body">your agent's partnered with ProjectStory to make getting quotes painless &mdash; record a quick video walkthrough of the project and get matched with local, vetted pros for fast estimates. No scheduling site visits just to get a ballpark number.</div><a class="resource-cta" href="https://www.myprojectstory.com/scottwhite" target="_blank" rel="noopener">Get a Free Quote <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">Your title company normally files this with the county auditor on your behalf as part of closing &mdash; it can reduce your taxable assessed value by the lesser of 60% or $48,000. It's not automatic though, so it's worth confirming directly with the county that it was actually recorded for your property.</div><a class="resource-cta" href="https://www.indy.gov/agency/marion-county-auditors-office" target="_blank" rel="noopener">Confirm with the Marion County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
 
     <div class="footnote">
       Scott White &middot; @properties<br>
-      Last updated 2026-11-07. This page is private to you &mdash; please don't share the link.
+      Last updated 2026-11-10. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
 <script>
@@ -585,6 +604,17 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       btn.textContent = 'Submit'; btn.disabled = false;
     });
   });
+})();
+</script>
+<script>
+(function(){
+  if (!/[?&]unsubscribe=1\b/.test(location.search)) return;
+  var banner = document.getElementById('unsub-banner');
+  var payload = {slug: 'micha-moore-qWgiyQaBxofrjD0bFmi-jA', kind: 'value_email_optout', section: 'home-equity'};
+  fetch('https://transaction-portal-submissions.scottwhite2011.workers.dev', {
+    method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)
+  }).catch(function(){ /* best-effort, see docstring */ });
+  if (banner) banner.hidden = false;
 })();
 </script>
 </body>
