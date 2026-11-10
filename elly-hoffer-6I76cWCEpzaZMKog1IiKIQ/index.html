@@ -46,6 +46,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .tdate{font-size:12.5px;color:var(--slate);margin-top:1px}
 .tstep.done .tlabel{color:var(--charcoal)}
 .note{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 16px;font-size:13.5px;color:var(--charcoal);line-height:1.55;margin-top:6px;box-shadow:var(--shadow)}
+.unsub-banner{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 16px;font-size:13px;color:var(--slate);line-height:1.5;margin-top:6px}
 .note .from{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);margin-bottom:6px}
 .doclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 .doc{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 14px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:box-shadow .15s ease,transform .15s ease}
@@ -310,15 +311,21 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     
     <div class="sub">1489 Hardwood Dr, Sheridan, IN 46069</div>
 
+    <div class="unsub-banner" id="unsub-banner" hidden>
+      You&rsquo;re unsubscribed from the monthly home value email. This page itself still works the same as always &mdash;
+      come back and check it anytime. (Changed your mind? Just email Scott and ask to be re-added.)
+    </div>
+
     
 
     
-    <div class="stats-row"><div class="stat"><div class="v">$290,014</div><div class="l">Est. Value</div></div><div class="stat"><div class="v">—</div><div class="l">Est. Equity</div></div></div>
+    <div class="stats-row"><div class="stat"><div class="v">$290,014</div><div class="l">Est. Value</div></div><div class="stat"><div class="v">0%</div><div class="l">Est. Equity</div></div></div>
 
     <h2>Your Home</h2>
     <div class="home-value">
       <div class="hv-estimate">$273,913 &ndash; $306,114</div>
       <div class="hv-sub">Estimated value today, based on 18 recent comparable sales &middot; updated 11/07/2026</div>
+      
       <div class="hv-gain">You closed at $313,313</div>
       <div class="hv-note">Estimated via a price/sqft trend fit across 18 recent &quot;Maple Run&quot; sold comps (last 6 months) -- tighter than a blind-radius search since every comp is a verified same-subdivision MLS sale. Homebot $284,337 weighted into this estimate.</div>
       <ul class="hv-history"><li><span>11/06/2026</span><span>$278,671 – $321,633</span></li></ul>
@@ -341,11 +348,62 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       <div class="rpr-ref-note">Homebot's own estimate, as of 11/06/2026. Shown for reference only &mdash; the estimate above (based on recent comparable sales) is what drives the equity figures on this page.</div>
     </div>
     
-    <div class="home-value"><details class="add-form" id="loan-info-details" open>
-      <summary>Don&rsquo;t have your loan on file? Tell us your numbers</summary>
-      <p class="section-intro">We don't have your actual loan on file for this home &mdash; pull up a recent
-        mortgage statement and fill in your approximate numbers, and we'll track your equity against those
-        instead. Won't be as precise as the real thing, but it beats nothing.</p>
+    <div class="home-value"><div class="mortgage-equity" data-loan-amount="303913.0" data-rate="5.49"
+         data-term-months="360" data-first-payment="2026-02-01"
+         data-value-low="273913.48408128833" data-value-high="306113.7757965261">
+      <div class="me-row">
+        <span class="me-label">Est. Remaining Mortgage Balance</span>
+        <span class="me-val" id="me-balance">&hellip;</span>
+      </div>
+      <div class="progress-wrap" style="margin:10px 0 14px">
+        <div class="progress-label"><span id="me-paid-label">&nbsp;</span><span id="me-paid-pct">&nbsp;</span></div>
+        <div class="progress-track"><div class="progress-fill" id="me-progress-fill" style="width:0%"></div></div>
+      </div>
+      <div class="me-row highlight">
+        <span class="me-label">Est. Equity</span>
+        <span class="me-val" id="me-equity">&hellip;</span>
+      </div>
+      <div class="me-foot">Estimated from your original loan terms (standard amortization &mdash; doesn't
+        account for extra principal payments, refinancing, or PMI removal) combined with the value estimate
+        above.</div>
+    </div>
+    <script>
+    (function(){
+      var el = document.querySelector('.mortgage-equity');
+      if (!el) return;
+      var P = parseFloat(el.getAttribute('data-loan-amount'));
+      var annualRate = parseFloat(el.getAttribute('data-rate'));
+      var N = parseInt(el.getAttribute('data-term-months'), 10);
+      var first = new Date(el.getAttribute('data-first-payment') + 'T00:00:00');
+      var valueLow = parseFloat(el.getAttribute('data-value-low'));
+      var valueHigh = parseFloat(el.getAttribute('data-value-high'));
+      var today = new Date(); today.setHours(0,0,0,0);
+
+      var n = (today.getFullYear() - first.getFullYear()) * 12 + (today.getMonth() - first.getMonth());
+      if (today.getDate() < first.getDate()) n -= 1;
+      n = Math.max(0, Math.min(N, n));
+
+      var r = annualRate / 100 / 12;
+      var balance = (r === 0)
+        ? P * (1 - n / N)
+        : P * (Math.pow(1 + r, N) - Math.pow(1 + r, n)) / (Math.pow(1 + r, N) - 1);
+      balance = Math.max(0, balance);
+
+      function fmt(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
+
+      document.getElementById('me-balance').textContent = fmt(balance);
+      var pct = Math.round((1 - balance / P) * 100);
+      document.getElementById('me-paid-label').textContent = 'Loan paid off';
+      document.getElementById('me-paid-pct').textContent = pct + '%';
+      document.getElementById('me-progress-fill').style.width = Math.min(100, Math.max(0, pct)) + '%';
+
+      var eqLow = valueLow - balance, eqHigh = valueHigh - balance;
+      var eqText = (Math.round(eqLow) === Math.round(eqHigh)) ? fmt(eqLow) : (fmt(eqLow) + ' – ' + fmt(eqHigh));
+      document.getElementById('me-equity').textContent = eqText;
+    })();
+    </script><details class="add-form" id="loan-info-details">
+      <summary>Correct your mortgage balance</summary>
+      <p class="section-intro">We're estimating your balance above from your original loan terms, which can't account for extra principal payments, a refinance, or PMI removal. Tell us your real current numbers from a recent statement and we'll track your equity against those instead.</p>
       <form id="loan-info-form">
         <input type="hidden" name="slug" value="elly-hoffer-6I76cWCEpzaZMKog1IiKIQ">
         <label>Approximate current mortgage balance<input type="number" name="balance" placeholder="e.g. 285000"  required></label>
@@ -461,7 +519,75 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     })();
     </script>
 
-    
+    <h2>Is Refinancing Worth It?</h2>
+    <p class="section-intro">See what a different rate would do to your payment, based on your current estimated balance.</p>
+    <div class="calc-card" data-loan-amount="303913.0" data-rate="5.49"
+         data-term-months="360" data-first-payment="2026-02-01" id="refi-calc">
+      <div class="calc-row">
+        <label for="refi-rate">Hypothetical New Rate (%)</label>
+        <input type="number" id="refi-rate" value="6.0" min="0" step="0.125">
+      </div>
+      <div class="calc-row">
+        <label for="refi-term">New Loan Term</label>
+        <select id="refi-term">
+          <option value="360">30-year fixed</option>
+          <option value="180">15-year fixed</option>
+        </select>
+      </div>
+      <div class="calc-result">
+        <div class="calc-result-row"><span class="cr-label">Current Est. Payment (P&amp;I)</span><span class="cr-val" id="refi-current">&hellip;</span></div>
+        <div class="calc-result-row"><span class="cr-label">New Est. Payment (P&amp;I)</span><span class="cr-val" id="refi-new">&hellip;</span></div>
+        <div class="calc-result-row"><span class="cr-label">Monthly Difference</span><span class="cr-val" id="refi-diff">&hellip;</span></div>
+      </div>
+      <div class="calc-disclaimer">Estimate only &mdash; principal &amp; interest on your current remaining balance, doesn't include closing costs, escrow changes, or PMI. For real numbers, talk to Kole McClain.</div>
+      <a class="calc-cta" href="mailto:kmcclain@uhm.com?subject=Refinance%20Question">Ask Kole McClain about refinancing <span class="arrow">&rarr;</span></a>
+    </div>
+    <script>
+    (function(){
+      var el = document.getElementById('refi-calc');
+      var P = parseFloat(el.getAttribute('data-loan-amount'));
+      var origRate = parseFloat(el.getAttribute('data-rate'));
+      var N = parseInt(el.getAttribute('data-term-months'), 10);
+      var first = new Date(el.getAttribute('data-first-payment') + 'T00:00:00');
+      var today = new Date(); today.setHours(0,0,0,0);
+
+      var n = (today.getFullYear() - first.getFullYear()) * 12 + (today.getMonth() - first.getMonth());
+      if (today.getDate() < first.getDate()) n -= 1;
+      n = Math.max(0, Math.min(N, n));
+
+      function pmt(principal, annualRatePct, termMonths) {
+        var r = annualRatePct / 100 / 12;
+        if (r === 0) return principal / termMonths;
+        return principal * (r * Math.pow(1 + r, termMonths)) / (Math.pow(1 + r, termMonths) - 1);
+      }
+
+      var origR = origRate / 100 / 12;
+      var balance = (origR === 0)
+        ? P * (1 - n / N)
+        : P * (Math.pow(1 + origR, N) - Math.pow(1 + origR, n)) / (Math.pow(1 + origR, N) - 1);
+      balance = Math.max(0, balance);
+
+      var currentPayment = pmt(P, origRate, N);
+
+      function fmt(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
+
+      var rateInput = document.getElementById('refi-rate'), termSelect = document.getElementById('refi-term');
+      var curEl = document.getElementById('refi-current'), newEl = document.getElementById('refi-new'), diffEl = document.getElementById('refi-diff');
+
+      function recalc() {
+        var newRate = parseFloat(rateInput.value) || 0;
+        var newTerm = parseInt(termSelect.value, 10);
+        var newPayment = pmt(balance, newRate, newTerm);
+        curEl.textContent = fmt(currentPayment);
+        newEl.textContent = fmt(newPayment);
+        var diff = currentPayment - newPayment;
+        diffEl.textContent = (diff >= 0 ? '-' : '+') + fmt(Math.abs(diff)) + '/mo';
+        diffEl.className = 'cr-val ' + (diff >= 0 ? 'good' : 'bad');
+      }
+      [rateInput, termSelect].forEach(function(el2) { el2.addEventListener('input', recalc); el2.addEventListener('change', recalc); });
+      recalc();
+    })();
+    </script>
 
     
 
@@ -469,13 +595,13 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     
 
-    <div class="note"><div class="from">Note from Scott White</div>BACKFILLED FROM CRM: single unambiguous Sold MLS record found.</div>
+    
 
-    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">If you haven't already, file a Homestead Deduction with your county auditor &mdash; it isn't automatic and can reduce your taxable assessed value by the lesser of 60% or $48,000. A one-time filing, and easy to forget after closing.</div><a class="resource-cta" href="https://www.hamiltoncounty.in.gov/368/Property-Tax-Deductions-Credits" target="_blank" rel="noopener">File with the Hamilton County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://www.hamiltoncounty.in.gov/405/Assessment-Appeal-Process" target="_blank" rel="noopener">Visit the Hamilton County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
+    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Planning a home improvement project?</div><div class="resource-body">your agent's partnered with ProjectStory to make getting quotes painless &mdash; record a quick video walkthrough of the project and get matched with local, vetted pros for fast estimates. No scheduling site visits just to get a ballpark number.</div><a class="resource-cta" href="https://www.myprojectstory.com/scottwhite" target="_blank" rel="noopener">Get a Free Quote <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">Your title company normally files this with the county auditor on your behalf as part of closing &mdash; it can reduce your taxable assessed value by the lesser of 60% or $48,000. It's not automatic though, so it's worth confirming directly with the county that it was actually recorded for your property.</div><a class="resource-cta" href="https://www.hamiltoncounty.in.gov/368/Property-Tax-Deductions-Credits" target="_blank" rel="noopener">Confirm with the Hamilton County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://www.hamiltoncounty.in.gov/405/Assessment-Appeal-Process" target="_blank" rel="noopener">Visit the Hamilton County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
 
     <div class="footnote">
       Scott White &middot; @properties<br>
-      Last updated 2026-11-07. This page is private to you &mdash; please don't share the link.
+      Last updated 2026-11-10. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
 <script>
@@ -505,6 +631,17 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       btn.textContent = 'Submit'; btn.disabled = false;
     });
   });
+})();
+</script>
+<script>
+(function(){
+  if (!/[?&]unsubscribe=1\b/.test(location.search)) return;
+  var banner = document.getElementById('unsub-banner');
+  var payload = {slug: 'elly-hoffer-6I76cWCEpzaZMKog1IiKIQ', kind: 'value_email_optout', section: 'home-equity'};
+  fetch('https://transaction-portal-submissions.scottwhite2011.workers.dev', {
+    method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)
+  }).catch(function(){ /* best-effort, see docstring */ });
+  if (banner) banner.hidden = false;
 })();
 </script>
 </body>
