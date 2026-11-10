@@ -46,6 +46,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .tdate{font-size:12.5px;color:var(--slate);margin-top:1px}
 .tstep.done .tlabel{color:var(--charcoal)}
 .note{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 16px;font-size:13.5px;color:var(--charcoal);line-height:1.55;margin-top:6px;box-shadow:var(--shadow)}
+.unsub-banner{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 16px;font-size:13px;color:var(--slate);line-height:1.5;margin-top:6px}
 .note .from{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);margin-bottom:6px}
 .doclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 .doc{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 14px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:box-shadow .15s ease,transform .15s ease}
@@ -326,8 +327,8 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     <div class="staff-section">
       <h3>Note From Agent</h3>
-      <div class="staff-current">Key dates and contacts for 5378 Rose Drive are above. Survey was waived and no home warranty is included per the purchase agreement. The seller will be signing remotely, so Foundation Title has been notified to prepare for that. Per the signed Purchase Agreement, closing is set for 11/13/2026 OR within 3 days after final loan approval, whichever is later -- so a late loan approval could push closing out past 11/13. Buyer broker compensation is 3%. The property is in the Ashburn HOA; the PA required the Seller to deliver the HOA governing documents within 3 days of acceptance (by 10/25/2026) -- Patti actually sent the Ashburn CC&amp;Rs on 10/26/2026, one day late, which starts the Buyer&#x27;s own 3-day written-objection window (due 10/29/2026, see milestone). Earnest money ($5,000) was due within 2 days of acceptance (10/24/2026) but wasn&#x27;t actually deposited until 10/27/2026 per CertifID confirmation -- a few days late, but received and on file with Foundation Title. The appraisal came back at $800,000, $20,000 over the $780,000 contract price.</div>
-      <textarea id="note-input">Key dates and contacts for 5378 Rose Drive are above. Survey was waived and no home warranty is included per the purchase agreement. The seller will be signing remotely, so Foundation Title has been notified to prepare for that. Per the signed Purchase Agreement, closing is set for 11/13/2026 OR within 3 days after final loan approval, whichever is later -- so a late loan approval could push closing out past 11/13. Buyer broker compensation is 3%. The property is in the Ashburn HOA; the PA required the Seller to deliver the HOA governing documents within 3 days of acceptance (by 10/25/2026) -- Patti actually sent the Ashburn CC&amp;Rs on 10/26/2026, one day late, which starts the Buyer&#x27;s own 3-day written-objection window (due 10/29/2026, see milestone). Earnest money ($5,000) was due within 2 days of acceptance (10/24/2026) but wasn&#x27;t actually deposited until 10/27/2026 per CertifID confirmation -- a few days late, but received and on file with Foundation Title. The appraisal came back at $800,000, $20,000 over the $780,000 contract price.</textarea>
+      <div class="staff-current">(none set)</div>
+      <textarea id="note-input"></textarea>
       <button class="staff-btn" id="note-btn" onclick="submitStaff('note_set', {text: document.getElementById('note-input').value}, document.getElementById('note-msg'), document.getElementById('note-btn'))">Save</button>
       <div class="add-form-msg" id="note-msg" hidden></div>
     </div>
@@ -384,7 +385,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     <div class="staff-section">
       <h3>Documents</h3>
-      <ul class="staff-list"><li><span class="staff-item-label">Purchase Agreement (Signed)</span><span class="staff-item-meta">file</span></li><li><span class="staff-item-label">Counter Offer 1 (Signed)</span><span class="staff-item-meta">file</span></li><li><span class="staff-item-label">Counter Offer 2 (Signed)</span><span class="staff-item-meta">file</span></li><li><span class="staff-item-label">Buyer&#x27;s Inspection Response (Accepted)</span><span class="staff-item-meta">link</span></li></ul>
+      <ul class="staff-list"><li><span class="staff-item-label">Purchase Agreement (Signed)</span><span class="staff-item-meta">file</span></li><li><span class="staff-item-label">Counter Offer 1 (Signed)</span><span class="staff-item-meta">file</span></li><li><span class="staff-item-label">Counter Offer 2 (Signed)</span><span class="staff-item-meta">file</span></li><li><span class="staff-item-label">Buyer&#x27;s Inspection Response (Accepted)</span><span class="staff-item-meta">link</span></li><li><span class="staff-item-label">ALTA Settlement Statement</span><span class="staff-item-meta">link</span></li></ul>
       <div class="staff-row">
         <label>Label<input type="text" id="dl-label" placeholder="e.g. Purchase Agreement (Signed)"></label>
         <label>DocuSign / External URL<input type="text" id="dl-url"></label>
