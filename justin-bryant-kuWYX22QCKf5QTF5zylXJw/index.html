@@ -46,6 +46,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .tdate{font-size:12.5px;color:var(--slate);margin-top:1px}
 .tstep.done .tlabel{color:var(--charcoal)}
 .note{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 16px;font-size:13.5px;color:var(--charcoal);line-height:1.55;margin-top:6px;box-shadow:var(--shadow)}
+.unsub-banner{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 16px;font-size:13px;color:var(--slate);line-height:1.5;margin-top:6px}
 .note .from{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);margin-bottom:6px}
 .doclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 .doc{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 14px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:box-shadow .15s ease,transform .15s ease}
@@ -310,15 +311,21 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     <div class="photo-wrap"><img class="hero" src="photo/bryant_salisbury.jpg" alt="6070 Salisbury St, Zionsville, IN 46077 listing photo"></div>
     <div class="sub">6070 Salisbury St, Zionsville, IN 46077</div>
 
+    <div class="unsub-banner" id="unsub-banner" hidden>
+      You&rsquo;re unsubscribed from the monthly home value email. This page itself still works the same as always &mdash;
+      come back and check it anytime. (Changed your mind? Just email Scott and ask to be re-added.)
+    </div>
+
     
 
     <div class="summary">Closed! Bought 07/27/2026 for $907,879. New construction with David Weekley Homes in Wild Air -- congratulations on your new home!</div>
-    <div class="stats-row"><div class="stat"><div class="v">$1,169,810</div><div class="l">Est. Value</div></div><div class="stat"><div class="v">—</div><div class="l">Est. Equity</div></div></div>
+    <div class="stats-row"><div class="stat"><div class="v">$1,169,810</div><div class="l">Est. Value</div></div><div class="stat"><div class="v">42%</div><div class="l">Est. Equity</div></div></div>
 
     <h2>Your Home</h2>
     <div class="home-value">
       <div class="hv-estimate">$878,610 &ndash; $1,461,010</div>
       <div class="hv-sub">Estimated value today, based on 7 recent comparable sales &middot; updated 11/07/2026</div>
+      
       <div class="hv-gain positive">&#9650; Up $261,931 since you closed at $907,879</div>
       <div class="hv-note">Estimated via a price/sqft trend fit across 7 recent &quot;Wild Air&quot; sold comps (last 6 months) -- tighter than a blind-radius search since every comp is a verified same-subdivision MLS sale. Homebot $1,060,000 weighted into this estimate.</div>
       
@@ -341,17 +348,29 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       <div class="rpr-ref-note">Homebot's own estimate, as of 11/06/2026. Shown for reference only &mdash; the estimate above (based on recent comparable sales) is what drives the equity figures on this page.</div>
     </div>
     
-    <div class="home-value"><details class="add-form" id="loan-info-details" open>
-      <summary>Don&rsquo;t have your loan on file? Tell us your numbers</summary>
-      <p class="section-intro">We don't have your actual loan on file for this home &mdash; pull up a recent
-        mortgage statement and fill in your approximate numbers, and we'll track your equity against those
-        instead. Won't be as precise as the real thing, but it beats nothing.</p>
+    <div class="home-value"><div class="me-row">
+        <span class="me-label">Your Reported Mortgage Balance</span>
+        <span class="me-val">$680,909</span>
+      </div>
+      
+      
+      <div class="me-row highlight">
+        <span class="me-label">Est. Equity</span>
+        <span class="me-val">$197,701 &ndash; $780,101</span>
+      </div>
+      <div class="me-foot">Based on what you told us on 11/10/2026 &mdash;
+        if your real balance drifts from this estimate (extra principal payments, a refinance, etc.),
+        refresh it below any time and that always takes over from here.</div>
+      <div class="me-foot">You noted: Original loan amount at closing (07/27/2026) was $680,909. Rate/term not provided.</div>
+      <details class="add-form" id="loan-info-details">
+      <summary>Update your mortgage info</summary>
+      <p class="section-intro">Pull up a recent mortgage statement and fill in your current numbers if ours have drifted -- this always takes over from whatever's shown above.</p>
       <form id="loan-info-form">
         <input type="hidden" name="slug" value="justin-bryant-kuWYX22QCKf5QTF5zylXJw">
-        <label>Approximate current mortgage balance<input type="number" name="balance" placeholder="e.g. 285000"  required></label>
+        <label>Approximate current mortgage balance<input type="number" name="balance" placeholder="e.g. 285000" value="680909" required></label>
         <label>Interest rate (optional)<input type="number" step="0.01" name="rate" placeholder="e.g. 6.5" ></label>
         <label>Current monthly payment, principal + interest (optional)<input type="number" name="payment" placeholder="e.g. 2100" ></label>
-        <label>Anything else useful (optional)<input type="text" name="notes" placeholder="Lender name, recent refinance, etc." ></label>
+        <label>Anything else useful (optional)<input type="text" name="notes" placeholder="Lender name, recent refinance, etc." value="Original loan amount at closing (07/27/2026) was $680,909. Rate/term not provided."></label>
         <button type="submit">Submit</button>
         <div class="add-form-msg" id="loan-info-msg" hidden></div>
       </form>
@@ -549,13 +568,13 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     <h2>Utilities</h2><p class="section-intro">On file for this home &mdash; handy reference if you ever need to call about service, a switch, or an outage.</p><ul class="util-list"><li class="util-row"><div class="util-top"><span class="util-provider">Boone County REMC</span><span class="util-cat">Electric</span></div><div class="util-links"><a href="tel:800-897-7362">800-897-7362</a></div></li><li class="util-row"><div class="util-top"><span class="util-provider">CenterPoint Energy</span><span class="util-cat">Gas</span></div><div class="util-links"><a href="tel:800-227-1376">800-227-1376</a></div><div class="util-notes">Verify -- may be propane in this part of Zionsville</div></li><li class="util-row"><div class="util-top"><span class="util-provider">Zionsville Water/Indiana American Water</span><span class="util-cat">Water</span></div><div class="util-notes">Verify provider with builder</div></li><li class="util-row"><div class="util-top"><span class="util-provider">Verify -- confirm with builder/HOA</span><span class="util-cat">Sewer</span></div></li></ul>
 
-    <div class="note"><div class="from">Note from Scott White</div>Congratulations, Justin and Allie -- 6070 Salisbury St in Wild Air officially closed 7/27 at $907,879! The home inspection came back clean on 7/10 ahead of your final walkthrough, financing went through Kole McClain at Union Home Mortgage, and closing was handled by Eileen Fisher at Stewart Title. Heather Vogt at David Weekley was great to work with throughout the build. Reach out any time if you need anything on the new place.</div>
+    
 
-    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">If you haven't already, file a Homestead Deduction with your county auditor &mdash; it isn't automatic and can reduce your taxable assessed value by the lesser of 60% or $48,000. A one-time filing, and easy to forget after closing.</div><a class="resource-cta" href="https://boonecounty.in.gov/offices/auditor" target="_blank" rel="noopener">File with the Boone County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://boonecounty.in.gov/offices/assessor/appeal-process/" target="_blank" rel="noopener">Visit the Boone County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
+    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Planning a home improvement project?</div><div class="resource-body">your agent's partnered with ProjectStory to make getting quotes painless &mdash; record a quick video walkthrough of the project and get matched with local, vetted pros for fast estimates. No scheduling site visits just to get a ballpark number.</div><a class="resource-cta" href="https://www.myprojectstory.com/scottwhite" target="_blank" rel="noopener">Get a Free Quote <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">Your title company normally files this with the county auditor on your behalf as part of closing &mdash; it can reduce your taxable assessed value by the lesser of 60% or $48,000. It's not automatic though, so it's worth confirming directly with the county that it was actually recorded for your property.</div><a class="resource-cta" href="https://boonecounty.in.gov/offices/auditor" target="_blank" rel="noopener">Confirm with the Boone County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://boonecounty.in.gov/offices/assessor/appeal-process/" target="_blank" rel="noopener">Visit the Boone County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
 
     <div class="footnote">
       Scott White &middot; @properties<br>
-      Last updated 2026-11-07. This page is private to you &mdash; please don't share the link.
+      Last updated 2026-11-10. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
 <script>
@@ -585,6 +604,17 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       btn.textContent = 'Submit'; btn.disabled = false;
     });
   });
+})();
+</script>
+<script>
+(function(){
+  if (!/[?&]unsubscribe=1\b/.test(location.search)) return;
+  var banner = document.getElementById('unsub-banner');
+  var payload = {slug: 'justin-bryant-kuWYX22QCKf5QTF5zylXJw', kind: 'value_email_optout', section: 'home-equity'};
+  fetch('https://transaction-portal-submissions.scottwhite2011.workers.dev', {
+    method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)
+  }).catch(function(){ /* best-effort, see docstring */ });
+  if (banner) banner.hidden = false;
 })();
 </script>
 </body>
