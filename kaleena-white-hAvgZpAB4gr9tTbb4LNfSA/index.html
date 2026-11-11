@@ -29,6 +29,7 @@ a{-webkit-tap-highlight-color:rgba(238,54,37,.12)}
 .eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--red-dark);margin:0 0 6px;text-align:center}
 h1{font-size:30px;font-weight:800;margin:0 0 18px;letter-spacing:-.015em;text-align:center;line-height:1.15}
 .sub{font-size:17px;font-weight:600;color:var(--charcoal);margin:16px 0 20px;text-align:center}
+.sqft-line{font-size:13px;font-weight:600;color:var(--slate);margin:-14px 0 20px;text-align:center}
 .summary{background:var(--red-tint);border-radius:var(--radius);padding:14px 16px;font-size:14.5px;font-weight:600;color:var(--red-deep);margin-bottom:20px;box-shadow:var(--shadow)}
 .stats-row{display:flex;gap:10px;margin-bottom:24px}
 .stat{flex:1;background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px;text-align:center;box-shadow:var(--shadow)}
@@ -70,7 +71,14 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .hv-gain.positive{color:var(--good)}
 .hv-note{font-size:11.5px;color:var(--slate);margin-top:8px;font-style:italic}
 .comps-block{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);margin-top:-8px;margin-bottom:20px}
-.comps-chart{margin-bottom:6px}
+.comps-chart{margin-bottom:6px;position:relative}
+.comps-chart .chart-hint{font-size:11px;color:var(--slate);font-style:italic;margin:0 0 6px}
+.comp-dot{transition:r .12s ease,opacity .12s ease}
+.chart-tooltip{position:absolute;pointer-events:none;background:var(--ink);color:var(--white);border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.5;box-shadow:var(--shadow-hover);max-width:210px;z-index:5;transform:translate(-50%,-100%);opacity:0;transition:opacity .1s ease}
+.chart-tooltip.visible{opacity:1}
+.chart-tooltip .tt-address{font-weight:700;font-size:12.5px;margin-bottom:4px}
+.chart-tooltip .tt-row{display:flex;justify-content:space-between;gap:10px;color:#D8D8D8}
+.chart-tooltip .tt-row b{color:var(--white);font-weight:700;font-variant-numeric:tabular-nums}
 .comps-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}
 .comps-table th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--slate);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--cloud)}
 .comps-table td{padding:7px 8px;border-bottom:1px solid var(--cloud);color:var(--charcoal);white-space:nowrap}
@@ -310,6 +318,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     <h1>Kaleena White, Sean White</h1>
     
     <div class="sub">2733 W 166th St, Westfield, IN 46074</div>
+    <div class="sqft-line">2,596 sq ft (finished) &mdash; source: Tax record</div>
 
     <div class="unsub-banner" id="unsub-banner" hidden>
       You&rsquo;re unsubscribed from the monthly home value email. This page itself still works the same as always &mdash;
@@ -355,9 +364,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       <div class="me-foot">You noted: Backfilled from Homebot&#x27;s last-synced mortgage data (30-year fixed at 3.125%, as of 11/07/2026) before decommissioning Homebot. Balance computed as Homebot&#x27;s value minus its reported equity amount.</div>
       <details class="add-form" id="loan-info-details">
       <summary>Update your mortgage info</summary>
-      <p class="section-intro">We don't have your actual loan on file for this home &mdash; pull up a recent
-        mortgage statement and fill in your approximate numbers, and we'll track your equity against those
-        instead. Won't be as precise as the real thing, but it beats nothing.</p>
+      <p class="section-intro">Pull up a recent mortgage statement and fill in your current numbers if ours have drifted -- this always takes over from whatever's shown above.</p>
       <form id="loan-info-form">
         <input type="hidden" name="slug" value="kaleena-white-hAvgZpAB4gr9tTbb4LNfSA">
         <label>Approximate current mortgage balance<input type="number" name="balance" placeholder="e.g. 285000" value="198651" required></label>
@@ -563,11 +570,11 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     
 
-    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">Your title company normally files this with the county auditor on your behalf as part of closing &mdash; it can reduce your taxable assessed value by the lesser of 60% or $48,000. It's not automatic though, so it's worth confirming directly with the county that it was actually recorded for your property.</div><a class="resource-cta" href="https://www.hamiltoncounty.in.gov/368/Property-Tax-Deductions-Credits" target="_blank" rel="noopener">Confirm with the Hamilton County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://www.hamiltoncounty.in.gov/405/Assessment-Appeal-Process" target="_blank" rel="noopener">Visit the Hamilton County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
+    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Planning a home improvement project?</div><div class="resource-body">your agent's partnered with ProjectStory to make getting quotes painless &mdash; record a quick video walkthrough of the project and get matched with local, vetted pros for fast estimates. No scheduling site visits just to get a ballpark number.</div><a class="resource-cta" href="https://www.myprojectstory.com/scottwhite" target="_blank" rel="noopener">Get a Free Quote <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">Your title company normally files this with the county auditor on your behalf as part of closing &mdash; it can reduce your taxable assessed value by the lesser of 60% or $48,000. It's not automatic though, so it's worth confirming directly with the county that it was actually recorded for your property.</div><a class="resource-cta" href="https://www.hamiltoncounty.in.gov/368/Property-Tax-Deductions-Credits" target="_blank" rel="noopener">Confirm with the Hamilton County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://www.hamiltoncounty.in.gov/405/Assessment-Appeal-Process" target="_blank" rel="noopener">Visit the Hamilton County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
 
     <div class="footnote">
       Scott White &middot; @properties<br>
-      Last updated 2026-11-08. This page is private to you &mdash; please don't share the link.
+      Last updated 2026-11-10. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
 <script>
