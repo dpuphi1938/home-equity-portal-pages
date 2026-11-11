@@ -29,6 +29,7 @@ a{-webkit-tap-highlight-color:rgba(238,54,37,.12)}
 .eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--red-dark);margin:0 0 6px;text-align:center}
 h1{font-size:30px;font-weight:800;margin:0 0 18px;letter-spacing:-.015em;text-align:center;line-height:1.15}
 .sub{font-size:17px;font-weight:600;color:var(--charcoal);margin:16px 0 20px;text-align:center}
+.sqft-line{font-size:13px;font-weight:600;color:var(--slate);margin:-14px 0 20px;text-align:center}
 .summary{background:var(--red-tint);border-radius:var(--radius);padding:14px 16px;font-size:14.5px;font-weight:600;color:var(--red-deep);margin-bottom:20px;box-shadow:var(--shadow)}
 .stats-row{display:flex;gap:10px;margin-bottom:24px}
 .stat{flex:1;background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px;text-align:center;box-shadow:var(--shadow)}
@@ -70,7 +71,14 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .hv-gain.positive{color:var(--good)}
 .hv-note{font-size:11.5px;color:var(--slate);margin-top:8px;font-style:italic}
 .comps-block{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);margin-top:-8px;margin-bottom:20px}
-.comps-chart{margin-bottom:6px}
+.comps-chart{margin-bottom:6px;position:relative}
+.comps-chart .chart-hint{font-size:11px;color:var(--slate);font-style:italic;margin:0 0 6px}
+.comp-dot{transition:r .12s ease,opacity .12s ease}
+.chart-tooltip{position:absolute;pointer-events:none;background:var(--ink);color:var(--white);border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.5;box-shadow:var(--shadow-hover);max-width:210px;z-index:5;transform:translate(-50%,-100%);opacity:0;transition:opacity .1s ease}
+.chart-tooltip.visible{opacity:1}
+.chart-tooltip .tt-address{font-weight:700;font-size:12.5px;margin-bottom:4px}
+.chart-tooltip .tt-row{display:flex;justify-content:space-between;gap:10px;color:#D8D8D8}
+.chart-tooltip .tt-row b{color:var(--white);font-weight:700;font-variant-numeric:tabular-nums}
 .comps-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}
 .comps-table th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--slate);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--cloud)}
 .comps-table td{padding:7px 8px;border-bottom:1px solid var(--cloud);color:var(--charcoal);white-space:nowrap}
@@ -309,6 +317,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     <div class="eyebrow">Staff Edit</div>
     <h1>Allison Ackert, Chris Ackert</h1>
     <div class="sub">3234 Polo Trl, Zionsville, IN 46077</div>
+    <div class="sqft-line">5,056 sq ft (finished) &mdash; source: Tax record</div>
 
     <div class="staff-note">@properties staff only &mdash; don't share this link with the client. Changes here go live once Scott White runs the daily sync (usually within a day).</div>
 
@@ -327,8 +336,8 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     <div class="staff-section">
       <h3>Note From Agent</h3>
-      <div class="staff-current">Original DCID (2015 MLS land listing, $115,000) was correct but land-only -- the actual home was custom-built afterward. Per Scott: a $624,000 construction mortgage recorded 05/04/2017 (Centier Bank, confirmed via Boone County tax records) implies an all-in purchase/build cost of ~$780,000 at standard 80% LTV. Using that as closed_price/closed_date instead of the bare land numbers.</div>
-      <textarea id="note-input">Original DCID (2015 MLS land listing, $115,000) was correct but land-only -- the actual home was custom-built afterward. Per Scott: a $624,000 construction mortgage recorded 05/04/2017 (Centier Bank, confirmed via Boone County tax records) implies an all-in purchase/build cost of ~$780,000 at standard 80% LTV. Using that as closed_price/closed_date instead of the bare land numbers.</textarea>
+      <div class="staff-current">(none set)</div>
+      <textarea id="note-input"></textarea>
       <button class="staff-btn" id="note-btn" onclick="submitStaff('note_set', {text: document.getElementById('note-input').value}, document.getElementById('note-msg'), document.getElementById('note-btn'))">Save</button>
       <div class="add-form-msg" id="note-msg" hidden></div>
     </div>
