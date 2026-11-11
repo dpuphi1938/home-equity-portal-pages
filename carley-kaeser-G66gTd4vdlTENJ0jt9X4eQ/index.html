@@ -29,6 +29,7 @@ a{-webkit-tap-highlight-color:rgba(238,54,37,.12)}
 .eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--red-dark);margin:0 0 6px;text-align:center}
 h1{font-size:30px;font-weight:800;margin:0 0 18px;letter-spacing:-.015em;text-align:center;line-height:1.15}
 .sub{font-size:17px;font-weight:600;color:var(--charcoal);margin:16px 0 20px;text-align:center}
+.sqft-line{font-size:13px;font-weight:600;color:var(--slate);margin:-14px 0 20px;text-align:center}
 .summary{background:var(--red-tint);border-radius:var(--radius);padding:14px 16px;font-size:14.5px;font-weight:600;color:var(--red-deep);margin-bottom:20px;box-shadow:var(--shadow)}
 .stats-row{display:flex;gap:10px;margin-bottom:24px}
 .stat{flex:1;background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px;text-align:center;box-shadow:var(--shadow)}
@@ -46,6 +47,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .tdate{font-size:12.5px;color:var(--slate);margin-top:1px}
 .tstep.done .tlabel{color:var(--charcoal)}
 .note{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:14px 16px;font-size:13.5px;color:var(--charcoal);line-height:1.55;margin-top:6px;box-shadow:var(--shadow)}
+.unsub-banner{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 16px;font-size:13px;color:var(--slate);line-height:1.5;margin-top:6px}
 .note .from{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);margin-bottom:6px}
 .doclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 .doc{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:12px 14px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:box-shadow .15s ease,transform .15s ease}
@@ -309,6 +311,12 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     <h1>Carley Kaeser, Jason Milford</h1>
     
     <div class="sub">5777 Open Fields Dr, Whitestown, IN 46075</div>
+    <div class="sqft-line">2,537 sq ft (finished) &mdash; source: MLS listing</div>
+
+    <div class="unsub-banner" id="unsub-banner" hidden>
+      You&rsquo;re unsubscribed from the monthly home value email. This page itself still works the same as always &mdash;
+      come back and check it anytime. (Changed your mind? Just email Scott and ask to be re-added.)
+    </div>
 
     
 
@@ -319,6 +327,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     <div class="home-value">
       <div class="hv-estimate">$375,955 &ndash; $455,648</div>
       <div class="hv-sub">Estimated value today, based on 19 recent comparable sales &middot; updated 11/07/2026</div>
+      
       <div class="hv-gain positive">&#9650; Up $45,801 since you closed at $370,000</div>
       <div class="hv-note">Estimated via a price/sqft trend fit across 19 recent &quot;Walker Farms&quot; sold comps (last 6 months) -- tighter than a blind-radius search since every comp is a verified same-subdivision MLS sale. RPR $410,290 and Homebot $444,598 weighted into this estimate.</div>
       <ul class="hv-history"><li><span>11/06/2026</span><span>$350,015 – $427,175</span></li></ul>
@@ -401,7 +410,19 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       var eqText = (Math.round(eqLow) === Math.round(eqHigh)) ? fmt(eqLow) : (fmt(eqLow) + ' – ' + fmt(eqHigh));
       document.getElementById('me-equity').textContent = eqText;
     })();
-    </script></div>
+    </script><details class="add-form" id="loan-info-details">
+      <summary>Correct your mortgage balance</summary>
+      <p class="section-intro">We're estimating your balance above from your original loan terms, which can't account for extra principal payments, a refinance, or PMI removal. Tell us your real current numbers from a recent statement and we'll track your equity against those instead.</p>
+      <form id="loan-info-form">
+        <input type="hidden" name="slug" value="carley-kaeser-G66gTd4vdlTENJ0jt9X4eQ">
+        <label>Approximate current mortgage balance<input type="number" name="balance" placeholder="e.g. 285000"  required></label>
+        <label>Interest rate (optional)<input type="number" step="0.01" name="rate" placeholder="e.g. 6.5" ></label>
+        <label>Current monthly payment, principal + interest (optional)<input type="number" name="payment" placeholder="e.g. 2100" ></label>
+        <label>Anything else useful (optional)<input type="text" name="notes" placeholder="Lender name, recent refinance, etc." ></label>
+        <button type="submit">Submit</button>
+        <div class="add-form-msg" id="loan-info-msg" hidden></div>
+      </form>
+    </details></div>
 
     <h2>Whitestown Market Snapshot</h2>
     <p class="section-intro">How the broader Whitestown market is trending &middot; October 2026 vs. prior year &mdash; not specific to your home (see Your Home above for that).</p>
@@ -663,13 +684,13 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     
 
-    <div class="note"><div class="from">Note from Scott White</div>Loan amount from ALTA Settlement Statement (MJW Financial). Rate derived from prepaid per-diem interest ($54.34/day ≈ 5.96%). Term assumed 30yr.</div>
+    
 
-    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">If you haven't already, file a Homestead Deduction with your county auditor &mdash; it isn't automatic and can reduce your taxable assessed value by the lesser of 60% or $48,000. A one-time filing, and easy to forget after closing.</div><a class="resource-cta" href="https://boonecounty.in.gov/offices/auditor" target="_blank" rel="noopener">File with the Boone County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://boonecounty.in.gov/offices/assessor/appeal-process/" target="_blank" rel="noopener">Visit the Boone County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
+    <h2>Homeowner Resources</h2><div class="resource-grid"><div class="resource-card"><div class="resource-title">Planning a home improvement project?</div><div class="resource-body">your agent's partnered with ProjectStory to make getting quotes painless &mdash; record a quick video walkthrough of the project and get matched with local, vetted pros for fast estimates. No scheduling site visits just to get a ballpark number.</div><a class="resource-cta" href="https://www.myprojectstory.com/scottwhite" target="_blank" rel="noopener">Get a Free Quote <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Homestead Deduction</div><div class="resource-body">Your title company normally files this with the county auditor on your behalf as part of closing &mdash; it can reduce your taxable assessed value by the lesser of 60% or $48,000. It's not automatic though, so it's worth confirming directly with the county that it was actually recorded for your property.</div><a class="resource-cta" href="https://boonecounty.in.gov/offices/auditor" target="_blank" rel="noopener">Confirm with the Boone County Auditor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Review your homeowner&#x27;s insurance</div><div class="resource-body">Worth a quick annual check-in with your insurance agent, especially as your home's value changes &mdash; make sure your dwelling coverage still reflects what it would actually cost to rebuild, not just the market value shown above.</div><div class="resource-cta-name">Andrew Bell &middot; Binford Insurance</div><div class="contact-links"><a href="tel:205-907-0001">205-907-0001</a><a href="mailto:andrew@binfordinsurance.com">andrew@binfordinsurance.com</a></div></div><div class="resource-card"><div class="resource-title">Property tax assessment</div><div class="resource-body">Your county reassesses periodically, and assessed value doesn't always track the real market &mdash; if a new assessment looks off relative to your home's actual value, you have the right to appeal it with the county assessor.</div><a class="resource-cta" href="https://boonecounty.in.gov/offices/assessor/appeal-process/" target="_blank" rel="noopener">Visit the Boone County Assessor <span class="arrow">&rarr;</span></a></div><div class="resource-card"><div class="resource-title">Thinking about your next move?</div><div class="resource-body">Whether it's buying again, selling, or just weighing options, your agent is one call away &mdash; and if you know someone else starting that conversation, a referral is always appreciated.</div><a class="resource-cta" href="mailto:boughtwithscott@gmail.com?subject=Referral" target="_blank" rel="noopener">Refer Me <span class="arrow">&rarr;</span></a></div></div>
 
     <div class="footnote">
       Scott White &middot; @properties<br>
-      Last updated 2026-11-07. This page is private to you &mdash; please don't share the link.
+      Last updated 2026-11-10. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
 <script>
@@ -699,6 +720,17 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       btn.textContent = 'Submit'; btn.disabled = false;
     });
   });
+})();
+</script>
+<script>
+(function(){
+  if (!/[?&]unsubscribe=1\b/.test(location.search)) return;
+  var banner = document.getElementById('unsub-banner');
+  var payload = {slug: 'carley-kaeser-G66gTd4vdlTENJ0jt9X4eQ', kind: 'value_email_optout', section: 'home-equity'};
+  fetch('https://transaction-portal-submissions.scottwhite2011.workers.dev', {
+    method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)
+  }).catch(function(){ /* best-effort, see docstring */ });
+  if (banner) banner.hidden = false;
 })();
 </script>
 </body>
