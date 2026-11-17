@@ -173,6 +173,9 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .staff-row label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--slate)}
 .staff-btn{align-self:flex-start;background:var(--red);color:var(--white);border:none;border-radius:8px;padding:8px 16px;font-weight:700;font-size:12.5px;cursor:pointer;margin-top:2px}
 .staff-btn:disabled{opacity:.6;cursor:default}
+.staff-optional-hint{color:var(--slate);font-size:12.5px;margin-bottom:10px}
+.staff-optional-list li{flex-direction:column;align-items:stretch;gap:8px}
+.staff-optional-reason{font-size:13px;color:var(--charcoal)}
 
 .countdown{background:linear-gradient(135deg,var(--ink),var(--charcoal));border-radius:var(--radius);padding:18px 20px;margin-bottom:20px;text-align:center;box-shadow:var(--shadow-hover)}
 .countdown .cd-num{font-size:40px;font-weight:800;color:var(--white);line-height:1;letter-spacing:-.02em}
@@ -326,6 +329,8 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       <input type="password" id="staff-passcode" placeholder="Enter passcode (saved on this device)">
     </div>
 
+    
+
     <div class="staff-section">
       <h3>Status Summary</h3>
       <div class="staff-current">Closed 11/06/2026 at $780,000.</div>
@@ -342,9 +347,9 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       <div class="add-form-msg" id="note-msg" hidden></div>
     </div>
 
-    <div class="staff-section">
+    <div class="staff-section" id="milestones">
       <h3>Milestones</h3>
-      <ul class="staff-list"><li><input type="checkbox" class="staff-milestone-toggle" id="ms-0" checked data-label="Under Contract" data-date="10/22/2026"><span class="staff-item-label">Under Contract</span><span class="staff-item-meta">10/22/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-1" checked data-label="Earnest Money Deadline" data-date="10/24/2026"><span class="staff-item-label">Earnest Money Deadline</span><span class="staff-item-meta">10/24/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-2" checked data-label="Financing Application Due" data-date="10/25/2026"><span class="staff-item-label">Financing Application Due</span><span class="staff-item-meta">10/25/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-3" checked data-label="HOA Document Deadline" data-date="10/29/2026"><span class="staff-item-label">HOA Document Deadline</span><span class="staff-item-meta">10/29/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-4" checked data-label="Closing" data-date="11/06/2026"><span class="staff-item-label">Closing</span><span class="staff-item-meta">11/06/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-5" checked data-label="Buyer Inspection Response Due" data-date="11/06/2026"><span class="staff-item-label">Buyer Inspection Response Due</span><span class="staff-item-meta">11/06/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-6" checked data-label="Loan Approval Deadline" data-date="11/12/2026"><span class="staff-item-label">Loan Approval Deadline</span><span class="staff-item-meta">11/12/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-7"  data-label="Insurance Deadline" data-date="11/12/2026"><span class="staff-item-label">Insurance Deadline</span><span class="staff-item-meta">11/12/2026</span></li></ul>
+      <ul class="staff-list"><li><input type="checkbox" class="staff-milestone-toggle" id="ms-0" checked data-label="Under Contract" data-date="10/22/2026"><span class="staff-item-label">Under Contract</span><span class="staff-item-meta">10/22/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-1" checked data-label="Earnest Money Deadline" data-date="10/24/2026"><span class="staff-item-label">Earnest Money Deadline</span><span class="staff-item-meta">10/24/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-2" checked data-label="Financing Application Due" data-date="10/25/2026"><span class="staff-item-label">Financing Application Due</span><span class="staff-item-meta">10/25/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-3" checked data-label="HOA Document Deadline" data-date="10/29/2026"><span class="staff-item-label">HOA Document Deadline</span><span class="staff-item-meta">10/29/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-4" checked data-label="Closing" data-date="11/06/2026"><span class="staff-item-label">Closing</span><span class="staff-item-meta">11/06/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-5" checked data-label="Buyer Inspection Response Due" data-date="11/06/2026"><span class="staff-item-label">Buyer Inspection Response Due</span><span class="staff-item-meta">11/06/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-6" checked data-label="Loan Approval Deadline" data-date="11/12/2026"><span class="staff-item-label">Loan Approval Deadline</span><span class="staff-item-meta">11/12/2026</span></li><li><input type="checkbox" class="staff-milestone-toggle" id="ms-7" checked data-label="Insurance Deadline" data-date="11/12/2026"><span class="staff-item-label">Insurance Deadline</span><span class="staff-item-meta">11/12/2026</span></li></ul>
       <div class="staff-row">
         <label>Label<input type="text" id="ms-new-label" placeholder="e.g. Inspection Response Due"></label>
         <label>Date<input type="text" id="ms-new-date" placeholder="MM/DD/YYYY"></label>
@@ -442,6 +447,13 @@ Array.prototype.slice.call(document.querySelectorAll('.staff-todo-toggle')).forE
   box.addEventListener('change', function(){
     submitStaff('todo_set', {label: box.dataset.label, due: box.dataset.due || null, done: box.checked},
       document.getElementById('todos-msg'), box);
+  });
+});
+Array.prototype.slice.call(document.querySelectorAll('.staff-optional-btn')).forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var fields;
+    try { fields = JSON.parse(btn.dataset.fields); } catch(e) { fields = {}; }
+    submitStaff(btn.dataset.kind, fields, document.getElementById(btn.id.replace('-btn', '-msg')), btn);
   });
 });
 
