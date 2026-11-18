@@ -1,0 +1,103 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Scott White Transaction Portal//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:4312 Garden Trace Drive\, Indianapolis\, IN 46268 Transaction
+  Timeline
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:emily-eagleson-IyWwpy54UpPnex0nWlhp5g-under-contract@portal.boughtwith
+ scott.com
+DTSTAMP:20261118T212738Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:Under Contract — 4312 Garden Trace Drive\, Indianapolis\, IN 46268
+ 
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/emily-
+ eagleson-IyWwpy54UpPnex0nWlhp5g/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:emily-eagleson-IyWwpy54UpPnex0nWlhp5g-closing@portal.boughtwithscott.c
+ om
+DTSTAMP:20261118T212738Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+SUMMARY:Closing — 4312 Garden Trace Drive\, Indianapolis\, IN 46268
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/emily-
+ eagleson-IyWwpy54UpPnex0nWlhp5g/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:emily-eagleson-IyWwpy54UpPnex0nWlhp5g-purchase-agreement-fully-signed@
+ portal.boughtwithscott.com
+DTSTAMP:20261118T212738Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:Purchase Agreement Fully Signed — 4312 Garden Trace Drive\, Indian
+ apolis\, IN 46268
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/emily-
+ eagleson-IyWwpy54UpPnex0nWlhp5g/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:emily-eagleson-IyWwpy54UpPnex0nWlhp5g-mortgage-contingency-deadline@po
+ rtal.boughtwithscott.com
+DTSTAMP:20261118T212738Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:Mortgage Contingency Deadline — 4312 Garden Trace Drive\, Indianap
+ olis\, IN 46268
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/emily-
+ eagleson-IyWwpy54UpPnex0nWlhp5g/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:emily-eagleson-IyWwpy54UpPnex0nWlhp5g-appraisal@portal.boughtwithscott
+ .com
+DTSTAMP:20261118T212738Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:Appraisal — 4312 Garden Trace Drive\, Indianapolis\, IN 46268
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/emily-
+ eagleson-IyWwpy54UpPnex0nWlhp5g/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:emily-eagleson-IyWwpy54UpPnex0nWlhp5g-initial-deposit@portal.boughtwit
+ hscott.com
+DTSTAMP:20261118T212738Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:Initial Deposit — 4312 Garden Trace Drive\, Indianapolis\, IN 4626
+ 8
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/emily-
+ eagleson-IyWwpy54UpPnex0nWlhp5g/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:emily-eagleson-IyWwpy54UpPnex0nWlhp5g-final-walkthrough@portal.boughtw
+ ithscott.com
+DTSTAMP:20261118T212738Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+SUMMARY:Final Walkthrough — 4312 Garden Trace Drive\, Indianapolis\, IN 46
+ 268
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/emily-
+ eagleson-IyWwpy54UpPnex0nWlhp5g/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:emily-eagleson-IyWwpy54UpPnex0nWlhp5g-new-home-celebration-orientation
+ @portal.boughtwithscott.com
+DTSTAMP:20261118T212738Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:New Home Celebration (Orientation) — 4312 Garden Trace Drive\, Ind
+ ianapolis\, IN 46268
+DESCRIPTION:Done — https://dpuphi1938.github.io/client-portal-pages/emily-
+ eagleson-IyWwpy54UpPnex0nWlhp5g/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
