@@ -19,7 +19,7 @@
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font-family:-apple-system,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
-a{-webkit-tap-highlight-color:rgba(238,54,37,.12)}
+a{-webkit-tap-highlight-color:rgba(23,42,74,.12)}
 .wrap{max-width:640px;margin:0 auto;padding:28px 20px 48px}
 .brandbar{height:4px;background:linear-gradient(90deg,var(--red),var(--red-dark));border-radius:2px;margin-bottom:20px}
 .photo-wrap{position:relative;width:95%;max-width:420px;margin:0 auto 22px;border-radius:16px;overflow:hidden;background:var(--cloud);box-shadow:var(--shadow-hover)}
@@ -187,7 +187,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
 .countdown{background:linear-gradient(135deg,var(--ink),var(--charcoal));border-radius:var(--radius);padding:18px 20px;margin-bottom:20px;text-align:center;box-shadow:var(--shadow-hover)}
 .countdown .cd-num{font-size:40px;font-weight:800;color:var(--white);line-height:1;letter-spacing:-.02em}
-.countdown .cd-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--red);margin-top:4px}
+.countdown .cd-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-top:4px}
 .countdown .cd-date{font-size:12px;color:var(--mist);margin-top:6px}
 .countdown.closed{background:linear-gradient(135deg,var(--good),#155c2d)}
 
@@ -349,22 +349,22 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     
 
     
-    <div class="stats-row"><div class="stat"><div class="v">$315,000</div><div class="l">Est. Value</div></div><div class="stat"><div class="v">4%</div><div class="l">Est. Equity</div></div><div class="stat"><div class="v">$195</div><div class="l">Price/Sq Ft</div></div></div>
+    <div class="stats-row"><div class="stat"><div class="v">$287,121</div><div class="l">Est. Value</div></div><div class="stat"><div class="v">0%</div><div class="l">Est. Equity</div></div><div class="stat"><div class="v">$178</div><div class="l">Price/Sq Ft</div></div></div>
 
     <h2>Your Home</h2>
     <div class="home-value">
-      <div class="hv-estimate">$304,812 &ndash; $325,188</div>
-      <div class="hv-sub">Estimated value today, based on 4 recent comparable sales &middot; updated 11/10/2026</div>
+      <div class="hv-estimate">$270,886 &ndash; $303,355</div>
+      <div class="hv-sub">Estimated value today, based on 15 recent comparable sales &middot; updated 11/20/2026</div>
       
-      <div class="hv-gain positive">&#9650; Up $1,687 since you closed at $313,313</div>
-      <div class="hv-note">Removed two low-outlier comps per Scott (311 Shadetree Ln $146.58/sqft, 1012 Maple Run Dr $151.74/sqft -- well below the remaining comps&#x27; $180-196/sqft). Kept at $315,000 per Scott -- re-blending with Homebot ($284,337) would pull it back down near the $290,014 he already flagged as running low, so Homebot stays excluded here.</div>
-      <ul class="hv-history"><li><span>11/10/2026</span><span>$298,900 – $331,100</span></li><li><span>11/07/2026</span><span>$273,913 – $306,114</span></li><li><span>11/06/2026</span><span>$278,671 – $321,633</span></li></ul>
+      <div class="hv-gain">You closed at $313,313</div>
+      <div class="hv-note">Estimated via a price/sqft trend fit across 15 recent &quot;Maple Run&quot; sold comps (last 6 months) -- tighter than a blind-radius search since every comp is a verified same-subdivision MLS sale. Homebot $284,337 weighted into this estimate.</div>
+      <ul class="hv-history"><li><span>11/10/2026</span><span>$304,812 – $325,188</span></li><li><span>11/10/2026</span><span>$298,900 – $331,100</span></li><li><span>11/07/2026</span><span>$273,913 – $306,114</span></li><li><span>11/06/2026</span><span>$278,671 – $321,633</span></li></ul>
     </div>
     
     <div class="comps-block">
       <div class="comps-chart">
         <div class="chart-hint">Hover a point for address, price &amp; square footage</div>
-        <svg class="comps-svg" id="compsChart" viewBox="0 0 640 320" width="100%" height="auto" role="img" aria-label="Price versus square footage, your home against 4 recent comparable sales. Hover each point for address, price, and square footage."><line x1="62" x2="622" y1="282.0" y2="282.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="286.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$272K</text><line x1="62" x2="622" y1="215.5" y2="215.5" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="219.5" text-anchor="end" font-size="10.5" fill="var(--slate)">$290K</text><line x1="62" x2="622" y1="149.0" y2="149.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="153.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$308K</text><line x1="62" x2="622" y1="82.5" y2="82.5" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="86.5" text-anchor="end" font-size="10.5" fill="var(--slate)">$325K</text><line x1="62" x2="622" y1="16.0" y2="16.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="20.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$343K</text><text x="62.0" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">1,393 sf</text><text x="248.7" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">1,544 sf</text><text x="435.3" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">1,694 sf</text><text x="622.0" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">1,845 sf</text><line x1="62" x2="622" y1="282" y2="282" stroke="var(--mist)" stroke-width="1"/><line x1="62" x2="62" y1="16" y2="282" stroke="var(--mist)" stroke-width="1"/><line x1="116.2" y1="255.5" x2="567.8" y2="66.8" stroke="var(--slate)" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.7"/><circle class="comp-dot" cx="116.2" cy="251.3" r="6" fill="var(--charcoal)" opacity="0.55" data-address="1404 Graybark St" data-price="$280,000" data-sqft="1,437 sq ft" data-psf="$195/sq ft" data-date="Sold 10/23/2026"/><circle class="comp-dot" cx="567.8" cy="46.7" r="6" fill="var(--charcoal)" opacity="0.55" data-address="550 Alder Way" data-price="$335,000" data-sqft="1,801 sq ft" data-psf="$186/sq ft" data-date="Sold 09/04/2026"/><circle class="comp-dot" cx="340.8" cy="206.7" r="6" fill="var(--charcoal)" opacity="0.55" data-address="1484 Littleleaf Dr" data-price="$292,000" data-sqft="1,618 sq ft" data-psf="$180/sq ft" data-date="Sold 08/11/2026"/><circle class="comp-dot" cx="165.8" cy="214.1" r="6" fill="var(--charcoal)" opacity="0.55" data-address="1410 Bigleaf Cir" data-price="$290,000" data-sqft="1,477 sq ft" data-psf="$196/sq ft" data-date="Sold 07/31/2026"/><circle class="comp-dot subject" cx="334.6" cy="121.1" r="9" fill="var(--gold)" data-address="Your Home" data-price="$315,000 (estimated)" data-sqft="1,613 sq ft" data-psf="$195/sq ft (implied)" data-date="Current estimate"/><text x="348.6" y="109.1" font-size="11.5" font-weight="700" fill="var(--gold-deep)">Your Home</text></svg><div class="chart-tooltip" id="compsTooltip"><div class="tt-address"></div><div class="tt-row"><span>Price</span><b class="tt-price"></b></div><div class="tt-row"><span>Size</span><b class="tt-sqft"></b></div><div class="tt-row"><span>$/Sq Ft</span><b class="tt-psf"></b></div><div class="tt-row"><span></span><b class="tt-date"></b></div></div><script>
+        <svg class="comps-svg" id="compsChart" viewBox="0 0 640 320" width="100%" height="auto" role="img" aria-label="Price versus square footage, your home against 6 recent comparable sales. Hover each point for address, price, and square footage."><line x1="62" x2="622" y1="282.0" y2="282.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="286.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$272K</text><line x1="62" x2="622" y1="215.5" y2="215.5" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="219.5" text-anchor="end" font-size="10.5" fill="var(--slate)">$290K</text><line x1="62" x2="622" y1="149.0" y2="149.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="153.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$308K</text><line x1="62" x2="622" y1="82.5" y2="82.5" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="86.5" text-anchor="end" font-size="10.5" fill="var(--slate)">$325K</text><line x1="62" x2="622" y1="16.0" y2="16.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="20.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$343K</text><text x="62.0" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">1,364 sf</text><text x="248.7" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">1,616 sf</text><text x="435.3" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">1,867 sf</text><text x="622.0" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">2,119 sf</text><line x1="62" x2="622" y1="282" y2="282" stroke="var(--mist)" stroke-width="1"/><line x1="62" x2="62" y1="16" y2="282" stroke="var(--mist)" stroke-width="1"/><line x1="116.2" y1="217.4" x2="567.8" y2="130.3" stroke="var(--slate)" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.7"/><circle class="comp-dot" cx="116.2" cy="251.3" r="6" fill="var(--charcoal)" opacity="0.55" data-address="1404 Graybark St" data-price="$280,000" data-sqft="1,437 sq ft" data-psf="$195/sq ft" data-date="Sold 10/23/2026"/><circle class="comp-dot" cx="545.6" cy="155.0" r="6" fill="var(--charcoal)" opacity="0.55" data-address="1012 Maple Run Dr" data-price="$305,900" data-sqft="2,016 sq ft" data-psf="$152/sq ft" data-date="Sold 09/08/2026"/><circle class="comp-dot" cx="386.1" cy="46.7" r="6" fill="var(--charcoal)" opacity="0.55" data-address="550 Alder Way" data-price="$335,000" data-sqft="1,801 sq ft" data-psf="$186/sq ft" data-date="Sold 09/04/2026"/><circle class="comp-dot" cx="567.8" cy="177.3" r="6" fill="var(--charcoal)" opacity="0.55" data-address="311 Shadetree Ln" data-price="$299,900" data-sqft="2,046 sq ft" data-psf="$147/sq ft" data-date="Sold 08/27/2026"/><circle class="comp-dot" cx="250.4" cy="206.7" r="6" fill="var(--charcoal)" opacity="0.55" data-address="1484 Littleleaf Dr" data-price="$292,000" data-sqft="1,618 sq ft" data-psf="$180/sq ft" data-date="Sold 08/11/2026"/><circle class="comp-dot" cx="145.9" cy="214.1" r="6" fill="var(--charcoal)" opacity="0.55" data-address="1410 Bigleaf Cir" data-price="$290,000" data-sqft="1,477 sq ft" data-psf="$196/sq ft" data-date="Sold 07/31/2026"/><circle class="comp-dot subject" cx="246.7" cy="224.8" r="9" fill="var(--gold)" data-address="Your Home" data-price="$287,121 (estimated)" data-sqft="1,613 sq ft" data-psf="$178/sq ft (implied)" data-date="Current estimate"/><text x="260.7" y="212.8" font-size="11.5" font-weight="700" fill="var(--gold-deep)">Your Home</text></svg><div class="chart-tooltip" id="compsTooltip"><div class="tt-address"></div><div class="tt-row"><span>Price</span><b class="tt-price"></b></div><div class="tt-row"><span>Size</span><b class="tt-sqft"></b></div><div class="tt-row"><span>$/Sq Ft</span><b class="tt-psf"></b></div><div class="tt-row"><span></span><b class="tt-date"></b></div></div><script>
 (function(){
   var svg = document.getElementById('compsChart');
   if (!svg) return;
@@ -451,7 +451,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       </div>
       <table class="comps-table">
       <thead><tr><th>Address</th><th>Sale Price</th><th>Sq. Ft.</th><th>$/Sq. Ft.</th><th>Sold</th></tr></thead>
-      <tbody><tr class="subject-row"><td><b>1489 Hardwood Dr</b></td><td><b>$315,000</b></td><td><b>1,613 sf</b></td><td><b>$195/sf</b></td><td><b>12/05/2025</b></td></tr><tr><td>1404 Graybark St</td><td>$280,000</td><td>1,437 sf</td><td>$195/sf</td><td>10/23/2026</td></tr><tr><td>550 Alder Way</td><td>$335,000</td><td>1,801 sf</td><td>$186/sf</td><td>09/04/2026</td></tr><tr><td>1484 Littleleaf Dr</td><td>$292,000</td><td>1,618 sf</td><td>$180/sf</td><td>08/11/2026</td></tr><tr><td>1410 Bigleaf Cir</td><td>$290,000</td><td>1,477 sf</td><td>$196/sf</td><td>07/31/2026</td></tr></tbody>
+      <tbody><tr class="subject-row"><td><b>1489 Hardwood Dr</b></td><td><b>$287,121</b></td><td><b>1,613 sf</b></td><td><b>$178/sf</b></td><td><b>12/05/2025</b></td></tr><tr><td>1404 Graybark St</td><td>$280,000</td><td>1,437 sf</td><td>$195/sf</td><td>10/23/2026</td></tr><tr><td>1012 Maple Run Dr</td><td>$305,900</td><td>2,016 sf</td><td>$152/sf</td><td>09/08/2026</td></tr><tr><td>550 Alder Way</td><td>$335,000</td><td>1,801 sf</td><td>$186/sf</td><td>09/04/2026</td></tr><tr><td>311 Shadetree Ln</td><td>$299,900</td><td>2,046 sf</td><td>$147/sf</td><td>08/27/2026</td></tr><tr><td>1484 Littleleaf Dr</td><td>$292,000</td><td>1,618 sf</td><td>$180/sf</td><td>08/11/2026</td></tr><tr><td>1410 Bigleaf Cir</td><td>$290,000</td><td>1,477 sf</td><td>$196/sf</td><td>07/31/2026</td></tr></tbody>
     </table>
     </div>
     
@@ -463,10 +463,9 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       </div>
       <div class="rpr-ref-note">Homebot's own estimate, as of 11/06/2026. Shown for reference only &mdash; the estimate above (based on recent comparable sales) is what drives the equity figures on this page.</div>
     </div>
-    
     <div class="home-value"><div class="mortgage-equity" data-loan-amount="303913.0" data-rate="5.49"
          data-term-months="360" data-first-payment="2026-02-01"
-         data-value-low="304811.72" data-value-high="325188.28">
+         data-value-low="270886.0792190662" data-value-high="303355.3595453929">
       <div class="me-row">
         <span class="me-label">Est. Remaining Mortgage Balance</span>
         <span class="me-val" id="me-balance">&hellip;</span>
@@ -596,7 +595,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       </div>
       <div class="calc-row">
         <label for="pp-down">Down Payment</label>
-        <input type="number" id="pp-down" value="63000" min="0" step="1000">
+        <input type="number" id="pp-down" value="57000" min="0" step="1000">
       </div>
       <div class="calc-row">
         <label for="pp-rate">Interest Rate (%)</label>
@@ -717,7 +716,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     <div class="footnote">
       Scott White &middot; @properties<br>
-      Last updated 2026-11-10. This page is private to you &mdash; please don't share the link.
+      Last updated 2026-11-20. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
 <script>
