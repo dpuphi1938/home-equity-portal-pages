@@ -19,7 +19,7 @@
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font-family:-apple-system,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
-a{-webkit-tap-highlight-color:rgba(238,54,37,.12)}
+a{-webkit-tap-highlight-color:rgba(23,42,74,.12)}
 .wrap{max-width:640px;margin:0 auto;padding:28px 20px 48px}
 .brandbar{height:4px;background:linear-gradient(90deg,var(--red),var(--red-dark));border-radius:2px;margin-bottom:20px}
 .photo-wrap{position:relative;width:95%;max-width:420px;margin:0 auto 22px;border-radius:16px;overflow:hidden;background:var(--cloud);box-shadow:var(--shadow-hover)}
@@ -187,7 +187,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
 .countdown{background:linear-gradient(135deg,var(--ink),var(--charcoal));border-radius:var(--radius);padding:18px 20px;margin-bottom:20px;text-align:center;box-shadow:var(--shadow-hover)}
 .countdown .cd-num{font-size:40px;font-weight:800;color:var(--white);line-height:1;letter-spacing:-.02em}
-.countdown .cd-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--red);margin-top:4px}
+.countdown .cd-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-top:4px}
 .countdown .cd-date{font-size:12px;color:var(--mist);margin-top:6px}
 .countdown.closed{background:linear-gradient(135deg,var(--good),#155c2d)}
 
@@ -349,18 +349,111 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     
 
     
-    <div class="stats-row"><div class="stat"><div class="v">$878,601</div><div class="l">Est. Value</div></div><div class="stat"><div class="v">60%</div><div class="l">Est. Equity</div></div><div class="stat"><div class="v">$173</div><div class="l">Price/Sq Ft</div></div></div>
+    <div class="stats-row"><div class="stat"><div class="v">$985,190</div><div class="l">Est. Value</div></div><div class="stat"><div class="v">64%</div><div class="l">Est. Equity</div></div><div class="stat"><div class="v">$194</div><div class="l">Price/Sq Ft</div></div></div>
 
     <h2>Your Home</h2>
     <div class="home-value">
-      <div class="hv-estimate">$878,601 &ndash; $878,601</div>
-      <div class="hv-sub">Estimated value today, based on 0 recent comparable sales &middot; updated 11/07/2026</div>
+      <div class="hv-estimate">$933,262 &ndash; $1,037,119</div>
+      <div class="hv-sub">Estimated value today, based on 6 recent comparable sales &middot; updated 11/20/2026</div>
       
-      <div class="hv-gain positive">&#9650; Up $348,601 since you closed at $530,000</div>
-      <div class="hv-note">Not enough recent same-subdivision MLS sales for a tighter estimate -- using MLS&#x27;s broader-radius blended estimate instead. RPR $838,820 and Homebot $878,297 weighted into this estimate (RPR and Homebot agree closely, so the range is tightened further).</div>
-      <ul class="hv-history"><li><span>11/06/2026</span><span>$908,665 – $908,665</span></li></ul>
+      <div class="hv-gain positive">&#9650; Up $455,190 since you closed at $530,000</div>
+      <div class="hv-note">Estimated via a price/sqft trend fit across 6 recent sold comps in the &quot;North West Hendricks Schools&quot; school district (last 6 months) -- same subdivision didn&#x27;t have enough recent sales on its own, but every comp here is still a verified same-school-district MLS sale, tighter than a blind-radius search. RPR $838,820 and Homebot $878,297 weighted into this estimate (RPR and Homebot agree closely, so the range is tightened further).</div>
+      <ul class="hv-history"><li><span>11/07/2026</span><span>$878,601 – $878,601</span></li><li><span>11/06/2026</span><span>$908,665 – $908,665</span></li></ul>
     </div>
     
+    <div class="comps-block">
+      <div class="comps-chart">
+        <div class="chart-hint">Hover a point for address, price &amp; square footage</div>
+        <svg class="comps-svg" id="compsChart" viewBox="0 0 640 320" width="100%" height="auto" role="img" aria-label="Price versus square footage, your home against 6 recent comparable sales. Hover each point for address, price, and square footage."><line x1="62" x2="622" y1="282.0" y2="282.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="286.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$329K</text><line x1="62" x2="622" y1="215.5" y2="215.5" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="219.5" text-anchor="end" font-size="10.5" fill="var(--slate)">$515K</text><line x1="62" x2="622" y1="149.0" y2="149.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="153.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$700K</text><line x1="62" x2="622" y1="82.5" y2="82.5" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="86.5" text-anchor="end" font-size="10.5" fill="var(--slate)">$885K</text><line x1="62" x2="622" y1="16.0" y2="16.0" stroke="var(--cloud)" stroke-width="1"/><text x="54" y="20.0" text-anchor="end" font-size="10.5" fill="var(--slate)">$1.07M</text><text x="62.0" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">3,071 sf</text><text x="248.7" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">3,908 sf</text><text x="435.3" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">4,746 sf</text><text x="622.0" y="304" text-anchor="middle" font-size="10.5" fill="var(--slate)">5,583 sf</text><line x1="62" x2="622" y1="282" y2="282" stroke="var(--mist)" stroke-width="1"/><line x1="62" x2="62" y1="16" y2="282" stroke="var(--mist)" stroke-width="1"/><line x1="116.2" y1="234.6" x2="231.4" y2="151.8" stroke="var(--slate)" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.7"/><circle class="comp-dot" cx="231.4" cy="146.3" r="6" fill="var(--charcoal)" opacity="0.55" data-address="4665 Devonshire Dr" data-price="$707,500" data-sqft="3,831 sq ft" data-psf="$185/sq ft" data-date="Sold 10/30/2026"/><circle class="comp-dot" cx="224.5" cy="148.2" r="6" fill="var(--charcoal)" opacity="0.55" data-address="4693 McCullah Dr" data-price="$702,400" data-sqft="3,800 sq ft" data-psf="$185/sq ft" data-date="Sold 09/09/2026"/><circle class="comp-dot" cx="126.4" cy="203.7" r="6" fill="var(--charcoal)" opacity="0.55" data-address="502 Fisher West Dr" data-price="$547,625" data-sqft="3,360 sq ft" data-psf="$163/sq ft" data-date="Sold 08/20/2026"/><circle class="comp-dot" cx="165.9" cy="238.3" r="6" fill="var(--charcoal)" opacity="0.55" data-address="463 Chester Ln" data-price="$451,315" data-sqft="3,537 sq ft" data-psf="$128/sq ft" data-date="Sold 08/14/2026"/><circle class="comp-dot" cx="124.4" cy="210.0" r="6" fill="var(--charcoal)" opacity="0.55" data-address="7 Woodsedge Ct" data-price="$530,000" data-sqft="3,351 sq ft" data-psf="$158/sq ft" data-date="Sold 07/30/2026"/><circle class="comp-dot" cx="116.2" cy="251.3" r="6" fill="var(--charcoal)" opacity="0.55" data-address="226 Ambassador Dr" data-price="$415,000" data-sqft="3,314 sq ft" data-psf="$125/sq ft" data-date="Sold 07/22/2026"/><circle class="comp-dot subject" cx="567.8" cy="46.7" r="9" fill="var(--gold)" data-address="Your Home" data-price="$985,190 (estimated)" data-sqft="5,340 sq ft" data-psf="$184/sq ft (implied)" data-date="Current estimate"/><text x="581.8" y="34.7" font-size="11.5" font-weight="700" fill="var(--gold-deep)">Your Home</text></svg><div class="chart-tooltip" id="compsTooltip"><div class="tt-address"></div><div class="tt-row"><span>Price</span><b class="tt-price"></b></div><div class="tt-row"><span>Size</span><b class="tt-sqft"></b></div><div class="tt-row"><span>$/Sq Ft</span><b class="tt-psf"></b></div><div class="tt-row"><span></span><b class="tt-date"></b></div></div><script>
+(function(){
+  var svg = document.getElementById('compsChart');
+  if (!svg) return;
+  var tooltip = document.getElementById('compsTooltip');
+  var card = svg.closest('.comps-chart');
+  var dots = Array.prototype.slice.call(svg.querySelectorAll('.comp-dot'));
+  var active = null;
+
+  function svgPoint(evt){
+    var pt = svg.createSVGPoint();
+    pt.x = evt.clientX; pt.y = evt.clientY;
+    var ctm = svg.getScreenCTM();
+    if (!ctm) return null;
+    return pt.matrixTransform(ctm.inverse());
+  }
+
+  function baseR(dot){ return dot.classList.contains('subject') ? 9 : 6; }
+
+  function setActive(dot){
+    if (active === dot) return;
+    if (active){
+      active.setAttribute('r', baseR(active));
+      active.style.opacity = active.classList.contains('subject') ? '1' : '0.55';
+    }
+    active = dot;
+    if (dot){
+      dot.setAttribute('r', baseR(dot) + 3);
+      dot.style.opacity = '1';
+    }
+  }
+
+  function showTooltip(dot){
+    var cx = parseFloat(dot.getAttribute('cx')), cy = parseFloat(dot.getAttribute('cy'));
+    var vb = svg.viewBox.baseVal;
+    var svgRect = svg.getBoundingClientRect();
+    var scaleX = svgRect.width / vb.width, scaleY = svgRect.height / vb.height;
+    var cardRect = card.getBoundingClientRect();
+    var px = (svgRect.left - cardRect.left) + cx * scaleX;
+    var py = (svgRect.top - cardRect.top) + cy * scaleY - (baseR(dot) + 3) * scaleY;
+
+    tooltip.querySelector('.tt-address').textContent = dot.dataset.address;
+    tooltip.querySelector('.tt-price').textContent = dot.dataset.price;
+    tooltip.querySelector('.tt-sqft').textContent = dot.dataset.sqft;
+    tooltip.querySelector('.tt-psf').textContent = dot.dataset.psf;
+    tooltip.querySelector('.tt-date').textContent = dot.dataset.date;
+
+    tooltip.style.left = px + 'px';
+    tooltip.style.top = py + 'px';
+    tooltip.classList.add('visible');
+  }
+
+  function hideTooltip(){
+    tooltip.classList.remove('visible');
+    setActive(null);
+  }
+
+  function nearestDot(evt){
+    var p = svgPoint(evt);
+    if (!p) return null;
+    var best = null, bestDist = 26;
+    dots.forEach(function(dot){
+      var dx = p.x - parseFloat(dot.getAttribute('cx'));
+      var dy = p.y - parseFloat(dot.getAttribute('cy'));
+      var dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < bestDist){ bestDist = dist; best = dot; }
+    });
+    return best;
+  }
+
+  svg.addEventListener('mousemove', function(evt){
+    var dot = nearestDot(evt);
+    if (dot){ setActive(dot); showTooltip(dot); }
+    else { hideTooltip(); }
+  });
+  svg.addEventListener('mouseleave', hideTooltip);
+  svg.addEventListener('touchstart', function(evt){
+    var touch = evt.touches[0];
+    var dot = nearestDot(touch);
+    if (dot){ setActive(dot); showTooltip(dot); evt.preventDefault(); }
+    else { hideTooltip(); }
+  }, {passive:false});
+})();
+</script>
+      </div>
+      <table class="comps-table">
+      <thead><tr><th>Address</th><th>Sale Price</th><th>Sq. Ft.</th><th>$/Sq. Ft.</th><th>Sold</th></tr></thead>
+      <tbody><tr class="subject-row"><td><b>4608 Devonshire Dr</b></td><td><b>$985,190</b></td><td><b>5,340 sf</b></td><td><b>$184/sf</b></td><td><b>06/21/2019</b></td></tr><tr><td>4665 Devonshire Dr</td><td>$707,500</td><td>3,831 sf</td><td>$185/sf</td><td>10/30/2026</td></tr><tr><td>4693 McCullah Dr</td><td>$702,400</td><td>3,800 sf</td><td>$185/sf</td><td>09/09/2026</td></tr><tr><td>502 Fisher West Dr</td><td>$547,625</td><td>3,360 sf</td><td>$163/sf</td><td>08/20/2026</td></tr><tr><td>463 Chester Ln</td><td>$451,315</td><td>3,537 sf</td><td>$128/sf</td><td>08/14/2026</td></tr><tr><td>7 Woodsedge Ct</td><td>$530,000</td><td>3,351 sf</td><td>$158/sf</td><td>07/30/2026</td></tr><tr><td>226 Ambassador Dr</td><td>$415,000</td><td>3,314 sf</td><td>$125/sf</td><td>07/22/2026</td></tr></tbody>
+    </table>
+    </div>
     <div class="rpr-ref">
       <div class="rpr-ref-label">Also from RPR (Realtors Property Resource)</div>
       <div class="rpr-ref-row">
@@ -377,10 +470,9 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       </div>
       <div class="rpr-ref-note">Homebot's own estimate, as of 11/06/2026 &middot; On file: 30-year fixed at 2.687% on May 31, 2021. Shown for reference only &mdash; the estimate above (based on recent comparable sales) is what drives the equity figures on this page.</div>
     </div>
-    
     <div class="home-value"><div class="mortgage-equity" data-loan-amount="404800.0" data-rate="2.687"
          data-term-months="360" data-first-payment="2021-06-01"
-         data-value-low="878601.1" data-value-high="878601.1">
+         data-value-low="933261.9854887365" data-value-high="1037118.5857295729">
       <div class="me-row">
         <span class="me-label">Est. Remaining Mortgage Balance</span>
         <span class="me-val" id="me-balance">&hellip;</span>
@@ -510,7 +602,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
       </div>
       <div class="calc-row">
         <label for="pp-down">Down Payment</label>
-        <input type="number" id="pp-down" value="176000" min="0" step="1000">
+        <input type="number" id="pp-down" value="197000" min="0" step="1000">
       </div>
       <div class="calc-row">
         <label for="pp-rate">Interest Rate (%)</label>
@@ -631,7 +723,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     <div class="footnote">
       Scott White &middot; @properties<br>
-      Last updated 2026-11-10. This page is private to you &mdash; please don't share the link.
+      Last updated 2026-11-20. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
 <script>
