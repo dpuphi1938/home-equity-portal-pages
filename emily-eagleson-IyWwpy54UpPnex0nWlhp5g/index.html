@@ -19,7 +19,7 @@
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font-family:-apple-system,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
-a{-webkit-tap-highlight-color:rgba(238,54,37,.12)}
+a{-webkit-tap-highlight-color:rgba(23,42,74,.12)}
 .wrap{max-width:640px;margin:0 auto;padding:28px 20px 48px}
 .brandbar{height:4px;background:linear-gradient(90deg,var(--red),var(--red-dark));border-radius:2px;margin-bottom:20px}
 .photo-wrap{position:relative;width:95%;max-width:420px;margin:0 auto 22px;border-radius:16px;overflow:hidden;background:var(--cloud);box-shadow:var(--shadow-hover)}
@@ -187,7 +187,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
 .countdown{background:linear-gradient(135deg,var(--ink),var(--charcoal));border-radius:var(--radius);padding:18px 20px;margin-bottom:20px;text-align:center;box-shadow:var(--shadow-hover)}
 .countdown .cd-num{font-size:40px;font-weight:800;color:var(--white);line-height:1;letter-spacing:-.02em}
-.countdown .cd-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--red);margin-top:4px}
+.countdown .cd-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-top:4px}
 .countdown .cd-date{font-size:12px;color:var(--mist);margin-top:6px}
 .countdown.closed{background:linear-gradient(135deg,var(--good),#155c2d)}
 
@@ -239,6 +239,23 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 .as-delta.bad{color:var(--bad)}
 .as-delta.flat{color:var(--slate)}
 .area-stats-secondary{display:flex;justify-content:space-between;font-size:12.5px;color:var(--charcoal);margin-bottom:20px}
+
+.ideal-cal{background:var(--white);border:1px solid var(--cloud);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);margin-bottom:20px}
+.ideal-cal-head{font-size:14.5px;font-weight:600;color:var(--charcoal);margin-bottom:8px}
+.ideal-cal-note{font-size:12.5px;color:var(--slate);line-height:1.5;margin-bottom:12px}
+.ideal-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:4px}
+.ideal-cal-dow{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);text-align:center;padding-bottom:4px}
+.ideal-cal-day{position:relative;aspect-ratio:1;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12.5px;font-weight:600;color:var(--charcoal);background:var(--paper)}
+.ideal-cal-day.pad{background:transparent}
+.ideal-cal-day.today{box-shadow:inset 0 0 0 2px var(--gold)}
+.ideal-cal-day.target{background:var(--red);color:var(--white)}
+.ideal-cal-day.lease:not(.target){box-shadow:inset 0 0 0 2px var(--bad);color:var(--bad)}
+.ideal-cal-num{line-height:1}
+.ideal-cal-tag{position:absolute;bottom:-2px;font-size:7px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
+.ideal-cal-legend{display:flex;gap:16px;margin-top:12px;font-size:11.5px;color:var(--slate)}
+.ideal-cal-legend-item.target{color:var(--red-dark)}
+.ideal-cal-legend-item.lease{color:var(--bad)}
+.ideal-cal-offgrid{font-size:12.5px;font-weight:600;color:var(--bad);margin-top:12px}
 </style>
 </head>
 <body>
@@ -355,7 +372,6 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
     
     
     
-    
     <div class="home-value"><details class="add-form" id="loan-info-details" open>
       <summary>Don&rsquo;t have your loan on file? Tell us your numbers</summary>
       <p class="section-intro">We don't have your actual loan on file for this home -- pull up a recent mortgage statement and fill in your approximate numbers, and we'll track your equity against those instead. Won't be as precise as the real thing, but it beats nothing.</p>
@@ -369,6 +385,12 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
         <div class="add-form-msg" id="loan-info-msg" hidden></div>
       </form>
     </details></div>
+
+    
+
+    
+
+    
 
     
 
@@ -462,7 +484,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--cloud);margin-left:2px}
 
     <div class="footnote">
       Scott White &middot; @properties<br>
-      Last updated 2026-11-20. This page is private to you &mdash; please don't share the link.
+      Last updated 2026-11-25. This page is private to you &mdash; please don't share the link.
     </div>
   </div>
 <script>
